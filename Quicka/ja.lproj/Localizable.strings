@@ -1,0 +1,66 @@
+
+// Common
+"Cancel" = "キャンセル";
+
+// MainViewController
+"New Action" = "新規項目を追加";
+"Edit Action" = "編集";
+"No results" = "検索結果なし";
+
+// SubViewController
+"Copy" = "コピー";
+"View Source" = "ソースを表示";
+"Mail" = "メールで送信する";
+
+// EditViewController
+"Select Image" = "画像を選択する";
+"Select From Library" = "ライブラリから選択する";
+"%@ is not exist on your device" = "%@ はインストールされていません";
+"Download from the App Store?" = "ダウンロードしますか？";
+"Download" = "ダウンロード";
+"Select From Photos App" = "写真アプリから選択";
+"Select From Quicka's Library" = "ライブラリから選択";
+"Create Icon" = "アイコンを作成";
+"Use this Icon" = "このアイコンを使用する";
+"Preview" = "プレビュー";
+"Select Color" = "色を選択";
+"Select Icon" = "アイコンを選択";
+
+// SettingsViewController
+"Settings" = "設定";
+"Search Engine" = "検索エンジン";
+"Read Later" = "あとで読む";
+"Use Built in Browser" = "内蔵ブラウザを使用する";
+"Use Suggest" = "サジェスト機能を利用する";
+"Clear After Search" = "検索後に語句を消去する";
+"Clear Cache" = "キャッシュを削除する";
+"%.1lf MB Used" = "使用中：%.1lf MB";
+"Version" = "バージョン";
+"Developed by" = "開発";
+"Support" = "サポート";
+"Feedback" = "フィードバックを送る";
+
+// CustomEngineViewController
+"Edit" = "編集";
+
+// ReadLaterViewController
+"None" = "なし";
+"Reading List" = "リーディングリスト";
+"You are logged in as %@" = "%@ でログイン中";
+"Change Account" = "アカウントを変更";
+"Use This Account" = "このアカウントを使用";
+"Logged in as %@." = "%@ でログインしました。";
+
+// HistoryViewController
+"Clear" = "消去";
+"Recents" = "履歴";
+"Clear All Recents" = "すべての履歴を消去";
+
+// BookmarkViewController
+"Bookmarks" = "ブックマーク";
+"History" = "履歴";
+"Edit Bookmark" = "ブックマークを編集";
+"New Bookmark" = "ブックマークを追加";
+
+// CustomActivity
+"Add Bookmark" = "ブックマークに追加";

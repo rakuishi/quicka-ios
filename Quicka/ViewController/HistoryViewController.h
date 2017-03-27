@@ -1,0 +1,22 @@
+//
+//  HistoryViewController.h
+//  Quicka
+//
+//  Created by OCHIISHI Koichiro on 9/16/13.
+//  Copyright (c) 2013 OCHIISHI Koichiro. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+#import "HistoryManager.h"
+
+@protocol HistoryViewControllerDelegate <NSObject>
+
+- (void)didSelectQuery:(NSString *)query;
+
+@end
+
+@interface HistoryViewController : UITableViewController <UIActionSheetDelegate>
+
+@property (nonatomic, assign) id <HistoryViewControllerDelegate> delegate;
+
+@end

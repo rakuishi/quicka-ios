@@ -1,0 +1,66 @@
+[
+    {
+        "title": "How to Use",
+        "title_ja": "使い方を見る",
+        "url": "http://rakuishi.com/quicka2",
+        "artworkUrl": "icon_star_yellow",
+        "trackId": "",
+        "trackName": "Quicka"
+    },
+    {
+        "title": "Search App Store",
+        "title_ja": "アプリを検索",
+        "url": "quicka2://?action=appstore",
+        "artworkUrl": "icon_appstore_blue",
+        "trackId": "",
+        "trackName": "Quicka"
+    },
+    {
+        "title": "Consult a Dictionary",
+        "title_ja": "辞書を調べる",
+        "url": "quicka2://?action=reference",
+        "artworkUrl": "icon_book_red",
+        "trackId": "",
+        "trackName": "Quicka"
+    },
+    {
+        "title": "Look up a Map",
+        "title_ja": "地図を調べる",
+        "url": "comgooglemaps://maps?q=[U]",
+        "artworkUrl": "585027354",
+        "trackId": "585027354",
+        "trackName": "Google Maps"
+    },
+    {
+        "title": "Search Tweet",
+        "title_ja": "検索",
+        "url": "tweetbot:///search?query=[U]",
+        "artworkUrl": "722294701",
+        "trackId": "722294701",
+        "trackName": "Tweetbot"
+    },
+    {
+        "title": "Add Event",
+        "title_ja": "予定を追加",
+        "url": "staccal://event?title=[U]",
+        "artworkUrl": "794729836",
+        "trackId": "794729836",
+        "trackName": "Staccal"
+    },
+    {
+        "title": "Consult a Dictionary",
+        "title_ja": "辞書を検索",
+        "url": "mkdaijirin://jp.monokakido.DAIJIRIN/search?text=[U]",
+        "artworkUrl": "299029654",
+        "trackId": "299029654",
+        "trackName": "大辞林"
+    },
+    {
+        "title": "Consult a Dictionary",
+        "title_ja": "辞書を検索",
+        "url": "mkwisdom2://jp.monokakido.WISDOM2/search?text=[U]",
+        "artworkUrl": "586803362",
+        "trackId": "586803362",
+        "trackName": "ウィズダム英和・和英辞典2"
+    }
+]

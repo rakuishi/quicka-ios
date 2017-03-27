@@ -1,0 +1,46 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+// モデル作成手順
+// Quicka.xcdatamodelId で Entity を作成し、Class 名を指定する
+// $ mogenerator --template-var arc=true -m Quicka.xcdatamodeld/Quicka.xcdatamodel/ -O Library/XcdataModel/
+
+#define QKApplicationReloadTableViewData    @"QKApplicationReloadTableViewData"
+#define QKApplicationSetTextToSearchBar     @"QKApplicationSetTextToSearchBar"
+#define QKApplicationEnablePanGesture       @"QKApplicationEnablePanGesture"
+
+#define POCKET_CONSUMER_KEY             @"19807-3e4b43bfc3052b28415262b6"
+
+#define QK_APPID                        @"725195676"
+#define QK_ACTION_JSON_URL              @"https://rakuishi.github.io/static/apps/quicka2/action.json"
+#define QK_IMAGE_JSON_URL               @"https://rakuishi.github.io/static/apps/quicka2/image.json"
+#define QK_APP_DOWNLOAD_URL(trackId)    [NSString stringWithFormat:@"https://itunes.apple.com/jp/app/id%@?mt=8&at=11l3RT", (trackId)]
+#define QK_APPSTORE_EN_URL(trackName)   [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&entity=software&limit=25", (trackName)]
+#define QK_APPSTORE_JP_URL(trackName)   [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&entity=software&country=JP&limit=25", (trackName)]
+#define QK_TINT_COLOR                   [UIColor colorWithRed:204.f/255.f green:204.f/255.f blue:204.f/255.f alpha:1.f]
+#define QK_BAR_TINT_COLOR               [UIColor colorWithRed:62.f/255.f green:65.f/255.f blue:72.f/255.f alpha:1.f]
+
+#define LSTR(key)                       NSLocalizedString((key), nil)
+#define JP                              [[[[[NSLocale preferredLanguages] firstObject] componentsSeparatedByString:@"-"] firstObject] isEqualToString:@"ja"]
+#define SYSTEM_VERSION_BIGER_THAN(v)    [[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending
+
+#ifdef DEBUG
+    #define DLog(fmt, ...) NSLog((@"%s " fmt), __func__, ##__VA_ARGS__);
+#else
+    #define DLog(...)
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <CoreData/CoreData.h>
+#endif

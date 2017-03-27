@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Quicka
+
+  Created by rakuishi on 2017/03/12.
+  Copyright © 2017 OCHIISHI Koichiro. All rights reserved.
+*/
+
+NSPhotoLibraryUsageDescription = "Quicka は、フォトライブラリデータを利用してアイコンを作成します。";
