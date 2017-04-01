@@ -71,6 +71,7 @@
 		1672818B17E5454B0072173D /* MagicalRecord+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = 1672816D17E5454B0072173D /* MagicalRecord+Setup.m */; };
 		1672818C17E5454B0072173D /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = 1672816F17E5454B0072173D /* MagicalRecord+ShorthandSupport.m */; };
 		1672818D17E5454B0072173D /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 1672817117E5454B0072173D /* MagicalRecord.m */; };
+		168FFD851E8FD35D003DB6D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 168FFD831E8FD35D003DB6D9 /* LaunchScreen.storyboard */; };
 		169DEB5A17E5BD24000F8C7D /* CustomActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 169DEB5917E5BD24000F8C7D /* CustomActivity.m */; };
 		169DEB6B17E68CD4000F8C7D /* _Action.m in Sources */ = {isa = PBXBuildFile; fileRef = 169DEB6017E68CD4000F8C7D /* _Action.m */; };
 		169DEB6E17E68CD4000F8C7D /* Action.m in Sources */ = {isa = PBXBuildFile; fileRef = 169DEB6617E68CD4000F8C7D /* Action.m */; };
@@ -95,7 +96,6 @@
 		16A5620D19CE5AD4007C89E8 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5620819CE5AD4007C89E8 /* NSData+ImageContentType.m */; };
 		16A5620E19CE5AD4007C89E8 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5620A19CE5AD4007C89E8 /* UIImageView+HighlightedWebCache.m */; };
 		16A5620F19CE5AD4007C89E8 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A5620C19CE5AD4007C89E8 /* UIView+WebCacheOperation.m */; };
-		16A5624219CE603E007C89E8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16A5624019CE603E007C89E8 /* LaunchScreen.xib */; };
 		16A840EE180006A700B946D3 /* BookmarkEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A840ED180006A700B946D3 /* BookmarkEditViewController.m */; };
 		16A840F1180013AE00B946D3 /* AppStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A840F0180013AE00B946D3 /* AppStoreViewController.m */; };
 		16AB5FB417FE1FB900B7D45A /* SearchEngineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AB5FB317FE1FB900B7D45A /* SearchEngineViewController.m */; };
@@ -246,6 +246,7 @@
 		1672817117E5454B0072173D /* MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalRecord.m; sourceTree = "<group>"; };
 		1672817217E5454B0072173D /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthand.h; sourceTree = "<group>"; };
 		1672817317E5454B0072173D /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
+		168FFD841E8FD35D003DB6D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		169DEB5817E5BD24000F8C7D /* CustomActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomActivity.h; sourceTree = "<group>"; };
 		169DEB5917E5BD24000F8C7D /* CustomActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomActivity.m; sourceTree = "<group>"; };
 		169DEB5F17E68CD4000F8C7D /* _Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Action.h; sourceTree = "<group>"; };
@@ -295,7 +296,6 @@
 		16A5620A19CE5AD4007C89E8 /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
 		16A5620B19CE5AD4007C89E8 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		16A5620C19CE5AD4007C89E8 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
-		16A5624119CE603E007C89E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		16A840EC180006A700B946D3 /* BookmarkEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookmarkEditViewController.h; path = ViewController/BookmarkEditViewController.h; sourceTree = "<group>"; };
 		16A840ED180006A700B946D3 /* BookmarkEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookmarkEditViewController.m; path = ViewController/BookmarkEditViewController.m; sourceTree = "<group>"; };
 		16A840EF180013AE00B946D3 /* AppStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppStoreViewController.h; path = ViewController/AppStoreViewController.h; sourceTree = "<group>"; };
@@ -430,7 +430,7 @@
 			isa = PBXGroup;
 			children = (
 				160E55EE182133F8008937C7 /* Images.xcassets */,
-				16A5624019CE603E007C89E8 /* LaunchScreen.xib */,
+				168FFD831E8FD35D003DB6D9 /* LaunchScreen.storyboard */,
 				160BEDCA17E471C000EC97FC /* Quicka.xcdatamodeld */,
 				160BEDBD17E471C000EC97FC /* Quicka-Info.plist */,
 				160033B2180756E300FB30D8 /* setup.json */,
@@ -856,11 +856,11 @@
 				1618E90318271AB700159F92 /* CollectionViewIconCell.xib in Resources */,
 				166BE33D181EFAAD0002A080 /* DefaultSubtitleIconCell.xib in Resources */,
 				166BE337181EF5A00002A080 /* TitleCell.xib in Resources */,
+				168FFD851E8FD35D003DB6D9 /* LaunchScreen.storyboard in Resources */,
 				1618E9081827228800159F92 /* MyCollectionViewCell.xib in Resources */,
 				160033B3180756E300FB30D8 /* setup.json in Resources */,
 				166BE341181EFD4A0002A080 /* DefaultCenterCell.xib in Resources */,
 				16DB820618318555007DE73E /* BookmarkCell.xib in Resources */,
-				16A5624219CE603E007C89E8 /* LaunchScreen.xib in Resources */,
 				16AB5FB917FF8D6600B7D45A /* Localizable.strings in Resources */,
 				166BE33B181EF73B0002A080 /* DefaultIconCell.xib in Resources */,
 				1618E90118271AA500159F92 /* CollectionViewColorCell.xib in Resources */,
@@ -1001,12 +1001,12 @@
 			name = Settings.storyboard;
 			sourceTree = "<group>";
 		};
-		16A5624019CE603E007C89E8 /* LaunchScreen.xib */ = {
+		168FFD831E8FD35D003DB6D9 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				16A5624119CE603E007C89E8 /* Base */,
+				168FFD841E8FD35D003DB6D9 /* Base */,
 			);
-			name = LaunchScreen.xib;
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 		16AB5FBB17FF8D6600B7D45A /* Localizable.strings */ = {
@@ -1119,7 +1119,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1139,7 +1138,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
