@@ -194,7 +194,7 @@ CGFloat const kSuggestViewFrameSizeHeight = 36.f;
     [self.connection cancel]; // 通信を都度キャンセルする
     self.data = [[NSMutableData alloc] initWithLength:0];
     if ([query length])  {
-        NSString *URLString = [NSString stringWithFormat:@"http://www.google.com/complete/search?hl=ja&q=%@&output=toolbar", [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        NSString *URLString = [NSString stringWithFormat:@"https://www.google.com/complete/search?hl=ja&q=%@&output=toolbar", [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
         
         NSURL *URL = [NSURL URLWithString:URLString];
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10.f];
