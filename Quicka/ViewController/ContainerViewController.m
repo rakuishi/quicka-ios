@@ -116,7 +116,6 @@
     if (query) {
         [self.mainViewController.searchBar setText:query];
     }
-    [self.mainViewController.searchBar becomeFirstResponder];
 }
 
 #pragma mark - MainViewControllerDelegate
@@ -142,9 +141,9 @@
     if (gesture.state == UIGestureRecognizerStateBegan) {
         
         if ([QuickaUtil isOnForKey:kQuickaUseBuiltInBrowser]) {
+            [self.mainViewController hideSoftwareKeyboard];
             if (x > self.width - MARGIN && self.isActiveMainView == YES) {
                 self.shouldMoveViewPosition = YES;
-                [self.mainViewController willBecomeResignActive];
             } else if (x < MARGIN && self.isActiveMainView == NO) {
                 self.shouldMoveViewPosition = YES;
             } else {
@@ -206,7 +205,7 @@
                          
                          self.mainViewController.isActive = YES;
                          self.mainViewController.searchBarTextField.enabled = YES;
-                         [self.mainViewController didBecomeActive];
+                         [self.mainViewController showSoftwareKeyboardIfPossible];
                      }];
 }
 
@@ -217,7 +216,7 @@
     
     CALayer *layer = self.subNavigationController.view.layer;
     [self animateShadowOpacityWithLayer:layer fromValue:0.4f toValue:0.f];
-    
+
     [UIView animateWithDuration:0.25f
                           delay:0.f
                         options:UIViewAnimationOptionCurveEaseOut

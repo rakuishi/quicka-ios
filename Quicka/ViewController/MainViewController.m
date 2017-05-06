@@ -42,7 +42,7 @@
     NSNotificationCenter *notification = [NSNotificationCenter defaultCenter];
     [notification addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     [notification addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    [notification addObserver:self selector:@selector(didBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
+    [notification addObserver:self selector:@selector(showSoftwareKeyboardIfPossible) name:UIApplicationDidBecomeActiveNotification object:nil];
     [notification addObserver:self selector:@selector(reloadTableViewData) name:QKApplicationReloadTableViewData object:nil];
     [notification addObserver:self selector:@selector(setTextToSearchBar:) name:QKApplicationSetTextToSearchBar object:nil];
 
@@ -58,11 +58,10 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self showSoftwareKeyboardIfPossible];
 
     // `viewDidLoad` でインスタンスを生成するのと比較して 200ms 短縮
     if (self.toolbarItems.count == 0) {
-        [self didBecomeActive];
-
         UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
         UIBarButtonItem *settingsButtonItem = [[UIBarButtonItem alloc] initWithTitle:LSTR(@"Settings") style:UIBarButtonItemStylePlain target:self action:@selector(settingsButtonItemTapped)];
         [self setToolbarItems:@[settingsButtonItem, flexibleSpace, self.editButtonItem] animated:NO];
@@ -126,14 +125,14 @@
 
 #pragma mark - From ContainerViewController
 
-- (void)didBecomeActive
+- (void)showSoftwareKeyboardIfPossible
 {
     if (self.isActive && self.editing == NO) {
         [self.searchBar becomeFirstResponder];
     }
 }
 
-- (void)willBecomeResignActive
+- (void)hideSoftwareKeyboard
 {
     [self.searchBar resignFirstResponder];
 }
@@ -167,7 +166,6 @@
 - (void)setTextToSearchBar:(NSNotification *)notification
 {
     [self.searchBar setText:[(NSString *)[notification.userInfo objectForKey:@"text"] UTF8DecodedString]];
-    [self.searchBar becomeFirstResponder];
 }
 
 #pragma mark - UISearchBarDelegate
@@ -384,7 +382,6 @@
 - (void)didSelectQuery:(NSString *)query
 {
     self.searchBar.text = query;
-    [self.searchBar becomeFirstResponder];
 }
 
 #pragma mark - EditViewControllerDelegate
@@ -478,7 +475,12 @@
                 [self.delegate scrollToSubViewControllerWithQuery:url];
             }
         } else {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+            SFSafariViewController *viewController = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:url]];
+            if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_x_Max) {
+                viewController.preferredBarTintColor = [UIColor blackColor];
+                viewController.preferredControlTintColor = [UIColor whiteColor];
+            }
+            [self presentViewController:viewController animated:YES completion:nil];
         }
     } else {
         [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];

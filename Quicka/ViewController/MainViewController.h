@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SafariServices/SafariServices.h>
+
 #import "HistoryViewController.h"
 #import "EditViewController.h"
 #import "SettingsViewController.h"
@@ -34,7 +36,7 @@
 @property (nonatomic, strong) UITextField *searchBarTextField;
 @property (nonatomic, assign) BOOL isActive;
 
-- (void)didBecomeActive;
-- (void)willBecomeResignActive;
+- (void)showSoftwareKeyboardIfPossible;
+- (void)hideSoftwareKeyboard;
 
 @end

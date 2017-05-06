@@ -34,6 +34,7 @@
 		1618E9061827214E00159F92 /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1618E9051827214E00159F92 /* CustomCollectionViewCell.m */; };
 		1618E9081827228800159F92 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1618E9071827228800159F92 /* MyCollectionViewCell.xib */; };
 		163D1C501800E3A8009894A5 /* SelectImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 163D1C4F1800E3A8009894A5 /* SelectImageViewController.m */; };
+		1647B4221EBC4C610038E066 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1647B4211EBC4C610038E066 /* SafariServices.framework */; };
 		164E809B181F16AB007922D6 /* ReadLaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 164E809A181F16AB007922D6 /* ReadLaterViewController.m */; };
 		164E80A7181FE7E1007922D6 /* PocketAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 164E809F181FE7E1007922D6 /* PocketAPI.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		164E80A8181FE7E1007922D6 /* PocketAPILogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 164E80A1181FE7E1007922D6 /* PocketAPILogin.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -173,6 +174,7 @@
 		1618E9071827228800159F92 /* MyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCollectionViewCell.xib; sourceTree = "<group>"; };
 		163D1C4E1800E3A8009894A5 /* SelectImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectImageViewController.h; path = ViewController/SelectImageViewController.h; sourceTree = "<group>"; };
 		163D1C4F1800E3A8009894A5 /* SelectImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectImageViewController.m; path = ViewController/SelectImageViewController.m; sourceTree = "<group>"; };
+		1647B4211EBC4C610038E066 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		164E8099181F16AB007922D6 /* ReadLaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReadLaterViewController.h; path = ViewController/ReadLaterViewController.h; sourceTree = "<group>"; };
 		164E809A181F16AB007922D6 /* ReadLaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReadLaterViewController.m; path = ViewController/ReadLaterViewController.m; sourceTree = "<group>"; };
 		164E809D181FE7E1007922D6 /* PocketAPI+NSOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PocketAPI+NSOperation.h"; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1647B4221EBC4C610038E066 /* SafariServices.framework in Frameworks */,
 				160BEDF517E474E300EC97FC /* QuartzCore.framework in Frameworks */,
 				160BEDB617E471C000EC97FC /* CoreGraphics.framework in Frameworks */,
 				160BEDBA17E471C000EC97FC /* CoreData.framework in Frameworks */,
@@ -398,6 +401,7 @@
 		160BEDB217E471C000EC97FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1647B4211EBC4C610038E066 /* SafariServices.framework */,
 				164E80AB181FE894007922D6 /* Security.framework */,
 				160BEDF417E474E300EC97FC /* QuartzCore.framework */,
 				160BEDB317E471C000EC97FC /* Foundation.framework */,
@@ -1125,7 +1129,7 @@
 				GCC_PREFIX_HEADER = "Quicka/Quicka-Prefix.pch";
 				GCC_WARN_UNDECLARED_SELECTOR = NO;
 				INFOPLIST_FILE = "Quicka/Quicka-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rakuishi.Quicka2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1144,7 +1148,7 @@
 				GCC_PREFIX_HEADER = "Quicka/Quicka-Prefix.pch";
 				GCC_WARN_UNDECLARED_SELECTOR = NO;
 				INFOPLIST_FILE = "Quicka/Quicka-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rakuishi.Quicka2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

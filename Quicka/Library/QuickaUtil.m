@@ -118,7 +118,7 @@
         // v1.0 → v1.1
 
         // 初期値を入力
-        [QuickaUtil setOn:YES forKey:kQuickaUseSuggestView];
+        [QuickaUtil setOn:NO forKey:kQuickaUseSuggestView];
         // [QuickaUtil setReadLaterIndex:kReadLaterTypeReadingList];
 
         version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
@@ -131,10 +131,10 @@
         [ActionManager setupInitAction];
         
         // 初期値を入力
-        [QuickaUtil setOn:YES forKey:kQuickaUseBuiltInBrowser];
-        [QuickaUtil setOn:YES forKey:kQuickaUseSuggestView];
+        [QuickaUtil setOn:NO forKey:kQuickaUseBuiltInBrowser];
+        [QuickaUtil setOn:NO forKey:kQuickaUseSuggestView];
         [QuickaUtil setReadLaterIndex:kReadLaterTypeReadingList];
-        
+
         version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
         [defaults setObject:version forKey:kQuickaVersion];
         [defaults synchronize];
