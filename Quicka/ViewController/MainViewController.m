@@ -476,10 +476,8 @@
             }
         } else {
             SFSafariViewController *viewController = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:url]];
-            if (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_9_x_Max) {
-                viewController.preferredBarTintColor = [UIColor blackColor];
-                viewController.preferredControlTintColor = [UIColor whiteColor];
-            }
+            viewController.preferredBarTintColor = [UIColor blackColor];
+            viewController.preferredControlTintColor = [UIColor whiteColor];
             [self presentViewController:viewController animated:YES completion:nil];
         }
     } else {
