@@ -319,7 +319,7 @@ NSString *const kActivityURLSchemesiCabMobile = @"icabmobile:";
 
 - (void)openURL:(NSURL *)URL
 {
-    [[UIApplication sharedApplication] openURL:URL];
+    [[UIApplication sharedApplication] openURL:URL options:@{} completionHandler:nil];
 }
 
 @end
@@ -372,7 +372,7 @@ NSString *const kActivityURLSchemesiCabMobile = @"icabmobile:";
     NSString *URLString = URL.absoluteString;
     URLString = [URLString stringByReplacingOccurrencesOfString:@"https:" withString:kActivityURLSchemesChrome];
     URLString = [URLString stringByReplacingOccurrencesOfString:@"http:" withString:kActivityURLSchemesChrome];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URLString]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URLString] options:@{} completionHandler:nil];
 }
 
 @end
@@ -425,7 +425,7 @@ NSString *const kActivityURLSchemesiCabMobile = @"icabmobile:";
     NSString *URLString = URL.absoluteString;
     URLString = [URLString stringByReplacingOccurrencesOfString:@"https:" withString:kActivityURLSchemesSleipnir];
     URLString = [URLString stringByReplacingOccurrencesOfString:@"http:" withString:kActivityURLSchemesSleipnir];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URLString]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URLString] options:@{} completionHandler:nil];
 }
 
 @end
@@ -478,7 +478,7 @@ NSString *const kActivityURLSchemesiCabMobile = @"icabmobile:";
     NSString *URLString = URL.absoluteString;
     URLString = [URLString stringByReplacingOccurrencesOfString:@"https:" withString:kActivityURLSchemesiCabMobile];
     URLString = [URLString stringByReplacingOccurrencesOfString:@"http:" withString:kActivityURLSchemesiCabMobile];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URLString]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URLString] options:@{} completionHandler:nil];
 }
 
 @end

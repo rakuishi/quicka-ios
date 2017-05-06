@@ -252,9 +252,9 @@ typedef enum kSection : NSUInteger {
         case kSectionAbout:
             [tableView deselectRowAtIndexPath:indexPath animated:YES];
             if (indexPath.row == 1) {
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://rakuishi.com"]];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://rakuishi.com"] options:@{} completionHandler:nil];
             } else if (indexPath.row == 2) {
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://rakuishi.com/quicka2/"]];
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://rakuishi.com/quicka2/"] options:@{} completionHandler:nil];
             }
             break;
         case kSectionCache:

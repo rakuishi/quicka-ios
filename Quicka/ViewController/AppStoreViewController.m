@@ -130,7 +130,7 @@
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
         NSDictionary *dict = self.objects[indexPath.row];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:QK_APP_DOWNLOAD_URL([dict objectForKey:@"trackId"])]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:QK_APP_DOWNLOAD_URL([dict objectForKey:@"trackId"])] options:@{} completionHandler:nil];
     }
 }
 

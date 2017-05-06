@@ -343,7 +343,7 @@
         return;
     }
     
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:QK_APP_DOWNLOAD_URL(self.trackId)]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:QK_APP_DOWNLOAD_URL(self.trackId)] options:@{} completionHandler:nil];
 }
 
 #pragma mark - UIImagePickerControllerDelegate

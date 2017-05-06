@@ -483,7 +483,7 @@
             [self presentViewController:viewController animated:YES completion:nil];
         }
     } else {
-        [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url]];
+        [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url] options:@{} completionHandler:nil];
     }
 }
 
