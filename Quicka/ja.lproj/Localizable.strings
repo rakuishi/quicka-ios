@@ -40,6 +40,7 @@
 "Support" = "サポート";
 "Feedback" = "フィードバックを送る";
 "Donation" = "Amazon ギフト券を寄付する";
+"Enter rakuishi@gmail.com as the recipient's e-mail address." = "受取人の E メールアドレスに rakuishi@gmail.com を入力します。";
 
 // CustomEngineViewController
 "Edit" = "編集";
