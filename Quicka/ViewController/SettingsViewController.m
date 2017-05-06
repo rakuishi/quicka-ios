@@ -16,6 +16,7 @@ typedef enum kSection : NSUInteger {
     kSectionCache,
     kSectionAbout,
     kSectionFeedback,
+    kSectionDonation,
     kSectionLisence,
     kSectionCount
 } kSection;
@@ -220,7 +221,7 @@ typedef enum kSection : NSUInteger {
                 cell.selectionStyle = UITableViewCellSelectionStyleDefault;
             } else {
                 cell.textLabel.text = LSTR(@"Support");
-                cell.detailTextLabel.text = @"rakuishi.com/quicka2/";
+                cell.detailTextLabel.text = @"https://rakuishi.com/quicka2/";
                 cell.selectionStyle = UITableViewCellSelectionStyleDefault;
             }
             
@@ -231,6 +232,13 @@ typedef enum kSection : NSUInteger {
             static NSString *CellIdentifier = @"CenterCell";
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
             cell.textLabel.text = LSTR(@"Feedback");
+            return cell;
+        }
+        case kSectionDonation: {
+            
+            static NSString *CellIdentifier = @"CenterCell";
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+            cell.textLabel.text = LSTR(@"Donation");
             return cell;
         }
         default: {
@@ -267,6 +275,10 @@ typedef enum kSection : NSUInteger {
             [self sendFeedback];
             [tableView deselectRowAtIndexPath:indexPath animated:YES];
             break;
+        case kSectionDonation:
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.amazon.co.jp/gp/product/B004N3APGO/"] options:@{} completionHandler:nil];
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+            break;
         default:
             [tableView deselectRowAtIndexPath:indexPath animated:YES];
             break;
@@ -277,6 +289,11 @@ typedef enum kSection : NSUInteger {
 
 - (void)sendFeedback
 {
+    if (![MFMailComposeViewController canSendMail]) {
+        // メールアプリが存在しない場合
+        return;
+    }
+    
     // メール下準備
     MFMailComposeViewController *composeViewController = [MFMailComposeViewController new];
     composeViewController.mailComposeDelegate = self;
