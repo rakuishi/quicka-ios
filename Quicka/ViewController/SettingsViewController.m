@@ -142,8 +142,6 @@ typedef enum kSection : NSUInteger {
 {
     if (section == kSectionCache) {
         return self.cacheSizeDescription;
-    } else if (section == kSectionDonation) {
-        return LSTR(@"Enter rakuishi@gmail.com as the recipient's e-mail address.");
     }
     return nil;
 }
