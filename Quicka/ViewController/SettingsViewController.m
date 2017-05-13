@@ -56,8 +56,7 @@ typedef enum kSection : NSUInteger {
     UIBarButtonItem *doneButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonItemTapped)];
     self.navigationItem.rightBarButtonItem = doneButtonItem;
     
-    // キャッシュサイズの取得に時間がかかるからタイミングを外して行う
-    [self performSelectorOnMainThread:@selector(getCacheSizeDescription) withObject:nil waitUntilDone:NO];
+    [self loadCacheSizeDescriptionOnAsync];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -98,10 +97,15 @@ typedef enum kSection : NSUInteger {
     }
 }
 
-- (void)getCacheSizeDescription
+- (void)loadCacheSizeDescriptionOnAsync
 {
-    self.cacheSizeDescription = [NSString stringWithFormat:LSTR(@"%.1lf MB Used"), [QuickaUtil getCacheSizeInMegaBytes]];
-    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:kSectionCache] withRowAnimation:UITableViewRowAnimationAutomatic];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        self.cacheSizeDescription = [NSString stringWithFormat:LSTR(@"%.1lf MB Used"), [QuickaUtil getCacheSizeInMegaBytes]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:kSectionCache] withRowAnimation:UITableViewRowAnimationAutomatic];
+        });
+    });
 }
 
 #pragma mark - Table view data source
@@ -260,7 +264,7 @@ typedef enum kSection : NSUInteger {
         case kSectionCache:
             [tableView deselectRowAtIndexPath:indexPath animated:YES];
             [QuickaUtil removeCache];
-            [self getCacheSizeDescription];
+            [self loadCacheSizeDescriptionOnAsync];
             [self.tableView reloadData];
             break;
         case kSectionFeedback:
