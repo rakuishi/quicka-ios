@@ -17,8 +17,6 @@
 {
     if (&UIGraphicsBeginImageContextWithOptions != NULL) {
 		UIGraphicsBeginImageContextWithOptions(CGSizeMake(size.width, size.height), NO, [[UIScreen mainScreen] scale]);
-	} else {
-		UIGraphicsBeginImageContext(CGSizeMake(size.width, size.height));
 	}
     
     CGContextRef context = UIGraphicsGetCurrentContext();
