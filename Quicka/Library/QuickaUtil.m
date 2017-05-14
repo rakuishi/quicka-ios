@@ -119,7 +119,7 @@
 
         // 初期値を入力
         [QuickaUtil setOn:NO forKey:kQuickaUseSuggestView];
-        // [QuickaUtil setReadLaterIndex:kReadLaterTypeReadingList];
+        [QuickaUtil setOn:YES forKey:kQuickaClearTextAfterSearch];
 
         version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
         [defaults setObject:version forKey:kQuickaVersion];
@@ -132,7 +132,7 @@
         
         // 初期値を入力
         [QuickaUtil setOn:NO forKey:kQuickaUseSuggestView];
-        [QuickaUtil setReadLaterIndex:kReadLaterTypeReadingList];
+        [QuickaUtil setOn:YES forKey:kQuickaClearTextAfterSearch];
 
         version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
         [defaults setObject:version forKey:kQuickaVersion];
