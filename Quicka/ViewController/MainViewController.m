@@ -441,7 +441,7 @@
     }
     
     // 検索欄で起動した時に、内蔵ブラウザを使用し、クエリに URL が存在する場合はそちらを優先
-    if (isSearchBarAction && [QuickaUtil isOnForKey:kQuickaUseBuiltInBrowser] && ([query hasPrefix:@"http:"] || [query hasPrefix:@"https:"])) {
+    if (isSearchBarAction && [QuickaUtil getBrowserIndex] != kBrowserTypeSafari && ([query hasPrefix:@"http:"] || [query hasPrefix:@"https:"])) {
         
         isOnlyLaunchApp = NO;
         url = query;
@@ -470,15 +470,25 @@
     }
 
     if ([url hasPrefix:@"http:"] || [url hasPrefix:@"https:"]) {
-        if ([QuickaUtil isOnForKey:kQuickaUseBuiltInBrowser]) {
-            if ([self.delegate respondsToSelector:@selector(scrollToSubViewControllerWithQuery:)]) {
-                [self.delegate scrollToSubViewControllerWithQuery:url];
+        switch ([QuickaUtil getBrowserIndex]) {
+            case kBrowserTypeSFSafariViewController: {
+                SFSafariViewController *viewController = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:url]];
+                viewController.preferredBarTintColor = [UIColor blackColor];
+                viewController.preferredControlTintColor = [UIColor whiteColor];
+                [self presentViewController:viewController animated:YES completion:nil];
+                break;
             }
-        } else {
-            SFSafariViewController *viewController = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:url]];
-            viewController.preferredBarTintColor = [UIColor blackColor];
-            viewController.preferredControlTintColor = [UIColor whiteColor];
-            [self presentViewController:viewController animated:YES completion:nil];
+            case kBrowserTypeSafari: {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url] options:@{} completionHandler:nil];
+                break;
+            }
+            case kBrowserTypeQuickaBrowser:
+            default: {
+                if ([self.delegate respondsToSelector:@selector(scrollToSubViewControllerWithQuery:)]) {
+                    [self.delegate scrollToSubViewControllerWithQuery:url];
+                }
+                break;
+            }
         }
     } else {
         [[UIApplication sharedApplication] openURL: [NSURL URLWithString: url] options:@{} completionHandler:nil];

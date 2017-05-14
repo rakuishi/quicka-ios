@@ -23,7 +23,6 @@ typedef enum kSection : NSUInteger {
 @interface SettingsViewController ()
 
 @property (nonatomic, strong) UISwitch *clearTextAfterSearchSwitch;
-@property (nonatomic, strong) UISwitch *useBuiltInBrowserSwitch;
 @property (nonatomic, strong) UISwitch *useSuggestViewSwitch;
 @property (nonatomic, strong) NSString *cacheSizeDescription;
 
@@ -37,19 +36,14 @@ typedef enum kSection : NSUInteger {
 
     self.title = LSTR(@"Settings");
     self.cacheSizeDescription = @"\n";
-    
-    self.useBuiltInBrowserSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
-    [self.useBuiltInBrowserSwitch setTag:0];
-    [self.useBuiltInBrowserSwitch setOn:[QuickaUtil isOnForKey:kQuickaUseBuiltInBrowser]];
-    [self.useBuiltInBrowserSwitch addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
-    
+
     self.useSuggestViewSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
-    [self.useSuggestViewSwitch setTag:1];
+    [self.useSuggestViewSwitch setTag:0];
     [self.useSuggestViewSwitch setOn:[QuickaUtil isOnForKey:kQuickaUseSuggestView]];
     [self.useSuggestViewSwitch addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
 
     self.clearTextAfterSearchSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
-    [self.clearTextAfterSearchSwitch setTag:2];
+    [self.clearTextAfterSearchSwitch setTag:1];
     [self.clearTextAfterSearchSwitch setOn:[QuickaUtil isOnForKey:kQuickaClearTextAfterSearch]];
     [self.clearTextAfterSearchSwitch addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
     
@@ -84,12 +78,9 @@ typedef enum kSection : NSUInteger {
 {
     switch (view.tag) {
         case 0:
-            [QuickaUtil setOn:view.on forKey:kQuickaUseBuiltInBrowser];
-            break;
-        case 1:
             [QuickaUtil setOn:view.on forKey:kQuickaUseSuggestView];
             break;
-        case 2:
+        case 1:
             [QuickaUtil setOn:view.on forKey:kQuickaClearTextAfterSearch];
             break;
         default:
@@ -187,10 +178,10 @@ typedef enum kSection : NSUInteger {
 
             if (indexPath.row == 0) {
                 
-                static NSString *CellIdentifier = @"BasicCell";
+                static NSString *CellIdentifier = @"BrowserCell";
                 UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-                cell.accessoryView = self.useBuiltInBrowserSwitch;
-                cell.textLabel.text = LSTR(@"Use Built in Browser");
+                cell.textLabel.text = LSTR(@"Browser");
+                cell.detailTextLabel.text = LSTR([QuickaUtil getBrowserName]);
                 return cell;
                 
             } else {

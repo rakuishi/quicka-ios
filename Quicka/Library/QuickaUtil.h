@@ -11,12 +11,12 @@
 #define kQuickaClearTextAfterSearch @"kQuickaClearTextAfterSearch"
 #define kQuickaSearchEngineIndex    @"kQuickaSearchEngineIndex"
 #define kQuickaReadLaterIndex       @"kQuickaReadLaterIndex"
+#define kQuickaBrowserIndex         @"kQuickaBrowserIndex"
 
 #define kQuickaBookmarkSegmentedControlIndex    @"kQuickaBookmarkSegmentedControlIndex"
 
 #define kQuickaVersion              @"kQuickaVersion"
 #define kQuickaCustomEngineURL      @"kQuickaCustomEngineURL"
-#define kQuickaUseBuiltInBrowser    @"kQuickaUseBuiltInBrowser"
 #define kQuickaUseSuggestView       @"kQuickaUseSuggestView"
 
 typedef NS_ENUM(NSInteger, kSearchEngineType) {
@@ -31,6 +31,13 @@ typedef NS_ENUM(NSInteger, kReadLaterType) {
     kReadLaterTypeReadingList,
     kReadLaterTypePocket,
     kReadLaterTypeCount
+};
+
+typedef NS_ENUM(NSInteger, kBrowserType) {
+    kBrowserTypeSFSafariViewController,
+    kBrowserTypeSafari,
+    kBrowserTypeQuickaBrowser,
+    kBrowserTypeCount
 };
 
 @interface QuickaUtil : NSObject
@@ -62,5 +69,10 @@ typedef NS_ENUM(NSInteger, kReadLaterType) {
 + (NSString *)getReadLaterName;
 + (NSInteger)getReadLaterIndex;
 + (void)setReadLaterIndex:(NSInteger)index;
+
++ (NSArray *)getBrowserNames;
++ (NSString *)getBrowserName;
++ (NSInteger)getBrowserIndex;
++ (void)setBrowserIndex:(NSInteger)index;
 
 @end

@@ -131,7 +131,6 @@
         [ActionManager setupInitAction];
         
         // 初期値を入力
-        [QuickaUtil setOn:NO forKey:kQuickaUseBuiltInBrowser];
         [QuickaUtil setOn:NO forKey:kQuickaUseSuggestView];
         [QuickaUtil setReadLaterIndex:kReadLaterTypeReadingList];
 
@@ -260,6 +259,35 @@
     if (index < readLaterNames.count) {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setInteger:index forKey:kQuickaReadLaterIndex];
+    }
+}
+
+#pragma mark - Browser
+
++ (NSArray *)getBrowserNames
+{
+    return @[@"SFSafariViewController", @"Safari", @"Quicka Browser"];
+}
+
++ (NSString *)getBrowserName
+{
+    NSArray *browserNames = [self getBrowserNames];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [browserNames objectAtIndex:[defaults integerForKey:kQuickaBrowserIndex]];
+}
+
++ (NSInteger)getBrowserIndex
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    return [defaults integerForKey:kQuickaBrowserIndex];
+}
+
++ (void)setBrowserIndex:(NSInteger)index
+{
+    NSArray *readLaterNames = [self getBrowserNames];
+    if (index < readLaterNames.count) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setInteger:index forKey:kQuickaBrowserIndex];
     }
 }
 

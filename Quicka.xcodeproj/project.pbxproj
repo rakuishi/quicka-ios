@@ -115,6 +115,7 @@
 		16D97BD718837F6900718B72 /* PerformanceTuningKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D97BD618837F6900718B72 /* PerformanceTuningKit.m */; };
 		16DB820618318555007DE73E /* BookmarkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 16DB820518318555007DE73E /* BookmarkCell.xib */; };
 		16DB820B18343623007DE73E /* UIWebView+Quicka2.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DB820A18343623007DE73E /* UIWebView+Quicka2.m */; };
+		16EE5E5A1EC7C88500F2188C /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16EE5E591EC7C88500F2188C /* BrowserViewController.m */; };
 		16EEDF571E751AAB001DE9E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16EEDF591E751AAB001DE9E5 /* InfoPlist.strings */; };
 		16F947DE17F82C10003923C5 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F947DD17F82C10003923C5 /* CustomTableViewCell.m */; };
 		16F947E117F82F64003923C5 /* QuickaUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F947E017F82F64003923C5 /* QuickaUtil.m */; };
@@ -334,6 +335,8 @@
 		16DB820518318555007DE73E /* BookmarkCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookmarkCell.xib; sourceTree = "<group>"; };
 		16DB820918343623007DE73E /* UIWebView+Quicka2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+Quicka2.h"; sourceTree = "<group>"; };
 		16DB820A18343623007DE73E /* UIWebView+Quicka2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+Quicka2.m"; sourceTree = "<group>"; };
+		16EE5E581EC7C88500F2188C /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BrowserViewController.h; path = ViewController/BrowserViewController.h; sourceTree = "<group>"; };
+		16EE5E591EC7C88500F2188C /* BrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BrowserViewController.m; path = ViewController/BrowserViewController.m; sourceTree = "<group>"; };
 		16EEDF581E751AAB001DE9E5 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		16F947DC17F82C10003923C5 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		16F947DD17F82C10003923C5 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
@@ -768,6 +771,8 @@
 				160E55F11821BB51008937C7 /* CustomEngineViewController.m */,
 				164E8099181F16AB007922D6 /* ReadLaterViewController.h */,
 				164E809A181F16AB007922D6 /* ReadLaterViewController.m */,
+				16EE5E581EC7C88500F2188C /* BrowserViewController.h */,
+				16EE5E591EC7C88500F2188C /* BrowserViewController.m */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -903,6 +908,7 @@
 				1672818117E5454B0072173D /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				1672818317E5454B0072173D /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				164E80A8181FE7E1007922D6 /* PocketAPILogin.m in Sources */,
+				16EE5E5A1EC7C88500F2188C /* BrowserViewController.m in Sources */,
 				16AB5FD017FFC8A400B7D45A /* BrowserBookmark.m in Sources */,
 				160BEDF317E4745400EC97FC /* ContainerViewController.m in Sources */,
 				164E80AA181FE7E1007922D6 /* SFHFKeychainUtils.m in Sources */,

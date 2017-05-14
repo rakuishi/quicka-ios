@@ -140,7 +140,7 @@
     
     if (gesture.state == UIGestureRecognizerStateBegan) {
         
-        if ([QuickaUtil isOnForKey:kQuickaUseBuiltInBrowser]) {
+        if ([QuickaUtil getBrowserIndex] == kBrowserTypeQuickaBrowser) {
             [self.mainViewController hideSoftwareKeyboard];
             if (x > self.width - MARGIN && self.isActiveMainView == YES) {
                 self.shouldMoveViewPosition = YES;

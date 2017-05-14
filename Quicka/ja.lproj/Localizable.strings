@@ -30,7 +30,7 @@
 "Settings" = "設定";
 "Search Engine" = "検索エンジン";
 "Read Later" = "あとで読む";
-"Use Built in Browser" = "内蔵ブラウザを使用する";
+"Browser" = "ブラウザ";
 "Use Suggest" = "サジェスト機能を利用する";
 "Clear After Search" = "検索後に語句を消去する";
 "Clear Cache" = "キャッシュを削除する";
@@ -39,6 +39,7 @@
 "Developed by" = "開発";
 "Support" = "サポート";
 "Feedback" = "フィードバックを送る";
+"Quicka Browser" = "内蔵ブラウザ";
 
 // CustomEngineViewController
 "Edit" = "編集";
