@@ -96,6 +96,11 @@
     }
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    return LSTR(@"This setting is enabled to use on Quicka Browser only.");
+}
+
 #pragma mark -
 
 - (void)didSelectRowAtIndexPath:(NSIndexPath *)indexPath preIndexPath:(NSIndexPath *)preIndexPath
