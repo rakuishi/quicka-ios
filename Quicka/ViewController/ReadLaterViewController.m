@@ -26,7 +26,7 @@
 
     self.title = LSTR(@"Read Later");
     self.readLaterNames = [QuickaUtil getReadLaterNames];
-    self.tableView.tintColor = QK_TINT_COLOR; // チェックマーク色
+    self.tableView.tintColor = QK_BAR_TINT_COLOR; // チェックマーク色
 }
 
 - (void)didReceiveMemoryWarning

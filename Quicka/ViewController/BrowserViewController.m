@@ -23,7 +23,7 @@
 
     self.title = LSTR(@"Browser");
     self.browserNames = [QuickaUtil getBrowserNames];
-    self.tableView.tintColor = QK_TINT_COLOR;
+    self.tableView.tintColor = QK_BAR_TINT_COLOR;
 }
 
 - (void)didReceiveMemoryWarning
