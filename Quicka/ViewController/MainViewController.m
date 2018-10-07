@@ -484,7 +484,7 @@
         switch ([QuickaUtil getBrowserIndex]) {
             case kBrowserTypeSFSafariViewController: {
                 SFSafariViewController *viewController = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:url]];
-                viewController.preferredBarTintColor = [UIColor blackColor];
+                viewController.preferredBarTintColor = QK_BAR_TINT_COLOR;
                 viewController.preferredControlTintColor = [UIColor whiteColor];
                 [self presentViewController:viewController animated:YES completion:nil];
                 break;
