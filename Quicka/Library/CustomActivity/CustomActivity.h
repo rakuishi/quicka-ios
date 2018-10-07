@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "BrowserBookmarkManager.h"
 #import "QuickaUtil.h"
-#import "PocketAPI.h"
 
 @interface CustomActivity : NSObject
 
@@ -26,10 +25,6 @@
 @end
 
 @interface ViewSourceActivity : UIActivity
-
-@end
-
-@interface PocketActivity : UIActivity
 
 @end
 

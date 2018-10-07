@@ -225,25 +225,17 @@
 
     NSArray *applicationActivities = [CustomActivity getApplicationActivities];
     UIActivityViewController *activityView = [[UIActivityViewController alloc] initWithActivityItems:@[title, URL] applicationActivities:applicationActivities];
-
-    NSInteger index = [QuickaUtil getReadLaterIndex];
-    switch (index) {
-        case 1:
-            // ReadingList
-            activityView.excludedActivityTypes = @[UIActivityTypeAirDrop, UIActivityTypeCopyToPasteboard];
-            break;
-        default:
-            // None, Pocket
-            activityView.excludedActivityTypes = @[UIActivityTypeAirDrop, UIActivityTypeCopyToPasteboard, UIActivityTypeAddToReadingList];
-            break;
-    }
+    activityView.excludedActivityTypes = @[UIActivityTypeAirDrop, UIActivityTypeCopyToPasteboard];
     
     [activityView setCompletionWithItemsHandler:^(NSString * __nullable activityType, BOOL completed, NSArray * __nullable returnedItems, NSError * __nullable activityError) {
         if ([activityType isEqualToString:@"View Source"]) {
             [self viewSourceCode:URL];
         }
     }];
-    [self presentViewController:activityView animated:YES completion:nil];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self presentViewController:activityView animated:YES completion:nil];
+    });
 }
 
 @end

@@ -18,8 +18,6 @@
 #define QKApplicationSetTextToSearchBar     @"QKApplicationSetTextToSearchBar"
 #define QKApplicationEnablePanGesture       @"QKApplicationEnablePanGesture"
 
-#define POCKET_CONSUMER_KEY             @"19807-3e4b43bfc3052b28415262b6"
-
 #define QK_APPID                        @"725195676"
 #define QK_ACTION_JSON_URL              @"https://rakuishi.github.io/static/apps/quicka2/action.json"
 #define QK_IMAGE_JSON_URL               @"https://rakuishi.github.io/static/apps/quicka2/image.json"

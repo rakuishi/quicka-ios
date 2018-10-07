@@ -11,7 +11,6 @@
 #import "MyNavigationController.h"
 #import "QuickaUtil.h"
 #import "ActionManager.h"
-#import "PocketAPI.h"
 #import "ContainerViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>

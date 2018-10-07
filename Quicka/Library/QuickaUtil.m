@@ -231,35 +231,6 @@
     [defaults synchronize];
 }
 
-#pragma mark - ReadLater
-
-+ (NSArray *)getReadLaterNames
-{
-    return @[@"None", @"Reading List", @"Pocket"];
-}
-
-+ (NSString *)getReadLaterName
-{
-    NSArray *readLaterNames = [self getReadLaterNames];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    return [readLaterNames objectAtIndex:[defaults integerForKey:kQuickaReadLaterIndex]];
-}
-
-+ (NSInteger)getReadLaterIndex
-{
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    return [defaults integerForKey:kQuickaReadLaterIndex];
-}
-
-+ (void)setReadLaterIndex:(NSInteger)index
-{
-    NSArray *readLaterNames = [self getReadLaterNames];
-    if (index < readLaterNames.count) {
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setInteger:index forKey:kQuickaReadLaterIndex];
-    }
-}
-
 #pragma mark - Browser
 
 + (NSArray *)getBrowserNames

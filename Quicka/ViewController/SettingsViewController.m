@@ -112,7 +112,7 @@ typedef enum kSection : NSUInteger {
         case kSectionSettingsMain:
             return 3;
         case kSectionSettingsSub:
-            return 2;
+            return 1;
         case kSectionAbout:
             return 3;
         default:
@@ -184,13 +184,6 @@ typedef enum kSection : NSUInteger {
                 cell.detailTextLabel.text = LSTR([QuickaUtil getBrowserName]);
                 return cell;
                 
-            } else {
-             
-                static NSString *CellIdentifier = @"ReadLaterCell";
-                UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-                cell.textLabel.text = LSTR(@"Read Later"); // Read Later
-                cell.detailTextLabel.text = LSTR([QuickaUtil getReadLaterName]);
-                return cell;
             }
         }
         case kSectionCache: {

@@ -12,8 +12,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	[[PocketAPI sharedAPI] setConsumerKey:POCKET_CONSUMER_KEY];
-
     id UINavigationBarAppearanceProxy = [UINavigationBar appearanceWhenContainedIn:[MyNavigationController class], nil];
     NSDictionary *attributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
     
@@ -35,36 +33,32 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-	if ([[PocketAPI sharedAPI] handleOpenURL:url]) {
-		return YES;
-	} else {
-		// if you handle your own URLs, do it here
-        NSString *host = [url host];
-        NSDictionary *dict = [self parseQueryString:[url query]];
-        if ([host isEqualToString:@"add"]) {
-            NSString *title = [dict objectForKey:@"title"];
-            NSString *url = [dict objectForKey:@"url"];
-            NSString *base64String = [dict objectForKey:@"image"];
-            if (title.length && url.length) {
-                title = [title UTF8DecodedString];
-                url = [url UTF8DecodedString];
-                if (base64String) {
-                    NSData *data = [[NSData alloc] initWithBase64EncodedString:base64String options:NSDataBase64DecodingIgnoreUnknownCharacters];
-                    UIImage *image = [UIImage imageWithData:data];
-                    [ActionManager addTitle:title url:url image:image];
-                } else {
-                    [ActionManager addTitle:title url:url image:nil];
-                }
-                [[NSNotificationCenter defaultCenter] postNotificationName:QKApplicationReloadTableViewData object:nil];
+    // if you handle your own URLs, do it here
+    NSString *host = [url host];
+    NSDictionary *dict = [self parseQueryString:[url query]];
+    if ([host isEqualToString:@"add"]) {
+        NSString *title = [dict objectForKey:@"title"];
+        NSString *url = [dict objectForKey:@"url"];
+        NSString *base64String = [dict objectForKey:@"image"];
+        if (title.length && url.length) {
+            title = [title UTF8DecodedString];
+            url = [url UTF8DecodedString];
+            if (base64String) {
+                NSData *data = [[NSData alloc] initWithBase64EncodedString:base64String options:NSDataBase64DecodingIgnoreUnknownCharacters];
+                UIImage *image = [UIImage imageWithData:data];
+                [ActionManager addTitle:title url:url image:image];
+            } else {
+                [ActionManager addTitle:title url:url image:nil];
             }
-        } else {
-            NSString *text = [dict objectForKey:@"text"];
-            if (text.length) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:QKApplicationSetTextToSearchBar object:nil userInfo:dict];
-            }
+            [[NSNotificationCenter defaultCenter] postNotificationName:QKApplicationReloadTableViewData object:nil];
         }
-        return YES;
-	}
+    } else {
+        NSString *text = [dict objectForKey:@"text"];
+        if (text.length) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:QKApplicationSetTextToSearchBar object:nil userInfo:dict];
+        }
+    }
+    return YES;
 }
 
 - (NSDictionary *)parseQueryString:(NSString *)query

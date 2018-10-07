@@ -35,11 +35,6 @@
 		1618E9081827228800159F92 /* MyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1618E9071827228800159F92 /* MyCollectionViewCell.xib */; };
 		163D1C501800E3A8009894A5 /* SelectImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 163D1C4F1800E3A8009894A5 /* SelectImageViewController.m */; };
 		1647B4221EBC4C610038E066 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1647B4211EBC4C610038E066 /* SafariServices.framework */; };
-		164E809B181F16AB007922D6 /* ReadLaterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 164E809A181F16AB007922D6 /* ReadLaterViewController.m */; };
-		164E80A7181FE7E1007922D6 /* PocketAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 164E809F181FE7E1007922D6 /* PocketAPI.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		164E80A8181FE7E1007922D6 /* PocketAPILogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 164E80A1181FE7E1007922D6 /* PocketAPILogin.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		164E80A9181FE7E1007922D6 /* PocketAPIOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 164E80A3181FE7E1007922D6 /* PocketAPIOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		164E80AA181FE7E1007922D6 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 164E80A6181FE7E1007922D6 /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		166BE335181EF5740002A080 /* DefaultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 166BE334181EF5740002A080 /* DefaultCell.xib */; };
 		166BE337181EF5A00002A080 /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 166BE336181EF5A00002A080 /* TitleCell.xib */; };
 		166BE339181EF5AF0002A080 /* URLCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 166BE338181EF5AF0002A080 /* URLCell.xib */; };
@@ -176,18 +171,6 @@
 		163D1C4E1800E3A8009894A5 /* SelectImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SelectImageViewController.h; path = ViewController/SelectImageViewController.h; sourceTree = "<group>"; };
 		163D1C4F1800E3A8009894A5 /* SelectImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SelectImageViewController.m; path = ViewController/SelectImageViewController.m; sourceTree = "<group>"; };
 		1647B4211EBC4C610038E066 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
-		164E8099181F16AB007922D6 /* ReadLaterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReadLaterViewController.h; path = ViewController/ReadLaterViewController.h; sourceTree = "<group>"; };
-		164E809A181F16AB007922D6 /* ReadLaterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ReadLaterViewController.m; path = ViewController/ReadLaterViewController.m; sourceTree = "<group>"; };
-		164E809D181FE7E1007922D6 /* PocketAPI+NSOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PocketAPI+NSOperation.h"; sourceTree = "<group>"; };
-		164E809E181FE7E1007922D6 /* PocketAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PocketAPI.h; sourceTree = "<group>"; };
-		164E809F181FE7E1007922D6 /* PocketAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PocketAPI.m; sourceTree = "<group>"; };
-		164E80A0181FE7E1007922D6 /* PocketAPILogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PocketAPILogin.h; sourceTree = "<group>"; };
-		164E80A1181FE7E1007922D6 /* PocketAPILogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PocketAPILogin.m; sourceTree = "<group>"; };
-		164E80A2181FE7E1007922D6 /* PocketAPIOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PocketAPIOperation.h; sourceTree = "<group>"; };
-		164E80A3181FE7E1007922D6 /* PocketAPIOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PocketAPIOperation.m; sourceTree = "<group>"; };
-		164E80A4181FE7E1007922D6 /* PocketAPITypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PocketAPITypes.h; sourceTree = "<group>"; };
-		164E80A5181FE7E1007922D6 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
-		164E80A6181FE7E1007922D6 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
 		164E80AB181FE894007922D6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		166BE334181EF5740002A080 /* DefaultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultCell.xib; sourceTree = "<group>"; };
 		166BE336181EF5A00002A080 /* TitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
@@ -469,7 +452,6 @@
 		160BEDF917E491E700EC97FC /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				164E809C181FE7E1007922D6 /* PocketAPI */,
 				169DEB9817E71BBE000F8C7D /* SDWebImage */,
 				1672813817E5454B0072173D /* MagicalRecord */,
 				169DEB7717E69048000F8C7D /* ModelManager */,
@@ -499,23 +481,6 @@
 				16D97BD618837F6900718B72 /* PerformanceTuningKit.m */,
 			);
 			path = Library;
-			sourceTree = "<group>";
-		};
-		164E809C181FE7E1007922D6 /* PocketAPI */ = {
-			isa = PBXGroup;
-			children = (
-				164E809D181FE7E1007922D6 /* PocketAPI+NSOperation.h */,
-				164E809E181FE7E1007922D6 /* PocketAPI.h */,
-				164E809F181FE7E1007922D6 /* PocketAPI.m */,
-				164E80A0181FE7E1007922D6 /* PocketAPILogin.h */,
-				164E80A1181FE7E1007922D6 /* PocketAPILogin.m */,
-				164E80A2181FE7E1007922D6 /* PocketAPIOperation.h */,
-				164E80A3181FE7E1007922D6 /* PocketAPIOperation.m */,
-				164E80A4181FE7E1007922D6 /* PocketAPITypes.h */,
-				164E80A5181FE7E1007922D6 /* SFHFKeychainUtils.h */,
-				164E80A6181FE7E1007922D6 /* SFHFKeychainUtils.m */,
-			);
-			path = PocketAPI;
 			sourceTree = "<group>";
 		};
 		166BE333181EF5740002A080 /* Cell */ = {
@@ -769,8 +734,6 @@
 				16AB5FB317FE1FB900B7D45A /* SearchEngineViewController.m */,
 				160E55F01821BB51008937C7 /* CustomEngineViewController.h */,
 				160E55F11821BB51008937C7 /* CustomEngineViewController.m */,
-				164E8099181F16AB007922D6 /* ReadLaterViewController.h */,
-				164E809A181F16AB007922D6 /* ReadLaterViewController.m */,
 				16EE5E581EC7C88500F2188C /* BrowserViewController.h */,
 				16EE5E591EC7C88500F2188C /* BrowserViewController.m */,
 			);
@@ -897,7 +860,6 @@
 				16FF6DA318173BB200CC30BC /* SourceCodeLinkManager.m in Sources */,
 				169DEBBE17E71BBE000F8C7D /* SDWebImagePrefetcher.m in Sources */,
 				16F947ED17FC66C9003923C5 /* SettingsViewController.m in Sources */,
-				164E80A9181FE7E1007922D6 /* PocketAPIOperation.m in Sources */,
 				1672817817E5454B0072173D /* NSObject+MagicalDataImport.m in Sources */,
 				1672818617E5454B0072173D /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				169DEBC217E71BBE000F8C7D /* UIImage+WebP.m in Sources */,
@@ -907,25 +869,21 @@
 				16A840F1180013AE00B946D3 /* AppStoreViewController.m in Sources */,
 				1672818117E5454B0072173D /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				1672818317E5454B0072173D /* NSManagedObjectContext+MagicalThreading.m in Sources */,
-				164E80A8181FE7E1007922D6 /* PocketAPILogin.m in Sources */,
 				16EE5E5A1EC7C88500F2188C /* BrowserViewController.m in Sources */,
 				16AB5FD017FFC8A400B7D45A /* BrowserBookmark.m in Sources */,
 				160BEDF317E4745400EC97FC /* ContainerViewController.m in Sources */,
-				164E80AA181FE7E1007922D6 /* SFHFKeychainUtils.m in Sources */,
 				16F947E417F83B63003923C5 /* MyNavigationController.m in Sources */,
 				169DEBBD17E71BBE000F8C7D /* SDWebImageManager.m in Sources */,
 				16A5620F19CE5AD4007C89E8 /* UIView+WebCacheOperation.m in Sources */,
 				160BEE4917E49B3900EC97FC /* SubViewController.m in Sources */,
 				1672817917E5454B0072173D /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				16AB5FD717FFC92E00B7D45A /* BrowserHistoryManager.m in Sources */,
-				164E80A7181FE7E1007922D6 /* PocketAPI.m in Sources */,
 				1672817F17E5454B0072173D /* NSManagedObject+MagicalRequests.m in Sources */,
 				16F947DE17F82C10003923C5 /* CustomTableViewCell.m in Sources */,
 				1672818D17E5454B0072173D /* MagicalRecord.m in Sources */,
 				160BEDC617E471C000EC97FC /* AppDelegate.m in Sources */,
 				1618E8FF18270C7300159F92 /* CreateIconViewController.m in Sources */,
 				1672818517E5454B0072173D /* NSPersistentStore+MagicalRecord.m in Sources */,
-				164E809B181F16AB007922D6 /* ReadLaterViewController.m in Sources */,
 				16D97BD718837F6900718B72 /* PerformanceTuningKit.m in Sources */,
 				169DEBB617E71BBE000F8C7D /* MKAnnotationView+WebCache.m in Sources */,
 				1672818417E5454B0072173D /* NSManagedObjectModel+MagicalRecord.m in Sources */,

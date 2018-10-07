@@ -10,7 +10,6 @@
 
 #define kQuickaClearTextAfterSearch @"kQuickaClearTextAfterSearch"
 #define kQuickaSearchEngineIndex    @"kQuickaSearchEngineIndex"
-#define kQuickaReadLaterIndex       @"kQuickaReadLaterIndex"
 #define kQuickaBrowserIndex         @"kQuickaBrowserIndex"
 
 #define kQuickaBookmarkSegmentedControlIndex    @"kQuickaBookmarkSegmentedControlIndex"
@@ -24,13 +23,6 @@ typedef NS_ENUM(NSInteger, kSearchEngineType) {
     kSearchEngineTypeYahoo,
     kSearchEngineTypeBing,
     kSearchEngineTypeCount
-};
-
-typedef NS_ENUM(NSInteger, kReadLaterType) {
-    kReadLaterTypeNone,
-    kReadLaterTypeReadingList,
-    kReadLaterTypePocket,
-    kReadLaterTypeCount
 };
 
 typedef NS_ENUM(NSInteger, kBrowserType) {
@@ -64,11 +56,6 @@ typedef NS_ENUM(NSInteger, kBrowserType) {
 
 + (NSString *)getCustomEngineURL;
 + (void)setCustomEngineURL:(NSString *)URL;
-
-+ (NSArray *)getReadLaterNames;
-+ (NSString *)getReadLaterName;
-+ (NSInteger)getReadLaterIndex;
-+ (void)setReadLaterIndex:(NSInteger)index;
 
 + (NSArray *)getBrowserNames;
 + (NSString *)getBrowserName;

@@ -33,11 +33,6 @@ NSString *const kActivityURLSchemesiCabMobile = @"icabmobile:";
         [applicationActivities addObject:activity];
     }
 
-    if ([[PocketAPI sharedAPI] isLoggedIn] && [QuickaUtil getReadLaterIndex] == 2) {
-        PocketActivity *activity = [PocketActivity new];
-        [applicationActivities addObject:activity];
-    }
-    
     {
         SafariActivity *activity = [SafariActivity new];
         [applicationActivities addObject:activity];
@@ -219,55 +214,6 @@ NSString *const kActivityURLSchemesiCabMobile = @"icabmobile:";
     for (id activityItem in activityItems) {
         if ([activityItem isKindOfClass:[NSURL class]]) {
             // ...
-        }
-    }
-}
-
-@end
-
-#pragma mark - PocketActivity
-
-@implementation PocketActivity
-
-- (NSString *)activityType
-{
-    return @"Send to Pocket";
-}
-
-- (NSString *)activityTitle
-{
-    return @"Pocket";
-}
-
-- (UIImage *)activityImage
-{
-    return [UIImage imageNamed:@"activity_pocket"];
-}
-
-+ (UIActivityCategory)activityCategory
-{
-    return UIActivityCategoryAction;
-}
-
-- (BOOL)canPerformWithActivityItems:(NSArray *)activityItems
-{
-    for (id activityItem in activityItems) {
-        if ([activityItem isKindOfClass:[NSURL class]]) {
-            return YES;
-        }
-    }
-    return NO;
-}
-
-- (void)prepareWithActivityItems:(NSArray *)activityItems
-{
-    for (id activityItem in activityItems) {
-        if ([activityItem isKindOfClass:[NSURL class]]) {
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-            [[PocketAPI sharedAPI] saveURL:(NSURL *)activityItem
-                                   handler:^(PocketAPI *api, NSURL *url, NSError *error) {
-                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-            }];
         }
     }
 }
