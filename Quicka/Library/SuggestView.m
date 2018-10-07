@@ -93,10 +93,8 @@ CGFloat const kSuggestViewFrameSizeHeight = 36.f;
 
 - (void)moveOriginY
 {
-    CGFloat statusBarHeight = [UIApplication sharedApplication].statusBarFrame.size.height - 20.f;
-
     CGRect toRect = self.keyboardRect;
-    toRect.origin.y = self.keyboardRect.origin.y - kSuggestViewFrameSizeHeight - statusBarHeight;
+    toRect.origin.y = self.keyboardRect.origin.y - kSuggestViewFrameSizeHeight;
     toRect.size.height = kSuggestViewFrameSizeHeight;
     self.frame = toRect;
     
