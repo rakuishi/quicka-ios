@@ -55,6 +55,17 @@
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+
+    // iOS 11 以降、UISearchBar の高さが 56px になり push 時に、遷移先の UINavigationBar 下に黒帯が表示されるのを防ぐ
+    // また、以下に加えて、self.window の背景色を白にしている
+    // https://stackoverflow.com/questions/46318022/uisearchbar-increases-navigation-bar-height-in-ios-11
+    [self.navigationController.view setNeedsLayout];
+    [self.navigationController.view layoutIfNeeded];
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
