@@ -99,25 +99,6 @@
     [self.webView setHidden:NO];
 }
 
-- (void)viewSourceCode:(NSURL *)URL
-{
-    SourceCodeViewController *viewController = [SourceCodeViewController new];
-    viewController.delegate = self;
-    viewController.URL = URL;
-    viewController.title = self.webView.title;
-    viewController.userAgent = self.userAgent;
-    MyNavigationController *navigationController = [[MyNavigationController alloc] initWithRootViewController:viewController];
-    [self presentViewController:navigationController animated:YES completion:nil];
-}
-
-#pragma mark - SourceCodeViewControllerDelegate
-
-- (void)didSelectURL:(NSURL *)URL
-{
-    [self.webView loadRequest:[NSURLRequest requestWithURL:URL]];
-    [self.webView setHidden:NO];
-}
-
 #pragma mark - WKNavigationDelegate
 
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation
@@ -202,15 +183,7 @@
     UIActivityViewController *activityView = [[UIActivityViewController alloc] initWithActivityItems:@[title, URL] applicationActivities:applicationActivities];
     activityView.excludedActivityTypes = @[UIActivityTypeAirDrop, UIActivityTypeCopyToPasteboard, UIActivityTypeAddToReadingList];
     
-    [activityView setCompletionWithItemsHandler:^(NSString * __nullable activityType, BOOL completed, NSArray * __nullable returnedItems, NSError * __nullable activityError) {
-        if ([activityType isEqualToString:@"View Source"]) {
-            [self viewSourceCode:URL];
-        }
-    }];
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self presentViewController:activityView animated:YES completion:nil];
-    });
+    [self presentViewController:activityView animated:YES completion:nil];
 }
 
 @end

@@ -19,14 +19,6 @@
 
 @end
 
-@interface BookmarkActivity: UIActivity
-
-@end
-
-@interface ViewSourceActivity : UIActivity
-
-@end
-
 @interface SafariActivity : UIActivity
 
 @end

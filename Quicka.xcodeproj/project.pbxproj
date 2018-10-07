@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		160033B3180756E300FB30D8 /* setup.json in Resources */ = {isa = PBXBuildFile; fileRef = 160033B2180756E300FB30D8 /* setup.json */; };
-		160036FF180DFFF400FB30D8 /* SourceCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 160036FE180DFFF400FB30D8 /* SourceCodeViewController.m */; };
 		160BEDB417E471C000EC97FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 160BEDB317E471C000EC97FC /* Foundation.framework */; };
 		160BEDB617E471C000EC97FC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 160BEDB517E471C000EC97FC /* CoreGraphics.framework */; };
 		160BEDB817E471C000EC97FC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 160BEDB717E471C000EC97FC /* UIKit.framework */; };
@@ -112,10 +111,7 @@
 		16A840F1180013AE00B946D3 /* AppStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16A840F0180013AE00B946D3 /* AppStoreViewController.m */; };
 		16AB5FB417FE1FB900B7D45A /* SearchEngineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AB5FB317FE1FB900B7D45A /* SearchEngineViewController.m */; };
 		16AB5FB917FF8D6600B7D45A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16AB5FBB17FF8D6600B7D45A /* Localizable.strings */; };
-		16BBB98218136B7500FAF88C /* MyApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BBB98118136B7500FAF88C /* MyApplication.m */; };
 		16D0B3B518914AD500880C2B /* NSString+Quicka2.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D0B3B418914AD500880C2B /* NSString+Quicka2.m */; };
-		16D97BD718837F6900718B72 /* PerformanceTuningKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D97BD618837F6900718B72 /* PerformanceTuningKit.m */; };
-		16DB820B18343623007DE73E /* UIWebView+Quicka2.m in Sources */ = {isa = PBXBuildFile; fileRef = 16DB820A18343623007DE73E /* UIWebView+Quicka2.m */; };
 		16EE5E5A1EC7C88500F2188C /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16EE5E591EC7C88500F2188C /* BrowserViewController.m */; };
 		16EEDF571E751AAB001DE9E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16EEDF591E751AAB001DE9E5 /* InfoPlist.strings */; };
 		16F947DE17F82C10003923C5 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F947DD17F82C10003923C5 /* CustomTableViewCell.m */; };
@@ -124,7 +120,6 @@
 		16F947E717F84DE1003923C5 /* MyReferenceLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F947E617F84DE1003923C5 /* MyReferenceLibraryViewController.m */; };
 		16F947EA17F85CDD003923C5 /* SuggestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F947E917F85CDD003923C5 /* SuggestView.m */; };
 		16F947ED17FC66C9003923C5 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F947EC17FC66C9003923C5 /* SettingsViewController.m */; };
-		16FF6DA318173BB200CC30BC /* SourceCodeLinkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 16FF6DA218173BB200CC30BC /* SourceCodeLinkManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,8 +134,6 @@
 
 /* Begin PBXFileReference section */
 		160033B2180756E300FB30D8 /* setup.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = setup.json; sourceTree = "<group>"; };
-		160036FD180DFFF400FB30D8 /* SourceCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SourceCodeViewController.h; path = ViewController/SourceCodeViewController.h; sourceTree = "<group>"; };
-		160036FE180DFFF400FB30D8 /* SourceCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SourceCodeViewController.m; path = ViewController/SourceCodeViewController.m; sourceTree = "<group>"; };
 		160BEDB017E471C000EC97FC /* Quicka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quicka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		160BEDB317E471C000EC97FC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		160BEDB517E471C000EC97FC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -329,14 +322,8 @@
 		16AB5FBA17FF8D6600B7D45A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		16AB5FBE17FF8DC700B7D45A /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		16AB5FBF17FF8DCC00B7D45A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		16BBB98018136B7500FAF88C /* MyApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyApplication.h; sourceTree = "<group>"; };
-		16BBB98118136B7500FAF88C /* MyApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyApplication.m; sourceTree = "<group>"; };
 		16D0B3B318914AD500880C2B /* NSString+Quicka2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Quicka2.h"; sourceTree = "<group>"; };
 		16D0B3B418914AD500880C2B /* NSString+Quicka2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Quicka2.m"; sourceTree = "<group>"; };
-		16D97BD518837F6900718B72 /* PerformanceTuningKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerformanceTuningKit.h; sourceTree = "<group>"; };
-		16D97BD618837F6900718B72 /* PerformanceTuningKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerformanceTuningKit.m; sourceTree = "<group>"; };
-		16DB820918343623007DE73E /* UIWebView+Quicka2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+Quicka2.h"; sourceTree = "<group>"; };
-		16DB820A18343623007DE73E /* UIWebView+Quicka2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+Quicka2.m"; sourceTree = "<group>"; };
 		16EE5E581EC7C88500F2188C /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BrowserViewController.h; path = ViewController/BrowserViewController.h; sourceTree = "<group>"; };
 		16EE5E591EC7C88500F2188C /* BrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BrowserViewController.m; path = ViewController/BrowserViewController.m; sourceTree = "<group>"; };
 		16EEDF581E751AAB001DE9E5 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -352,8 +339,6 @@
 		16F947E917F85CDD003923C5 /* SuggestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestView.m; sourceTree = "<group>"; };
 		16F947EB17FC66C9003923C5 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = ViewController/SettingsViewController.h; sourceTree = "<group>"; };
 		16F947EC17FC66C9003923C5 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = ViewController/SettingsViewController.m; sourceTree = "<group>"; };
-		16FF6DA118173BB200CC30BC /* SourceCodeLinkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceCodeLinkManager.h; sourceTree = "<group>"; };
-		16FF6DA218173BB200CC30BC /* SourceCodeLinkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceCodeLinkManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -481,8 +466,6 @@
 				16F947E617F84DE1003923C5 /* MyReferenceLibraryViewController.m */,
 				16F947E217F83B63003923C5 /* MyNavigationController.h */,
 				16F947E317F83B63003923C5 /* MyNavigationController.m */,
-				16DB820918343623007DE73E /* UIWebView+Quicka2.h */,
-				16DB820A18343623007DE73E /* UIWebView+Quicka2.m */,
 				16D0B3B318914AD500880C2B /* NSString+Quicka2.h */,
 				16D0B3B418914AD500880C2B /* NSString+Quicka2.m */,
 				16F947DC17F82C10003923C5 /* CustomTableViewCell.h */,
@@ -493,12 +476,6 @@
 				16F947E917F85CDD003923C5 /* SuggestView.m */,
 				16F947DF17F82F64003923C5 /* QuickaUtil.h */,
 				16F947E017F82F64003923C5 /* QuickaUtil.m */,
-				16BBB98018136B7500FAF88C /* MyApplication.h */,
-				16BBB98118136B7500FAF88C /* MyApplication.m */,
-				16FF6DA118173BB200CC30BC /* SourceCodeLinkManager.h */,
-				16FF6DA218173BB200CC30BC /* SourceCodeLinkManager.m */,
-				16D97BD518837F6900718B72 /* PerformanceTuningKit.h */,
-				16D97BD618837F6900718B72 /* PerformanceTuningKit.m */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -766,8 +743,6 @@
 			children = (
 				160BEE4717E49B3900EC97FC /* SubViewController.h */,
 				160BEE4817E49B3900EC97FC /* SubViewController.m */,
-				160036FD180DFFF400FB30D8 /* SourceCodeViewController.h */,
-				160036FE180DFFF400FB30D8 /* SourceCodeViewController.m */,
 			);
 			name = Sub;
 			sourceTree = "<group>";
@@ -902,8 +877,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				16880AFF216A51B300C3C52A /* Hisotry+CoreDataProperties.m in Sources */,
-				16DB820B18343623007DE73E /* UIWebView+Quicka2.m in Sources */,
-				16FF6DA318173BB200CC30BC /* SourceCodeLinkManager.m in Sources */,
 				16880AC3216A47E200C3C52A /* UIImage+ForceDecode.m in Sources */,
 				165146B2216A472F00813B82 /* FLAnimatedImageView.m in Sources */,
 				16880AC9216A47E200C3C52A /* SDWebImageCoderHelper.m in Sources */,
@@ -937,7 +910,6 @@
 				1618E8FF18270C7300159F92 /* CreateIconViewController.m in Sources */,
 				1672818517E5454B0072173D /* NSPersistentStore+MagicalRecord.m in Sources */,
 				16880AD5216A47E200C3C52A /* SDWebImageGIFCoder.m in Sources */,
-				16D97BD718837F6900718B72 /* PerformanceTuningKit.m in Sources */,
 				16880AC5216A47E200C3C52A /* FLAnimatedImageView+WebCache.m in Sources */,
 				1672818417E5454B0072173D /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				1672817517E5454B0072173D /* NSAttributeDescription+MagicalDataImport.m in Sources */,
@@ -960,7 +932,6 @@
 				16880ADB216A47E200C3C52A /* SDWebImageWebPCoder.m in Sources */,
 				16880AD6216A47E200C3C52A /* SDImageCacheConfig.m in Sources */,
 				16880AC4216A47E200C3C52A /* SDWebImageCodersManager.m in Sources */,
-				160036FF180DFFF400FB30D8 /* SourceCodeViewController.m in Sources */,
 				160E55F21821BB51008937C7 /* CustomEngineViewController.m in Sources */,
 				1672817B17E5454B0072173D /* NSManagedObject+MagicalAggregation.m in Sources */,
 				1672818C17E5454B0072173D /* MagicalRecord+ShorthandSupport.m in Sources */,
@@ -976,7 +947,6 @@
 				1672817C17E5454B0072173D /* NSManagedObject+MagicalDataImport.m in Sources */,
 				16880AF9216A50B000C3C52A /* Action+CoreDataProperties.m in Sources */,
 				16880ACA216A47E200C3C52A /* SDWebImageCompat.m in Sources */,
-				16BBB98218136B7500FAF88C /* MyApplication.m in Sources */,
 				16880ACD216A47E200C3C52A /* NSButton+WebCache.m in Sources */,
 				16880AD4216A47E200C3C52A /* NSImage+WebCache.m in Sources */,
 				16880AC2216A47E200C3C52A /* SDWebImageFrame.m in Sources */,

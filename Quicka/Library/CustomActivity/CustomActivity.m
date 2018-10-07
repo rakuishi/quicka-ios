@@ -19,17 +19,7 @@ NSString *const kActivityURLSchemesiCabMobile = @"icabmobile:";
     NSMutableArray *applicationActivities = [NSMutableArray new];
 
     {
-        BookmarkActivity *activity = [BookmarkActivity new];
-        [applicationActivities addObject:activity];
-    }
-
-    {
         CopyActivity *activity = [CopyActivity new];
-        [applicationActivities addObject:activity];
-    }
-
-    {
-        ViewSourceActivity *activity = [ViewSourceActivity new];
         [applicationActivities addObject:activity];
     }
 
@@ -105,109 +95,6 @@ NSString *const kActivityURLSchemesiCabMobile = @"icabmobile:";
 {
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     [pasteboard setValue:URL.absoluteString forPasteboardType: @"public.utf8-plain-text"];
-}
-
-@end
-
-#pragma mark - BookmarkActivity
-
-@implementation BookmarkActivity
-
-- (NSString *)activityType
-{
-    return @"Bookmark";
-}
-
-- (NSString *)activityTitle
-{
-    return LSTR(@"Add Bookmark");
-}
-
-- (UIImage *)activityImage
-{
-    return [UIImage imageNamed:@"activity_bookmark"];
-}
-
-+ (UIActivityCategory)activityCategory
-{
-    return UIActivityCategoryAction;
-}
-
-- (BOOL)canPerformWithActivityItems:(NSArray *)activityItems
-{
-    NSString *title = nil;
-    NSString *URLString = nil;
-    
-    for (id activityItem in activityItems) {
-        if ([activityItem isKindOfClass:[NSURL class]]) {
-            NSURL *URL = (NSURL *)activityItem;
-            URLString = URL.absoluteString;
-        } else if ([activityItem isKindOfClass:[NSString class]]) {
-            title = (NSString *)activityItem;
-        }
-    }
-
-    return NO;
-}
-
-- (void)prepareWithActivityItems:(NSArray *)activityItems
-{
-    NSString *title = nil;
-    NSString *URLString = nil;
-    
-    for (id activityItem in activityItems) {
-        if ([activityItem isKindOfClass:[NSURL class]]) {
-            NSURL *URL = (NSURL *)activityItem;
-            URLString = URL.absoluteString;
-        } else if ([activityItem isKindOfClass:[NSString class]]) {
-            title = (NSString *)activityItem;
-        }
-    }
-}
-
-@end
-
-#pragma mark - ViewSourceActivity
-
-@implementation ViewSourceActivity
-
-- (NSString *)activityType
-{
-    return @"View Source";
-}
-
-- (NSString *)activityTitle
-{
-    return LSTR(@"View Source");
-}
-
-- (UIImage *)activityImage
-{
-    return [UIImage imageNamed:@"activity_source"];
-}
-
-+ (UIActivityCategory)activityCategory
-{
-    return UIActivityCategoryAction;
-}
-
-- (BOOL)canPerformWithActivityItems:(NSArray *)activityItems
-{
-    for (id activityItem in activityItems) {
-        if ([activityItem isKindOfClass:[NSURL class]]) {
-            return YES;
-        }
-    }
-    return NO;
-}
-
-- (void)prepareWithActivityItems:(NSArray *)activityItems
-{
-    for (id activityItem in activityItems) {
-        if ([activityItem isKindOfClass:[NSURL class]]) {
-            // ...
-        }
-    }
 }
 
 @end

@@ -12,8 +12,6 @@
 #import "QuickaUtil.h"
 #import "CustomActivity.h"
 #import "MyNavigationController.h"
-#import "SourceCodeViewController.h"
-#import "UIWebView+Quicka2.h"
 #import "NSString+Quicka2.h"
 
 @protocol SubViewControllerDelegate <NSObject>
@@ -22,7 +20,7 @@
 
 @end
 
-@interface SubViewController : UIViewController <UIScrollViewDelegate, WKNavigationDelegate, UIActionSheetDelegate, SourceCodeViewControllerDelegate>
+@interface SubViewController : UIViewController <UIScrollViewDelegate, WKNavigationDelegate, UIActionSheetDelegate>
 
 @property (nonatomic, weak) id <SubViewControllerDelegate> delegate;
 @property (nonatomic) WKWebView *webView;
