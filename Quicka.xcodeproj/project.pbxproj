@@ -99,10 +99,16 @@
 		16880AD9216A47E200C3C52A /* SDWebImageImageIOCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 16880AB7216A47E200C3C52A /* SDWebImageImageIOCoder.m */; };
 		16880ADA216A47E200C3C52A /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 16880ABB216A47E200C3C52A /* UIButton+WebCache.m */; };
 		16880ADB216A47E200C3C52A /* SDWebImageWebPCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 16880ABC216A47E200C3C52A /* SDWebImageWebPCoder.m */; };
+		16880AF8216A50B000C3C52A /* Action+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 16880AF6216A50B000C3C52A /* Action+CoreDataClass.m */; };
+		16880AF9216A50B000C3C52A /* Action+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 16880AF7216A50B000C3C52A /* Action+CoreDataProperties.m */; };
+		16880AFE216A51B300C3C52A /* Hisotry+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 16880AFC216A51B300C3C52A /* Hisotry+CoreDataClass.m */; };
+		16880AFF216A51B300C3C52A /* Hisotry+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 16880AFD216A51B300C3C52A /* Hisotry+CoreDataProperties.m */; };
+		16880B04216A520F00C3C52A /* BrowserBookmark+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 16880B02216A520F00C3C52A /* BrowserBookmark+CoreDataClass.m */; };
+		16880B05216A520F00C3C52A /* BrowserBookmark+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 16880B03216A520F00C3C52A /* BrowserBookmark+CoreDataProperties.m */; };
+		16880B0A216A524700C3C52A /* BrowserHistory+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 16880B08216A524700C3C52A /* BrowserHistory+CoreDataClass.m */; };
+		16880B0B216A524700C3C52A /* BrowserHistory+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 16880B09216A524700C3C52A /* BrowserHistory+CoreDataProperties.m */; };
 		168FFD851E8FD35D003DB6D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 168FFD831E8FD35D003DB6D9 /* LaunchScreen.storyboard */; };
 		169DEB5A17E5BD24000F8C7D /* CustomActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 169DEB5917E5BD24000F8C7D /* CustomActivity.m */; };
-		169DEB6B17E68CD4000F8C7D /* _Action.m in Sources */ = {isa = PBXBuildFile; fileRef = 169DEB6017E68CD4000F8C7D /* _Action.m */; };
-		169DEB6E17E68CD4000F8C7D /* Action.m in Sources */ = {isa = PBXBuildFile; fileRef = 169DEB6617E68CD4000F8C7D /* Action.m */; };
 		169DEB7A17E6905F000F8C7D /* HistoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 169DEB7917E6905F000F8C7D /* HistoryManager.m */; };
 		169DEB8017E699A6000F8C7D /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 169DEB7F17E699A6000F8C7D /* HistoryViewController.m */; };
 		169DEB8817E6C0E0000F8C7D /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 169DEB8717E6C0E0000F8C7D /* EditViewController.m */; };
@@ -112,14 +118,8 @@
 		16AB5FB417FE1FB900B7D45A /* SearchEngineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AB5FB317FE1FB900B7D45A /* SearchEngineViewController.m */; };
 		16AB5FB917FF8D6600B7D45A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16AB5FBB17FF8D6600B7D45A /* Localizable.strings */; };
 		16AB5FC217FFA5E300B7D45A /* BookmarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AB5FC117FFA5E300B7D45A /* BookmarkViewController.m */; };
-		16AB5FCE17FFC8A400B7D45A /* _BrowserBookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AB5FC717FFC8A400B7D45A /* _BrowserBookmark.m */; };
-		16AB5FCF17FFC8A400B7D45A /* _BrowserHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AB5FC917FFC8A400B7D45A /* _BrowserHistory.m */; };
-		16AB5FD017FFC8A400B7D45A /* BrowserBookmark.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AB5FCB17FFC8A400B7D45A /* BrowserBookmark.m */; };
-		16AB5FD117FFC8A400B7D45A /* BrowserHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AB5FCD17FFC8A400B7D45A /* BrowserHistory.m */; };
 		16AB5FD417FFC92200B7D45A /* BrowserBookmarkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AB5FD317FFC92200B7D45A /* BrowserBookmarkManager.m */; };
 		16AB5FD717FFC92E00B7D45A /* BrowserHistoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AB5FD617FFC92E00B7D45A /* BrowserHistoryManager.m */; };
-		16AB5FE217FFCEEA00B7D45A /* _Hisotry.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AB5FDF17FFCEEA00B7D45A /* _Hisotry.m */; };
-		16AB5FE317FFCEEA00B7D45A /* Hisotry.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AB5FE117FFCEEA00B7D45A /* Hisotry.m */; };
 		16BBB98218136B7500FAF88C /* MyApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BBB98118136B7500FAF88C /* MyApplication.m */; };
 		16D0B3B518914AD500880C2B /* NSString+Quicka2.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D0B3B418914AD500880C2B /* NSString+Quicka2.m */; };
 		16D97BD718837F6900718B72 /* PerformanceTuningKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D97BD618837F6900718B72 /* PerformanceTuningKit.m */; };
@@ -312,13 +312,25 @@
 		16880ABB216A47E200C3C52A /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WebCache.m"; sourceTree = "<group>"; };
 		16880ABC216A47E200C3C52A /* SDWebImageWebPCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageWebPCoder.m; sourceTree = "<group>"; };
 		16880ABD216A47E200C3C52A /* UIImage+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GIF.h"; sourceTree = "<group>"; };
+		16880AF4216A50B000C3C52A /* Action+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Action+CoreDataProperties.h"; sourceTree = "<group>"; };
+		16880AF5216A50B000C3C52A /* Action+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Action+CoreDataClass.h"; sourceTree = "<group>"; };
+		16880AF6216A50B000C3C52A /* Action+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Action+CoreDataClass.m"; sourceTree = "<group>"; };
+		16880AF7216A50B000C3C52A /* Action+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Action+CoreDataProperties.m"; sourceTree = "<group>"; };
+		16880AFA216A51B300C3C52A /* Hisotry+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hisotry+CoreDataProperties.h"; sourceTree = "<group>"; };
+		16880AFB216A51B300C3C52A /* Hisotry+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hisotry+CoreDataClass.h"; sourceTree = "<group>"; };
+		16880AFC216A51B300C3C52A /* Hisotry+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Hisotry+CoreDataClass.m"; sourceTree = "<group>"; };
+		16880AFD216A51B300C3C52A /* Hisotry+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Hisotry+CoreDataProperties.m"; sourceTree = "<group>"; };
+		16880B00216A520F00C3C52A /* BrowserBookmark+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BrowserBookmark+CoreDataProperties.h"; sourceTree = "<group>"; };
+		16880B01216A520F00C3C52A /* BrowserBookmark+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BrowserBookmark+CoreDataClass.h"; sourceTree = "<group>"; };
+		16880B02216A520F00C3C52A /* BrowserBookmark+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BrowserBookmark+CoreDataClass.m"; sourceTree = "<group>"; };
+		16880B03216A520F00C3C52A /* BrowserBookmark+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BrowserBookmark+CoreDataProperties.m"; sourceTree = "<group>"; };
+		16880B06216A524700C3C52A /* BrowserHistory+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BrowserHistory+CoreDataProperties.h"; sourceTree = "<group>"; };
+		16880B07216A524700C3C52A /* BrowserHistory+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BrowserHistory+CoreDataClass.h"; sourceTree = "<group>"; };
+		16880B08216A524700C3C52A /* BrowserHistory+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BrowserHistory+CoreDataClass.m"; sourceTree = "<group>"; };
+		16880B09216A524700C3C52A /* BrowserHistory+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BrowserHistory+CoreDataProperties.m"; sourceTree = "<group>"; };
 		168FFD841E8FD35D003DB6D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		169DEB5817E5BD24000F8C7D /* CustomActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomActivity.h; sourceTree = "<group>"; };
 		169DEB5917E5BD24000F8C7D /* CustomActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomActivity.m; sourceTree = "<group>"; };
-		169DEB5F17E68CD4000F8C7D /* _Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Action.h; sourceTree = "<group>"; };
-		169DEB6017E68CD4000F8C7D /* _Action.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Action.m; sourceTree = "<group>"; };
-		169DEB6517E68CD4000F8C7D /* Action.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Action.h; sourceTree = "<group>"; };
-		169DEB6617E68CD4000F8C7D /* Action.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Action.m; sourceTree = "<group>"; };
 		169DEB7817E6905F000F8C7D /* HistoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryManager.h; sourceTree = "<group>"; };
 		169DEB7917E6905F000F8C7D /* HistoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryManager.m; sourceTree = "<group>"; };
 		169DEB7E17E699A6000F8C7D /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryViewController.h; path = ViewController/HistoryViewController.h; sourceTree = "<group>"; };
@@ -338,22 +350,10 @@
 		16AB5FBF17FF8DCC00B7D45A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		16AB5FC017FFA5E300B7D45A /* BookmarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookmarkViewController.h; path = ViewController/BookmarkViewController.h; sourceTree = "<group>"; };
 		16AB5FC117FFA5E300B7D45A /* BookmarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookmarkViewController.m; path = ViewController/BookmarkViewController.m; sourceTree = "<group>"; };
-		16AB5FC617FFC8A400B7D45A /* _BrowserBookmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BrowserBookmark.h; sourceTree = "<group>"; };
-		16AB5FC717FFC8A400B7D45A /* _BrowserBookmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BrowserBookmark.m; sourceTree = "<group>"; };
-		16AB5FC817FFC8A400B7D45A /* _BrowserHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BrowserHistory.h; sourceTree = "<group>"; };
-		16AB5FC917FFC8A400B7D45A /* _BrowserHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BrowserHistory.m; sourceTree = "<group>"; };
-		16AB5FCA17FFC8A400B7D45A /* BrowserBookmark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserBookmark.h; sourceTree = "<group>"; };
-		16AB5FCB17FFC8A400B7D45A /* BrowserBookmark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserBookmark.m; sourceTree = "<group>"; };
-		16AB5FCC17FFC8A400B7D45A /* BrowserHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserHistory.h; sourceTree = "<group>"; };
-		16AB5FCD17FFC8A400B7D45A /* BrowserHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserHistory.m; sourceTree = "<group>"; };
 		16AB5FD217FFC92200B7D45A /* BrowserBookmarkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserBookmarkManager.h; sourceTree = "<group>"; };
 		16AB5FD317FFC92200B7D45A /* BrowserBookmarkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserBookmarkManager.m; sourceTree = "<group>"; };
 		16AB5FD517FFC92E00B7D45A /* BrowserHistoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserHistoryManager.h; sourceTree = "<group>"; };
 		16AB5FD617FFC92E00B7D45A /* BrowserHistoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserHistoryManager.m; sourceTree = "<group>"; };
-		16AB5FDE17FFCEEA00B7D45A /* _Hisotry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _Hisotry.h; sourceTree = "<group>"; };
-		16AB5FDF17FFCEEA00B7D45A /* _Hisotry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _Hisotry.m; sourceTree = "<group>"; };
-		16AB5FE017FFCEEA00B7D45A /* Hisotry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hisotry.h; sourceTree = "<group>"; };
-		16AB5FE117FFCEEA00B7D45A /* Hisotry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hisotry.m; sourceTree = "<group>"; };
 		16BBB98018136B7500FAF88C /* MyApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyApplication.h; sourceTree = "<group>"; };
 		16BBB98118136B7500FAF88C /* MyApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyApplication.m; sourceTree = "<group>"; };
 		16D0B3B318914AD500880C2B /* NSString+Quicka2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Quicka2.h"; sourceTree = "<group>"; };
@@ -746,22 +746,22 @@
 		169DEB5E17E68CD4000F8C7D /* XcdataModel */ = {
 			isa = PBXGroup;
 			children = (
-				16AB5FDE17FFCEEA00B7D45A /* _Hisotry.h */,
-				16AB5FDF17FFCEEA00B7D45A /* _Hisotry.m */,
-				16AB5FE017FFCEEA00B7D45A /* Hisotry.h */,
-				16AB5FE117FFCEEA00B7D45A /* Hisotry.m */,
-				169DEB5F17E68CD4000F8C7D /* _Action.h */,
-				169DEB6017E68CD4000F8C7D /* _Action.m */,
-				169DEB6517E68CD4000F8C7D /* Action.h */,
-				169DEB6617E68CD4000F8C7D /* Action.m */,
-				16AB5FC617FFC8A400B7D45A /* _BrowserBookmark.h */,
-				16AB5FC717FFC8A400B7D45A /* _BrowserBookmark.m */,
-				16AB5FC817FFC8A400B7D45A /* _BrowserHistory.h */,
-				16AB5FC917FFC8A400B7D45A /* _BrowserHistory.m */,
-				16AB5FCA17FFC8A400B7D45A /* BrowserBookmark.h */,
-				16AB5FCB17FFC8A400B7D45A /* BrowserBookmark.m */,
-				16AB5FCC17FFC8A400B7D45A /* BrowserHistory.h */,
-				16AB5FCD17FFC8A400B7D45A /* BrowserHistory.m */,
+				16880AF4216A50B000C3C52A /* Action+CoreDataProperties.h */,
+				16880AF5216A50B000C3C52A /* Action+CoreDataClass.h */,
+				16880AF6216A50B000C3C52A /* Action+CoreDataClass.m */,
+				16880AF7216A50B000C3C52A /* Action+CoreDataProperties.m */,
+				16880B00216A520F00C3C52A /* BrowserBookmark+CoreDataProperties.h */,
+				16880B01216A520F00C3C52A /* BrowserBookmark+CoreDataClass.h */,
+				16880B02216A520F00C3C52A /* BrowserBookmark+CoreDataClass.m */,
+				16880B03216A520F00C3C52A /* BrowserBookmark+CoreDataProperties.m */,
+				16880B06216A524700C3C52A /* BrowserHistory+CoreDataProperties.h */,
+				16880B07216A524700C3C52A /* BrowserHistory+CoreDataClass.h */,
+				16880B08216A524700C3C52A /* BrowserHistory+CoreDataClass.m */,
+				16880B09216A524700C3C52A /* BrowserHistory+CoreDataProperties.m */,
+				16880AFA216A51B300C3C52A /* Hisotry+CoreDataProperties.h */,
+				16880AFB216A51B300C3C52A /* Hisotry+CoreDataClass.h */,
+				16880AFC216A51B300C3C52A /* Hisotry+CoreDataClass.m */,
+				16880AFD216A51B300C3C52A /* Hisotry+CoreDataProperties.m */,
 			);
 			path = XcdataModel;
 			sourceTree = "<group>";
@@ -945,8 +945,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16880AFF216A51B300C3C52A /* Hisotry+CoreDataProperties.m in Sources */,
 				16DB820B18343623007DE73E /* UIWebView+Quicka2.m in Sources */,
 				16AB5FC217FFA5E300B7D45A /* BookmarkViewController.m in Sources */,
+				16880B0A216A524700C3C52A /* BrowserHistory+CoreDataClass.m in Sources */,
 				16FF6DA318173BB200CC30BC /* SourceCodeLinkManager.m in Sources */,
 				16880AC3216A47E200C3C52A /* UIImage+ForceDecode.m in Sources */,
 				165146B2216A472F00813B82 /* FLAnimatedImageView.m in Sources */,
@@ -958,19 +960,19 @@
 				16880AC8216A47E200C3C52A /* UIImage+MultiFormat.m in Sources */,
 				1672818617E5454B0072173D /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				1672817717E5454B0072173D /* NSNumber+MagicalDataImport.m in Sources */,
-				16AB5FD117FFC8A400B7D45A /* BrowserHistory.m in Sources */,
+				16880B0B216A524700C3C52A /* BrowserHistory+CoreDataProperties.m in Sources */,
 				16F947EA17F85CDD003923C5 /* SuggestView.m in Sources */,
 				16A840F1180013AE00B946D3 /* AppStoreViewController.m in Sources */,
 				1672818117E5454B0072173D /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				1672818317E5454B0072173D /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				16880ACE216A47E200C3C52A /* SDAnimatedImageRep.m in Sources */,
 				16EE5E5A1EC7C88500F2188C /* BrowserViewController.m in Sources */,
-				16AB5FD017FFC8A400B7D45A /* BrowserBookmark.m in Sources */,
 				160BEDF317E4745400EC97FC /* ContainerViewController.m in Sources */,
 				16880AD1216A47E200C3C52A /* SDWebImageTransition.m in Sources */,
 				16F947E417F83B63003923C5 /* MyNavigationController.m in Sources */,
 				16880ABF216A47E200C3C52A /* MKAnnotationView+WebCache.m in Sources */,
 				16880ADA216A47E200C3C52A /* UIButton+WebCache.m in Sources */,
+				16880AFE216A51B300C3C52A /* Hisotry+CoreDataClass.m in Sources */,
 				160BEE4917E49B3900EC97FC /* SubViewController.m in Sources */,
 				1672817917E5454B0072173D /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
 				16880AD9216A47E200C3C52A /* SDWebImageImageIOCoder.m in Sources */,
@@ -982,19 +984,21 @@
 				160BEDC617E471C000EC97FC /* AppDelegate.m in Sources */,
 				1618E8FF18270C7300159F92 /* CreateIconViewController.m in Sources */,
 				1672818517E5454B0072173D /* NSPersistentStore+MagicalRecord.m in Sources */,
+				16880B04216A520F00C3C52A /* BrowserBookmark+CoreDataClass.m in Sources */,
 				16880AD5216A47E200C3C52A /* SDWebImageGIFCoder.m in Sources */,
 				16D97BD718837F6900718B72 /* PerformanceTuningKit.m in Sources */,
 				16880AC5216A47E200C3C52A /* FLAnimatedImageView+WebCache.m in Sources */,
 				1672818417E5454B0072173D /* NSManagedObjectModel+MagicalRecord.m in Sources */,
 				1672817517E5454B0072173D /* NSAttributeDescription+MagicalDataImport.m in Sources */,
+				16880B05216A520F00C3C52A /* BrowserBookmark+CoreDataProperties.m in Sources */,
 				169DEB9717E719E6000F8C7D /* ActionManager.m in Sources */,
 				169DEB8817E6C0E0000F8C7D /* EditViewController.m in Sources */,
 				16880ACC216A47E200C3C52A /* SDWebImageCoder.m in Sources */,
 				1672817417E5454B0072173D /* MagicalImportFunctions.m in Sources */,
 				169DEB5A17E5BD24000F8C7D /* CustomActivity.m in Sources */,
+				16880AF8216A50B000C3C52A /* Action+CoreDataClass.m in Sources */,
 				163D1C501800E3A8009894A5 /* SelectImageViewController.m in Sources */,
 				160BEDF817E47C6700EC97FC /* MainViewController.m in Sources */,
-				16AB5FE317FFCEEA00B7D45A /* Hisotry.m in Sources */,
 				1672818017E5454B0072173D /* NSManagedObjectContext+MagicalObserving.m in Sources */,
 				1672818B17E5454B0072173D /* MagicalRecord+Setup.m in Sources */,
 				169DEB7A17E6905F000F8C7D /* HistoryManager.m in Sources */,
@@ -1010,22 +1014,19 @@
 				160036FF180DFFF400FB30D8 /* SourceCodeViewController.m in Sources */,
 				160E55F21821BB51008937C7 /* CustomEngineViewController.m in Sources */,
 				1672817B17E5454B0072173D /* NSManagedObject+MagicalAggregation.m in Sources */,
-				16AB5FCE17FFC8A400B7D45A /* _BrowserBookmark.m in Sources */,
 				1672818C17E5454B0072173D /* MagicalRecord+ShorthandSupport.m in Sources */,
 				16880AC1216A47E200C3C52A /* UIImageView+HighlightedWebCache.m in Sources */,
 				160BEDC217E471C000EC97FC /* main.m in Sources */,
 				16880ACB216A47E200C3C52A /* SDWebImagePrefetcher.m in Sources */,
-				169DEB6E17E68CD4000F8C7D /* Action.m in Sources */,
 				1672817A17E5454B0072173D /* NSString+MagicalDataImport.m in Sources */,
 				16880ABE216A47E200C3C52A /* UIImage+WebP.m in Sources */,
 				16880AC7216A47E200C3C52A /* UIImage+GIF.m in Sources */,
 				1672818A17E5454B0072173D /* MagicalRecord+Options.m in Sources */,
 				1672817E17E5454B0072173D /* NSManagedObject+MagicalRecord.m in Sources */,
-				16AB5FE217FFCEEA00B7D45A /* _Hisotry.m in Sources */,
-				16AB5FCF17FFC8A400B7D45A /* _BrowserHistory.m in Sources */,
 				1672818717E5454B0072173D /* MagicalRecord+Actions.m in Sources */,
 				16A840EE180006A700B946D3 /* BookmarkEditViewController.m in Sources */,
 				1672817C17E5454B0072173D /* NSManagedObject+MagicalDataImport.m in Sources */,
+				16880AF9216A50B000C3C52A /* Action+CoreDataProperties.m in Sources */,
 				16880ACA216A47E200C3C52A /* SDWebImageCompat.m in Sources */,
 				16BBB98218136B7500FAF88C /* MyApplication.m in Sources */,
 				16880ACD216A47E200C3C52A /* NSButton+WebCache.m in Sources */,
@@ -1044,7 +1045,6 @@
 				16880AC6216A47E200C3C52A /* SDWebImageDownloader.m in Sources */,
 				1672818817E5454B0072173D /* MagicalRecord+ErrorHandling.m in Sources */,
 				16880AD3216A47E200C3C52A /* UIImageView+WebCache.m in Sources */,
-				169DEB6B17E68CD4000F8C7D /* _Action.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

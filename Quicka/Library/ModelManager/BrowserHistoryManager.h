@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "CoreData+MagicalRecord.h"
-#import "BrowserHistory.h"
+#import "BrowserHistory+CoreDataClass.h"
 
 @interface BrowserHistoryManager : NSObject
 

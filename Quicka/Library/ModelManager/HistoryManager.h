@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "CoreData+MagicalRecord.h"
-#import "Hisotry.h"
+#import "Hisotry+CoreDataClass.h"
 
 @interface HistoryManager : NSObject
 

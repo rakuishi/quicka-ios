@@ -10,10 +10,6 @@
 #warning "This project uses features only available in iOS SDK 5.0 and later."
 #endif
 
-// モデル作成手順
-// Quicka.xcdatamodelId で Entity を作成し、Class 名を指定する
-// $ mogenerator --template-var arc=true -m Quicka.xcdatamodeld/Quicka.xcdatamodel/ -O Library/XcdataModel/
-
 #define QKApplicationReloadTableViewData    @"QKApplicationReloadTableViewData"
 #define QKApplicationSetTextToSearchBar     @"QKApplicationSetTextToSearchBar"
 #define QKApplicationEnablePanGesture       @"QKApplicationEnablePanGesture"

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "CoreData+MagicalRecord.h"
-#import "BrowserBookmark.h"
+#import "BrowserBookmark+CoreDataClass.h"
 
 @interface BrowserBookmarkManager : NSObject
 
