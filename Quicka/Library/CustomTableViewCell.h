@@ -23,7 +23,3 @@
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
 
 @end
-
-@interface BookmarkCell : UITableViewCell
-
-@end

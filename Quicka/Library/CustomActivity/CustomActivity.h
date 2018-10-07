@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BrowserBookmarkManager.h"
 #import "QuickaUtil.h"
 
 @interface CustomActivity : NSObject

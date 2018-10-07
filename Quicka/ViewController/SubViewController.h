@@ -11,8 +11,6 @@
 
 #import "QuickaUtil.h"
 #import "CustomActivity.h"
-#import "BrowserHistoryManager.h"
-#import "BookmarkViewController.h"
 #import "MyNavigationController.h"
 #import "SourceCodeViewController.h"
 #import "UIWebView+Quicka2.h"
@@ -24,14 +22,13 @@
 
 @end
 
-@interface SubViewController : UIViewController <UIScrollViewDelegate, WKNavigationDelegate, UIActionSheetDelegate, BookmarkViewControllerDelegate, SourceCodeViewControllerDelegate>
+@interface SubViewController : UIViewController <UIScrollViewDelegate, WKNavigationDelegate, UIActionSheetDelegate, SourceCodeViewControllerDelegate>
 
 @property (nonatomic, weak) id <SubViewControllerDelegate> delegate;
 @property (nonatomic) WKWebView *webView;
 
 - (void)searchWithQuery:(NSString *)query;
 - (void)scrollToMainViewController;
-- (void)bookmark;
 - (void)goBack;
 - (void)goForward;
 - (void)refresh;

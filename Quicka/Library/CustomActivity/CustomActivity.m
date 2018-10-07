@@ -147,10 +147,6 @@ NSString *const kActivityURLSchemesiCabMobile = @"icabmobile:";
         }
     }
 
-    if (title && URLString && [BrowserBookmarkManager isAlreadyExistUrl:URLString] == NO) {
-        return YES;
-    }
-    
     return NO;
 }
 
@@ -166,10 +162,6 @@ NSString *const kActivityURLSchemesiCabMobile = @"icabmobile:";
         } else if ([activityItem isKindOfClass:[NSString class]]) {
             title = (NSString *)activityItem;
         }
-    }
-    
-    if (title && URLString) {
-        [BrowserBookmarkManager addTitle:title url:URLString];
     }
 }
 

@@ -48,7 +48,6 @@
     [titleView addSubview:self.barUrlButton];
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonitem_back"] style:UIBarButtonItemStylePlain target:self action:@selector(scrollToMainViewController)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonitem_bookmark"] style:UIBarButtonItemStylePlain target:self action:@selector(bookmark)];
     
     UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     self.goBackButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonitem_arrow_left"] style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
@@ -111,19 +110,6 @@
     [self presentViewController:navigationController animated:YES completion:nil];
 }
 
-#pragma mark - BookmarkViewControllerDelegate
-
-- (void)didSelectURLString:(NSString *)URLString
-{
-    if ([URLString hasPrefix:@"javascript:"]) {
-        // javascript: の場合は、JavaScript として扱うように
-        [self.webView evaluateJavaScript:URLString completionHandler:nil];
-    } else {
-        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:URLString]]];
-        [self.webView setHidden:NO];
-    }
-}
-
 #pragma mark - SourceCodeViewControllerDelegate
 
 - (void)didSelectURL:(NSURL *)URL
@@ -151,8 +137,6 @@
     
     self.barTitleLabel.text = title;
     [self.barUrlButton setTitle:[url UTF8DecodedString] forState:UIControlStateNormal];
-    
-    [BrowserHistoryManager addTitle:title url:url];
 
 	self.goBackButtonItem.enabled = _webView.canGoBack;
 	self.goForwardButtonItem.enabled = _webView.canGoForward;
@@ -183,15 +167,6 @@
     if ([self.delegate respondsToSelector:@selector(scrollToMainViewControllerWithQuery:)]) {
         [self.delegate scrollToMainViewControllerWithQuery:nil];
     }
-}
-
-- (void)bookmark
-{
-    BookmarkViewController *viewController = [[BookmarkViewController alloc] initWithStyle:UITableViewStylePlain];
-    viewController.delegate = self;
-    MyNavigationController *navigationController = [[MyNavigationController alloc] initWithRootViewController:viewController];
-    [navigationController setToolbarHidden:NO];
-    [self presentViewController:navigationController animated:YES completion:nil];
 }
 
 #pragma mark - UIToolbarItems
@@ -225,7 +200,7 @@
 
     NSArray *applicationActivities = [CustomActivity getApplicationActivities];
     UIActivityViewController *activityView = [[UIActivityViewController alloc] initWithActivityItems:@[title, URL] applicationActivities:applicationActivities];
-    activityView.excludedActivityTypes = @[UIActivityTypeAirDrop, UIActivityTypeCopyToPasteboard];
+    activityView.excludedActivityTypes = @[UIActivityTypeAirDrop, UIActivityTypeCopyToPasteboard, UIActivityTypeAddToReadingList];
     
     [activityView setCompletionWithItemsHandler:^(NSString * __nullable activityType, BOOL completed, NSArray * __nullable returnedItems, NSError * __nullable activityError) {
         if ([activityType isEqualToString:@"View Source"]) {
