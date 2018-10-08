@@ -12,12 +12,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    id UINavigationBarAppearanceProxy = [UINavigationBar appearanceWhenContainedIn:[MyNavigationController class], nil];
+    id UINavigationBarAppearanceProxy = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[[UINavigationController class]]];
     NSDictionary *attributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
     
     [UINavigationBarAppearanceProxy setTintColor:QK_TINT_COLOR];
     [UINavigationBarAppearanceProxy setBarTintColor:QK_BAR_TINT_COLOR];
     [UINavigationBarAppearanceProxy setTitleTextAttributes:attributes];
+    [UINavigationBarAppearanceProxy setTranslucent:false];
     [[UIToolbar appearance] setTintColor:QK_TINT_COLOR];
     [[UIToolbar appearance] setBarTintColor:QK_BAR_TINT_COLOR];
     
@@ -32,7 +33,7 @@
     return YES;
 }
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
     // if you handle your own URLs, do it here
     NSString *host = [url host];
@@ -75,12 +76,6 @@
     }
     
     return dict;
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    // Saves changes in the application's managed object context before the application terminates.
-    // [self saveContext];
 }
 
 @end

@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-#import "MyNavigationController.h"
 #import "MainViewController.h"
 #import "SubViewController.h"
 

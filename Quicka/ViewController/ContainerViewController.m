@@ -12,8 +12,8 @@
 
 @interface ContainerViewController ()
 
-@property (nonatomic) MyNavigationController *mainNavigationController;
-@property (nonatomic) MyNavigationController *subNavigationController;
+@property (nonatomic) UINavigationController *mainNavigationController;
+@property (nonatomic) UINavigationController *subNavigationController;
 @property (nonatomic) MainViewController *mainViewController;
 @property (nonatomic) SubViewController *subViewController;
 
@@ -36,13 +36,13 @@
     self.mainViewController = [[MainViewController alloc] initWithStyle:UITableViewStylePlain];
     self.mainViewController.isActive = YES;
     self.mainViewController.delegate = self;
-    self.mainNavigationController = [[MyNavigationController alloc] initWithRootViewController:self.mainViewController];
+    self.mainNavigationController = [[UINavigationController alloc] initWithRootViewController:self.mainViewController];
     self.mainNavigationController.toolbar.translucent = NO;
     [self.mainNavigationController setToolbarHidden:NO];
     
     self.subViewController = [SubViewController new];
     self.subViewController.delegate = self;
-    self.subNavigationController = [[MyNavigationController alloc] initWithRootViewController:self.subViewController];
+    self.subNavigationController = [[UINavigationController alloc] initWithRootViewController:self.subViewController];
     self.subNavigationController.toolbar.translucent = NO;
     [self.subNavigationController setToolbarHidden:NO];
     

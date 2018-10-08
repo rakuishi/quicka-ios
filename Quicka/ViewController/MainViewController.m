@@ -128,7 +128,7 @@
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Settings" bundle:[NSBundle mainBundle]];
     SettingsViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"SettingsViewController"];
-    MyNavigationController *navigationController = [[MyNavigationController alloc] initWithRootViewController:viewController];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     [self presentViewController:navigationController animated:YES completion:nil];
 }
 
@@ -194,7 +194,7 @@
 {
     HistoryViewController *viewController = [[HistoryViewController alloc] initWithStyle:UITableViewStylePlain];
     viewController.delegate = self;
-    MyNavigationController *navigationController = [[MyNavigationController alloc] initWithRootViewController:viewController];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     [self presentViewController:navigationController animated:YES completion:nil];
 }
 
@@ -444,7 +444,7 @@
 
         AppStoreViewController *viewController = [[AppStoreViewController alloc] initWithStyle:UITableViewStylePlain];
         viewController.query = query;
-        MyNavigationController *navigationController = [[MyNavigationController alloc] initWithRootViewController:viewController];
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
         [self presentViewController:navigationController animated:YES completion:nil];
 
         return;

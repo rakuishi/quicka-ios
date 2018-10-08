@@ -10,7 +10,6 @@
 #import "CustomTableViewCell.h"
 #import "SelectImageViewController.h"
 #import "CreateIconViewController.h"
-#import "MyNavigationController.h"
 #import "UIImageView+WebCache.h"
 #import "ActionManager.h"
 #import "QuickaUtil.h"

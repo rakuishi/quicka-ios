@@ -314,22 +314,20 @@
             picker.allowsEditing = YES;
             picker.delegate = self;
             [self presentViewController:picker animated:YES completion:nil];
-            
-            [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
         }
     }]];
 
     [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"Select From Quicka's Library") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         SelectImageViewController *viewController = [[SelectImageViewController alloc] initWithStyle:UITableViewStylePlain];
         viewController.delegate = self;
-        MyNavigationController *navigationController = [[MyNavigationController alloc] initWithRootViewController:viewController];
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
         [self presentViewController:navigationController animated:YES completion:nil];
     }]];
 
     [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"Create Icon") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         CreateIconViewController *viewController = [[CreateIconViewController alloc] initWithStyle:UITableViewStyleGrouped];
         viewController.delegate = self;
-        MyNavigationController *navigationController = [[MyNavigationController alloc] initWithRootViewController:viewController];
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
         [self presentViewController:navigationController animated:YES completion:nil];
     }]];
 
@@ -340,7 +338,6 @@
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
 {
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
     
     UIImage *newImage = [QuickaUtil resizeImage:image toSize:CGSizeMake(58.f, 58.f)];
@@ -349,7 +346,6 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

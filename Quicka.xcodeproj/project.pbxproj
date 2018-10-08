@@ -116,7 +116,6 @@
 		16EEDF571E751AAB001DE9E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16EEDF591E751AAB001DE9E5 /* InfoPlist.strings */; };
 		16F947DE17F82C10003923C5 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F947DD17F82C10003923C5 /* CustomTableViewCell.m */; };
 		16F947E117F82F64003923C5 /* QuickaUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F947E017F82F64003923C5 /* QuickaUtil.m */; };
-		16F947E417F83B63003923C5 /* MyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F947E317F83B63003923C5 /* MyNavigationController.m */; };
 		16F947E717F84DE1003923C5 /* MyReferenceLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F947E617F84DE1003923C5 /* MyReferenceLibraryViewController.m */; };
 		16F947EA17F85CDD003923C5 /* SuggestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F947E917F85CDD003923C5 /* SuggestView.m */; };
 		16F947ED17FC66C9003923C5 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F947EC17FC66C9003923C5 /* SettingsViewController.m */; };
@@ -331,8 +330,6 @@
 		16F947DD17F82C10003923C5 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		16F947DF17F82F64003923C5 /* QuickaUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickaUtil.h; sourceTree = "<group>"; };
 		16F947E017F82F64003923C5 /* QuickaUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickaUtil.m; sourceTree = "<group>"; };
-		16F947E217F83B63003923C5 /* MyNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationController.h; sourceTree = "<group>"; };
-		16F947E317F83B63003923C5 /* MyNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationController.m; sourceTree = "<group>"; };
 		16F947E517F84DE1003923C5 /* MyReferenceLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyReferenceLibraryViewController.h; sourceTree = "<group>"; };
 		16F947E617F84DE1003923C5 /* MyReferenceLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyReferenceLibraryViewController.m; sourceTree = "<group>"; };
 		16F947E817F85CDD003923C5 /* SuggestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestView.h; sourceTree = "<group>"; };
@@ -464,8 +461,6 @@
 				169DEB4B17E5B486000F8C7D /* CustomActivity */,
 				16F947E517F84DE1003923C5 /* MyReferenceLibraryViewController.h */,
 				16F947E617F84DE1003923C5 /* MyReferenceLibraryViewController.m */,
-				16F947E217F83B63003923C5 /* MyNavigationController.h */,
-				16F947E317F83B63003923C5 /* MyNavigationController.m */,
 				16D0B3B318914AD500880C2B /* NSString+Quicka2.h */,
 				16D0B3B418914AD500880C2B /* NSString+Quicka2.m */,
 				16F947DC17F82C10003923C5 /* CustomTableViewCell.h */,
@@ -895,7 +890,6 @@
 				16EE5E5A1EC7C88500F2188C /* BrowserViewController.m in Sources */,
 				160BEDF317E4745400EC97FC /* ContainerViewController.m in Sources */,
 				16880AD1216A47E200C3C52A /* SDWebImageTransition.m in Sources */,
-				16F947E417F83B63003923C5 /* MyNavigationController.m in Sources */,
 				16880ABF216A47E200C3C52A /* MKAnnotationView+WebCache.m in Sources */,
 				16880ADA216A47E200C3C52A /* UIButton+WebCache.m in Sources */,
 				16880AFE216A51B300C3C52A /* Hisotry+CoreDataClass.m in Sources */,

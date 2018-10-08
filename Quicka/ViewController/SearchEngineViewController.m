@@ -7,7 +7,6 @@
 //
 
 #import "SearchEngineViewController.h"
-#import "MyNavigationController.h"
 #import "QuickaUtil.h"
 
 @interface SearchEngineViewController ()
@@ -87,7 +86,7 @@
         
         CustomEngineViewController *viewController = [[CustomEngineViewController alloc] initWithStyle:UITableViewStyleGrouped];
         viewController.delegate = self;
-        MyNavigationController *navigationController = [[MyNavigationController alloc] initWithRootViewController:viewController];
+        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
         [self presentViewController:navigationController animated:YES completion:nil];
     }
 }

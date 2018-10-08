@@ -11,7 +11,6 @@
 
 #import "QuickaUtil.h"
 #import "CustomActivity.h"
-#import "MyNavigationController.h"
 #import "NSString+Quicka2.h"
 
 @protocol SubViewControllerDelegate <NSObject>

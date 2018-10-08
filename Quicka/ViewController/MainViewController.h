@@ -16,10 +16,8 @@
 #import "CustomTableViewCell.h"
 #import "HistoryManager.h"
 #import "QuickaUtil.h"
-#import "MyNavigationController.h"
 #import "SuggestView.h"
 #import "MyReferenceLibraryViewController.h"
-#import "MyNavigationController.h"
 #import "AppStoreViewController.h"
 #import "NSString+Quicka2.h"
 
