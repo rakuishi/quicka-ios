@@ -336,10 +336,11 @@
 
 #pragma mark - UIImagePickerControllerDelegate
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey,id> *)info
 {
     [self dismissViewControllerAnimated:YES completion:nil];
-    
+
+    UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
     UIImage *newImage = [QuickaUtil resizeImage:image toSize:CGSizeMake(58.f, 58.f)];
     self.iconImageView.image = [QuickaUtil maskImage:newImage];
 }
