@@ -20,7 +20,7 @@
 
 @end
 
-@interface SubViewController : UIViewController <UIScrollViewDelegate, WKNavigationDelegate, UIActionSheetDelegate>
+@interface SubViewController : UIViewController <UIScrollViewDelegate, WKNavigationDelegate>
 
 @property (nonatomic, weak) id <SubViewControllerDelegate> delegate;
 @property (nonatomic) WKWebView *webView;

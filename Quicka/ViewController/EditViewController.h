@@ -26,7 +26,7 @@ typedef NS_ENUM(NSInteger, EditViewControllerStyle) {
 
 @end
 
-@interface EditViewController : UITableViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UIActionSheetDelegate, SelectImageViewControllerDelegate, CreateIconViewControllerDelegate, UITextFieldDelegate>
+@interface EditViewController : UITableViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, SelectImageViewControllerDelegate, CreateIconViewControllerDelegate, UITextFieldDelegate>
 
 @property (nonatomic, assign) id <EditViewControllerDelegate> delegate;
 @property (nonatomic, assign) EditViewControllerStyle style;

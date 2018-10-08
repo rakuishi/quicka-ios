@@ -48,19 +48,17 @@
 
 - (void)deleteButtonItemTapped
 {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:LSTR(@"Cancel") destructiveButtonTitle:LSTR(@"Clear All Recents") otherButtonTitles:nil];
-    [actionSheet showInView:self.view];
-}
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"Cancel") style:UIAlertActionStyleCancel handler:nil]];
 
-#pragma mark - UIActionSheetDelegate
-
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (actionSheet.destructiveButtonIndex == buttonIndex) {
+    [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"Clear All Recents") style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
         [HistoryManager deleteAllData];
         self.historys = [NSMutableArray new];
         [self.tableView reloadData];
-    }
+    }]];
+    
+    [self presentViewController:actionSheet animated:YES completion:nil];
 }
 
 #pragma mark - Table view data source

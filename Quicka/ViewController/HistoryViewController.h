@@ -15,7 +15,7 @@
 
 @end
 
-@interface HistoryViewController : UITableViewController <UIActionSheetDelegate>
+@interface HistoryViewController : UITableViewController
 
 @property (nonatomic, assign) id <HistoryViewControllerDelegate> delegate;
 

@@ -249,8 +249,7 @@
         
     } else if (indexPath.section == 0 && indexPath.row == 2) {
 
-        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:LSTR(@"Cancel") destructiveButtonTitle:nil otherButtonTitles:LSTR(@"Select From Photos App"), LSTR(@"Select From Quicka's Library"), LSTR(@"Create Icon"), nil];
-        [actionSheet showInView:self.view];
+        [self showActionSheet];
     }
 }
 
@@ -302,16 +301,14 @@
 
 #pragma mark - UIActionSheet
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)showActionSheet
 {
-    if (actionSheet.cancelButtonIndex == buttonIndex) {
-        return;
-    }
-    
-    if (buttonIndex == 0) {
-        // Select From Photos App
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+
+    [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"Cancel") style:UIAlertActionStyleCancel handler:nil]];
+
+    [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"Select From Photos App") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
-            
             UIImagePickerController *picker = [[UIImagePickerController alloc] init];
             picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
             picker.allowsEditing = YES;
@@ -320,30 +317,23 @@
             
             [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:YES];
         }
-    } else if (buttonIndex == 1) {
-        // Select From Quicka's Library
+    }]];
+
+    [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"Select From Quicka's Library") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         SelectImageViewController *viewController = [[SelectImageViewController alloc] initWithStyle:UITableViewStylePlain];
         viewController.delegate = self;
         MyNavigationController *navigationController = [[MyNavigationController alloc] initWithRootViewController:viewController];
         [self presentViewController:navigationController animated:YES completion:nil];
-    } else {
-        // Create Icon
+    }]];
+
+    [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"Create Icon") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         CreateIconViewController *viewController = [[CreateIconViewController alloc] initWithStyle:UITableViewStyleGrouped];
         viewController.delegate = self;
         MyNavigationController *navigationController = [[MyNavigationController alloc] initWithRootViewController:viewController];
         [self presentViewController:navigationController animated:YES completion:nil];
-    }
-}
+    }]];
 
-#pragma mark - UIAlertViewDelegate
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (alertView.cancelButtonIndex == buttonIndex) {
-        return;
-    }
-    
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:QK_APP_DOWNLOAD_URL(self.trackId)] options:@{} completionHandler:nil];
+    [self presentViewController:actionSheet animated:YES completion:nil];
 }
 
 #pragma mark - UIImagePickerControllerDelegate
