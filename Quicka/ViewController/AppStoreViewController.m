@@ -39,17 +39,17 @@
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     NSURLSessionTask *task = [session dataTaskWithURL:url
                                     completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
-                                        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                                        if (!error) {
-                                            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-                                            self.objects = [dict objectForKey:@"results"];
-                                            if (self.objects.count == 0) {
-                                                self.isNoResult = YES;
-                                            }
-                                            dispatch_async(q_main, ^{
+                                        dispatch_async(q_main, ^{
+                                            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                                            if (!error) {
+                                                NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+                                                self.objects = [dict objectForKey:@"results"];
+                                                if (self.objects.count == 0) {
+                                                    self.isNoResult = YES;
+                                                }
                                                 [tableView reloadData];
-                                            });
-                                        }
+                                            }
+                                        });
                                     }];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [task resume];
