@@ -45,14 +45,14 @@
         
         NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
         NSURLSessionTask *task = [session dataTaskWithURL:url
-                                        completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
-                                            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-                                            if (!error) {
-                                                _json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-                                                dispatch_async(q_main, ^{
+                                        completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                            dispatch_async(q_main, ^{
+                                                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                                                if (!error) {
+                                                    self.json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
                                                     [self.tableView reloadData];
-                                                });
-                                            }
+                                                }
+                                            });
                                         }];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
         [task resume];
