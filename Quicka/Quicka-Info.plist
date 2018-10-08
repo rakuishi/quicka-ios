@@ -46,6 +46,23 @@
 		<string>googlechrome</string>
 		<string>sleipnir</string>
 		<string>icabmobile</string>
+		<string>webhub</string>
+		<string>dolphin</string>
+		<string>egobird</string>
+		<string>postmania-fb</string>
+		<string>due</string>
+		<string>dayone</string>
+		<string>choical</string>
+		<string>smartever</string>
+		<string>withever</string>
+		<string>fastever</string>
+		<string>moca</string>
+		<string>spendable</string>
+		<string>udwriter</string>
+		<string>quickreminder</string>
+		<string>postalcode</string>
+		<string>mkccjad</string>
+		<string>hmdaijisen</string>
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
