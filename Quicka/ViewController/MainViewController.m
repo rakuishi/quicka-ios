@@ -433,7 +433,7 @@
         
         [HistoryManager addQuery:query];
 
-        MyReferenceLibraryViewController *referenceLibraryViewController = [[MyReferenceLibraryViewController alloc] initWithTerm:query];
+        UIReferenceLibraryViewController *referenceLibraryViewController = [[UIReferenceLibraryViewController alloc] initWithTerm:query];
         [self presentViewController:referenceLibraryViewController animated:YES completion:nil];
 
         return;

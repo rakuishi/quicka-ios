@@ -116,7 +116,6 @@
 		16EEDF571E751AAB001DE9E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16EEDF591E751AAB001DE9E5 /* InfoPlist.strings */; };
 		16F947DE17F82C10003923C5 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F947DD17F82C10003923C5 /* CustomTableViewCell.m */; };
 		16F947E117F82F64003923C5 /* QuickaUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F947E017F82F64003923C5 /* QuickaUtil.m */; };
-		16F947E717F84DE1003923C5 /* MyReferenceLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F947E617F84DE1003923C5 /* MyReferenceLibraryViewController.m */; };
 		16F947EA17F85CDD003923C5 /* SuggestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F947E917F85CDD003923C5 /* SuggestView.m */; };
 		16F947ED17FC66C9003923C5 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F947EC17FC66C9003923C5 /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
@@ -330,8 +329,6 @@
 		16F947DD17F82C10003923C5 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		16F947DF17F82F64003923C5 /* QuickaUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickaUtil.h; sourceTree = "<group>"; };
 		16F947E017F82F64003923C5 /* QuickaUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickaUtil.m; sourceTree = "<group>"; };
-		16F947E517F84DE1003923C5 /* MyReferenceLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyReferenceLibraryViewController.h; sourceTree = "<group>"; };
-		16F947E617F84DE1003923C5 /* MyReferenceLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyReferenceLibraryViewController.m; sourceTree = "<group>"; };
 		16F947E817F85CDD003923C5 /* SuggestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuggestView.h; sourceTree = "<group>"; };
 		16F947E917F85CDD003923C5 /* SuggestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestView.m; sourceTree = "<group>"; };
 		16F947EB17FC66C9003923C5 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = ViewController/SettingsViewController.h; sourceTree = "<group>"; };
@@ -459,8 +456,6 @@
 				169DEB7717E69048000F8C7D /* ModelManager */,
 				169DEB5E17E68CD4000F8C7D /* XcdataModel */,
 				169DEB4B17E5B486000F8C7D /* CustomActivity */,
-				16F947E517F84DE1003923C5 /* MyReferenceLibraryViewController.h */,
-				16F947E617F84DE1003923C5 /* MyReferenceLibraryViewController.m */,
 				16D0B3B318914AD500880C2B /* NSString+Quicka2.h */,
 				16D0B3B418914AD500880C2B /* NSString+Quicka2.m */,
 				16F947DC17F82C10003923C5 /* CustomTableViewCell.h */,
@@ -950,7 +945,6 @@
 				16880AD2216A47E200C3C52A /* NSData+ImageContentType.m in Sources */,
 				1672818217E5454B0072173D /* NSManagedObjectContext+MagicalSaves.m in Sources */,
 				169DEB8017E699A6000F8C7D /* HistoryViewController.m in Sources */,
-				16F947E717F84DE1003923C5 /* MyReferenceLibraryViewController.m in Sources */,
 				165146B1216A472F00813B82 /* FLAnimatedImage.m in Sources */,
 				1672817D17E5454B0072173D /* NSManagedObject+MagicalFinders.m in Sources */,
 				160BEDCC17E471C000EC97FC /* Quicka.xcdatamodeld in Sources */,

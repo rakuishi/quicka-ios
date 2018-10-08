@@ -17,7 +17,6 @@
 #import "HistoryManager.h"
 #import "QuickaUtil.h"
 #import "SuggestView.h"
-#import "MyReferenceLibraryViewController.h"
 #import "AppStoreViewController.h"
 #import "NSString+Quicka2.h"
 
