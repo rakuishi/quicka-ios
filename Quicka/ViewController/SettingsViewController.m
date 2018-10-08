@@ -114,7 +114,7 @@ typedef enum kSection : NSUInteger {
         case kSectionSettingsSub:
             return 1;
         case kSectionAbout:
-            return 3;
+            return 4;
         default:
             return 1;
     }
@@ -201,14 +201,22 @@ typedef enum kSection : NSUInteger {
             if (indexPath.row == 0) {
                 cell.textLabel.text = LSTR(@"Version");
                 cell.detailTextLabel.text = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+                cell.accessoryType = UITableViewCellAccessoryNone;
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
             } else if (indexPath.row == 1) {
                 cell.textLabel.text = LSTR(@"Developed by");
                 cell.detailTextLabel.text = @"rakuishi";
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 cell.selectionStyle = UITableViewCellSelectionStyleDefault;
-            } else {
+            } else if (indexPath.row == 2) {
                 cell.textLabel.text = LSTR(@"Support");
                 cell.detailTextLabel.text = @"rakuishi.com/quicka2/";
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+            } else {
+                cell.textLabel.text = LSTR(@"Privacy Policy");
+                cell.detailTextLabel.text = @"";
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 cell.selectionStyle = UITableViewCellSelectionStyleDefault;
             }
             
@@ -243,6 +251,8 @@ typedef enum kSection : NSUInteger {
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://rakuishi.com"] options:@{} completionHandler:nil];
             } else if (indexPath.row == 2) {
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://rakuishi.com/quicka2/"] options:@{} completionHandler:nil];
+            } else if (indexPath.row == 3) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://rakuishi.github.io/privacy-policy/quicka2.html"] options:@{} completionHandler:nil];
             }
             break;
         case kSectionCache:
