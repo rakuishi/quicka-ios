@@ -18,7 +18,6 @@ CGFloat const kSuggestViewFrameSizeHeight = 36.f;
 @interface SuggestView ()
 
 @property (nonatomic, strong) UIScrollView *scrollView;
-@property (nonatomic, strong) UIImageView *background;
 @property (nonatomic, strong) UIView *buttonBaseView;
 @property (nonatomic, strong) NSMutableArray *queries;
 @property (nonatomic, strong) NSMutableArray *tempQueries;
@@ -48,11 +47,15 @@ CGFloat const kSuggestViewFrameSizeHeight = 36.f;
     CGFloat width = [[UIScreen mainScreen] bounds].size.width;
     self = [super initWithFrame:CGRectMake(0.f, 0.f, width, kSuggestViewFrameSizeHeight)];
     if (self) {
-        
-        self.background = [[UIImageView alloc] initWithFrame:self.frame];
-        self.background.image = [UIImage imageNamed:@"suggestview_background_basic"];
-        self.background.userInteractionEnabled = YES;
-        [self addSubview:self.background];
+        if (@available(iOS 13.0, *)) {
+            if (UITraitCollection.currentTraitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+                self.backgroundColor = UIColor.systemBackgroundColor;
+            } else {
+                self.backgroundColor = UIColor.systemGray4Color;
+            }
+        } else {
+            self.backgroundColor = UIColor.whiteColor;
+        }
         
         self.scrollView = [[UIScrollView alloc] initWithFrame:self.frame];
         self.scrollView.decelerationRate = UIScrollViewDecelerationRateFast;
@@ -97,14 +100,6 @@ CGFloat const kSuggestViewFrameSizeHeight = 36.f;
     toRect.origin.y = self.keyboardRect.origin.y - kSuggestViewFrameSizeHeight;
     toRect.size.height = kSuggestViewFrameSizeHeight;
     self.frame = toRect;
-    
-    if (self.keyboardRect.size.height == 216.f) {
-        // 216.f 特になし（キーボード上部の区切りなし）
-        self.background.image = [UIImage imageNamed:@"suggestview_background_basic"];
-    } else {
-        // 252.f 日本語変換候補（キーボード上部の区切り有り）
-        self.background.image = [UIImage imageNamed:@"suggestview_background_conversion"];
-    }
 }
 
 - (void)updateButtons
@@ -123,11 +118,6 @@ CGFloat const kSuggestViewFrameSizeHeight = 36.f;
         _button[i] = nil;
     }
     
-    // 再描画
-    UIImage *buttonBgInitImage = [[UIImage imageNamed:@"suggestview_button_init"] resizableImageWithCapInsets:UIEdgeInsetsMake(0.f, 1.f, 0.f, 1.f)];
-    UIImage *buttonBgInitHlImage = [[UIImage imageNamed:@"suggestview_button_init_hl"] resizableImageWithCapInsets:UIEdgeInsetsMake(0.f, 1.f, 0.f, 1.f)];
-    UIImage *buttonBgNextImage = [[UIImage imageNamed:@"suggestview_button_next"] resizableImageWithCapInsets:UIEdgeInsetsMake(0.f, 1.f, 0.f, 1.f)];
-    UIImage *buttonBgNextHlImage = [[UIImage imageNamed:@"suggestview_button_next_hl"] resizableImageWithCapInsets:UIEdgeInsetsMake(0.f, 1.f, 0.f, 1.f)];
     UIFont *font = [UIFont systemFontOfSize:17.f];
     
     int max = (int) MIN(self.queries.count, kSuggestViewMaxQuery);
@@ -144,16 +134,15 @@ CGFloat const kSuggestViewFrameSizeHeight = 36.f;
         }
         
         [button setTag:i];
-        if (i == 0) {
-            [button setBackgroundImage:buttonBgInitImage forState:UIControlStateNormal];
-            [button setBackgroundImage:buttonBgInitHlImage forState:UIControlStateHighlighted];
-        } else {
-            [button setBackgroundImage:buttonBgNextImage forState:UIControlStateNormal];
-            [button setBackgroundImage:buttonBgNextHlImage forState:UIControlStateHighlighted];
-        }
         [button setTitle:self.queries[i] forState:UIControlStateNormal];
         [button.titleLabel setFont:font];
-        [button setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
+        if (@available(iOS 13.0, *)) {
+            [button setTitleColor:UIColor.labelColor forState:UIControlStateNormal];
+            [button setTitleColor:UIColor.secondaryLabelColor forState:UIControlStateHighlighted];
+        } else {
+            [button setTitleColor:UIColor.darkTextColor forState:UIControlStateNormal];
+            [button setTitleColor:UIColor.lightTextColor forState:UIControlStateHighlighted];
+        }
         [button setTitleEdgeInsets:UIEdgeInsetsMake(3.f, 0.f, 0.f, 0.f)];
         [button.titleLabel setTextAlignment:NSTextAlignmentCenter];
         [button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];

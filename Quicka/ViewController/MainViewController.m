@@ -306,7 +306,7 @@
         cell.textLabel.text = LSTR(@"New Action");
         cell.imageView.image = [UIImage imageNamed:@"icon_plus"];
     }
-    
+
     return cell;
 }
 

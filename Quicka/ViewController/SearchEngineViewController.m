@@ -25,7 +25,6 @@
 
     self.title = LSTR(@"Search Engine");
     self.searchEngineNames = [QuickaUtil getSearchEngineNames];
-    self.tableView.tintColor = QK_BAR_TINT_COLOR; // チェックマーク色
 }
 
 - (void)didReceiveMemoryWarning

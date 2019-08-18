@@ -171,6 +171,9 @@
                 self.titleField = (UITextField *)[cell viewWithTag:1];
                 self.titleField.delegate = self;
                 self.titleField.returnKeyType = UIReturnKeyNext;
+                if (@available(iOS 13.0, *)) {
+                    self.titleField.textColor = UIColor.labelColor;
+                }
                 if (self.action) {
                     self.titleField.text = self.action.title;
                 }
@@ -184,6 +187,9 @@
                 self.urlField = (UITextField *)[cell viewWithTag:2];
                 self.urlField.delegate = self;
                 self.urlField.returnKeyType = UIReturnKeyDone;
+                if (@available(iOS 13.0, *)) {
+                    self.urlField.textColor = UIColor.labelColor;
+                }
                 if (self.action) {
                     self.urlField.text = self.action.url;
                 }
