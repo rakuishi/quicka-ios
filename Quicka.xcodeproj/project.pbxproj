@@ -811,7 +811,7 @@
 			};
 			buildConfigurationList = 160BEDAB17E471C000EC97FC /* Build configuration list for PBXProject "Quicka" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
