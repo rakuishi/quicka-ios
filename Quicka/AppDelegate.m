@@ -14,14 +14,19 @@
 {
     id UINavigationBarAppearanceProxy = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[[UINavigationController class]]];
     NSDictionary *attributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
-    
     [UINavigationBarAppearanceProxy setTintColor:QK_TINT_COLOR];
     [UINavigationBarAppearanceProxy setBarTintColor:QK_BAR_TINT_COLOR];
     [UINavigationBarAppearanceProxy setTitleTextAttributes:attributes];
     [UINavigationBarAppearanceProxy setTranslucent:false];
     [[UIToolbar appearance] setTintColor:QK_TINT_COLOR];
     [[UIToolbar appearance] setBarTintColor:QK_BAR_TINT_COLOR];
-    
+
+    if (@available(iOS 13.0, *)) {
+        [[UITextField appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]] setBackgroundColor:[UIColor systemBackgroundColor]];
+    } else {
+        [[UITextField appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]] setBackgroundColor:[UIColor whiteColor]];
+    }
+
     [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Quicka.sql"];
     [QuickaUtil setup];
     
