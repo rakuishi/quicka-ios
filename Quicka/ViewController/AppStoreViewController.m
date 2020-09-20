@@ -30,7 +30,7 @@
     __weak UITableView *tableView = self.tableView;
     dispatch_queue_t q_main = dispatch_get_main_queue();
     
-    self.query = [self.query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    self.query = [self.query stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
     NSURL *url = [NSURL URLWithString:(JP) ? QK_APPSTORE_JP_URL(self.query) : QK_APPSTORE_EN_URL(self.query)];
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     configuration.requestCachePolicy = NSURLRequestReloadIgnoringCacheData;

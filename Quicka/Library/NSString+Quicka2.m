@@ -12,44 +12,27 @@
 
 - (NSString *)UTF8EncodedString
 {
-    return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, (CFStringRef)self, NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8));
+    NSString *genDelims = @":/?#[]@";
+    NSString *subDelims = @"!$&'()*+,;=";
+    NSString *reservedCharacters = [NSString stringWithFormat:@"%@%@", genDelims, subDelims];
+    NSMutableCharacterSet * allowedCharacterSet = [NSCharacterSet URLQueryAllowedCharacterSet].mutableCopy;
+    [allowedCharacterSet removeCharactersInString:reservedCharacters];
+    return [self stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacterSet];
 }
 
 - (NSString *)UTF8DecodedString
 {
-    return (NSString *)CFBridgingRelease(CFURLCreateStringByReplacingPercentEscapesUsingEncoding(kCFAllocatorDefault, (CFStringRef)self, CFSTR(""), kCFStringEncodingUTF8));
+    return (NSString *)CFBridgingRelease(CFURLCreateStringByReplacingPercentEscapes(kCFAllocatorDefault, (CFStringRef)self, CFSTR("")));
 }
 
 - (NSString *)transitYahooURLString
 {
     NSArray *list = [self componentsSeparatedByString:@" "];
-    if (list.count != 2) {
-        return nil;
-    }
+    if (list.count != 2) list = [self componentsSeparatedByString:@"　"];
+    if (list.count != 2) return nil;
     
-    NSDate *date = [NSDate date];
-    
-    NSDateFormatter *formatter = [NSDateFormatter new];
-    [formatter setLocale:[NSLocale systemLocale]];
-    [formatter setTimeZone:[NSTimeZone systemTimeZone]];
-    
-    [formatter setDateFormat:@"yyyyMM"];
-    NSString *ym = [formatter stringFromDate:date];
-    
-    [formatter setDateFormat:@"dd"];
-    NSString *d = [formatter stringFromDate:date];
-    
-    [formatter setDateFormat:@"H"];
-    NSString *hh = [formatter stringFromDate:date];
-    
-    [formatter setDateFormat:@"mm"];
-    NSString *mm = [formatter stringFromDate:date];
-    NSString *m1 = [mm substringWithRange:NSMakeRange(0,1)];
-    NSString *m2 = [mm substringWithRange:NSMakeRange(1,1)];
-    
-    NSString *url = [NSString stringWithFormat:@"http://transit.loco.yahoo.co.jp/search/result"
-                     "?from=%@&to=%@&ym=%@&d=%@&hh=%@&m1=%@&m2=%@&ei=utf-8", list[0], list[1], ym, d, hh, m1, m2];
-    return [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *url = [NSString stringWithFormat:@"https://transit.yahoo.co.jp/search/result?from=%@&to=%@", list[0], list[1]];
+    return [url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
 }
 
 - (NSString *)convertedString

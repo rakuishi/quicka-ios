@@ -469,14 +469,20 @@
         url = [url stringByReplacingOccurrencesOfString:@"[U]" withString:encodedQuery];
     } else if ([url rangeOfString:@"[S]"].location != NSNotFound) {
         isOnlyLaunchApp = NO;
+        // TODO: 将来的に [S]: NSShiftJISStringEncoding を廃止する
+        #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
         NSString *encodedQuery = [query stringByAddingPercentEscapesUsingEncoding:NSShiftJISStringEncoding];
+        #pragma GCC diagnostic warning "-Wdeprecated-declarations"
         url = [url stringByReplacingOccurrencesOfString:@"[S]" withString:encodedQuery];
     } else if ([url rangeOfString:@"[E]"].location != NSNotFound) {
         isOnlyLaunchApp = NO;
+        // TODO: 将来的に [E]: NSJapaneseEUCStringEncoding を廃止する
+        #pragma GCC diagnostic ignored "-Wdeprecated-declarations"
         NSString *encodedQuery = [query stringByAddingPercentEscapesUsingEncoding:NSJapaneseEUCStringEncoding];
+        #pragma GCC diagnostic warning "-Wdeprecated-declarations"
         url = [url stringByReplacingOccurrencesOfString:@"[E]" withString:encodedQuery];
     }
-    
+
     if (isOnlyLaunchApp) {
         // アプリを起動するだけの場合、履歴には格納しないように
     } else {
