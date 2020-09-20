@@ -235,7 +235,7 @@
 
 + (NSArray *)getBrowserNames
 {
-    return @[@"SFSafariViewController", @"Safari", @"Quicka Browser"];
+    return @[@"SFSafariViewController", @"Default Browser App", @"Quicka Browser"];
 }
 
 + (NSString *)getBrowserName
