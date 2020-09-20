@@ -20,9 +20,8 @@ CGFloat const kSuggestViewFrameSizeHeight = 36.f;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIView *buttonBaseView;
 @property (nonatomic, strong) NSMutableArray *queries;
-@property (nonatomic, strong) NSMutableArray *tempQueries;
-@property (nonatomic, strong) NSMutableData *data;
-@property (nonatomic, strong) NSURLConnection *connection;
+@property (nonatomic, strong) NSURLSession *session;
+@property (nonatomic, strong) NSURLSessionDataTask *sessionDataTask;
 @property (nonatomic, assign) CGRect keyboardRect;
 
 @end
@@ -48,11 +47,7 @@ CGFloat const kSuggestViewFrameSizeHeight = 36.f;
     self = [super initWithFrame:CGRectMake(0.f, 0.f, width, kSuggestViewFrameSizeHeight)];
     if (self) {
         if (@available(iOS 13.0, *)) {
-            if (UITraitCollection.currentTraitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-                self.backgroundColor = UIColor.systemBackgroundColor;
-            } else {
-                self.backgroundColor = UIColor.systemGray4Color;
-            }
+            self.backgroundColor = UIColor.systemGray5Color;
         } else {
             self.backgroundColor = UIColor.whiteColor;
         }
@@ -63,8 +58,6 @@ CGFloat const kSuggestViewFrameSizeHeight = 36.f;
         self.scrollView.scrollsToTop = NO; // SubViewController における UIWebView のステータスバータップによる移動を許可するために
         [self addSubview:self.scrollView];
         
-        // self.queries = [NSMutableArray arrayWithArray:@[@"新宿", @"原宿", @"渋谷", @"千駄ヶ谷", @"立川", @"池袋"]];
-        // [self updateButtons];
         self.alpha = 0.f;
         
         // ステータスバーの変動に対応する
@@ -72,7 +65,11 @@ CGFloat const kSuggestViewFrameSizeHeight = 36.f;
                                                  selector:@selector(statusBarFrameWillChange:)
                                                      name:UIApplicationWillChangeStatusBarFrameNotification
                                                    object:nil];
+        
+        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+        self.session = [NSURLSession sessionWithConfiguration:config];
     }
+
     return self;
 }
 
@@ -178,60 +175,44 @@ CGFloat const kSuggestViewFrameSizeHeight = 36.f;
 
 - (void)setQuery:(NSString *)query
 {
-    [self.connection cancel]; // 通信を都度キャンセルする
-    self.data = [[NSMutableData alloc] initWithLength:0];
+    if (self.sessionDataTask != nil) {
+        [self.sessionDataTask cancel];
+    }
+
     if ([query length])  {
-        NSString *URLString = [NSString stringWithFormat:@"https://www.google.com/complete/search?hl=ja&q=%@&output=toolbar", [query stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        NSString *URLString = [NSString stringWithFormat:@"https://www.google.com/complete/search?hl=ja&q=%@&output=toolbar", [query stringByAddingPercentEncodingWithAllowedCharacters: NSCharacterSet.alphanumericCharacterSet]];
         
         NSURL *URL = [NSURL URLWithString:URLString];
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10.f];
-        // iPhone に指定されたユーザーエージェントでは, hl=ja の場合にデータを取得できない問題を偽装で解決する
-        [request setValue:@"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36" forHTTPHeaderField:@"User-Agent"];
+        self.sessionDataTask = [self.session dataTaskWithURL:URL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            if (data != nil) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self parse:[[NSString alloc] initWithData:data encoding:NSShiftJISStringEncoding]];
+                });
+            }
+        }];
+        [self.sessionDataTask resume];
         
-        self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     } else {
         self.alpha = 0.f;
     }
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
-{
-    [self.data setLength:0];
-}
+- (void)parse:(NSString *)text {
+    NSMutableArray *queries = [NSMutableArray new];
 
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
-{
-    [self.connection cancel];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{
-    [self.data appendData:data];
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    self.tempQueries = [NSMutableArray new];
-    
-    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:self.data];
-    parser.delegate = self;
-    [parser parse];
-}
-
-- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
-{
-    if ([elementName isEqualToString:@"suggestion"]) {
-        [self.tempQueries addObject:[attributeDict objectForKey:@"data"]];
+    NSString *pattern = @"<suggestion data=\\\"(.*?)\\\"/>";
+    NSError *error = nil;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:&error];
+    if (error == nil) {
+        NSArray *matches = [regex matchesInString:text options:0 range:NSMakeRange(0, text.length)];
+        for (NSTextCheckingResult *match in matches) {
+            [queries addObject:[text substringWithRange:[match rangeAtIndex:1]]];
+        }
     }
-}
-
-- (void)parserDidEndDocument:(NSXMLParser *)parser
-{
-    if (self.tempQueries.count) {
-        self.queries = self.tempQueries;
+    
+    if ([queries count] > 0) {
+        self.queries = queries;
         [self updateButtons];
-    } else {
-        // 正しくデータが取得できていない時は、そのままデータを表示しておく
     }
 }
 

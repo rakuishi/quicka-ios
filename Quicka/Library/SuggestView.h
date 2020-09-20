@@ -14,7 +14,7 @@
 
 @end
 
-@interface SuggestView : UIView <NSXMLParserDelegate>
+@interface SuggestView : UIView
 
 @property (nonatomic, weak) id <SuggestViewDelegate> delegate;
 
