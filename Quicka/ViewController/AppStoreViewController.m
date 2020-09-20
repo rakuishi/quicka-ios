@@ -115,7 +115,6 @@
         __weak UIImageView *imageView = cell.imageView;
         [imageView sd_setImageWithURL:[NSURL URLWithString:[dict objectForKey:@"artworkUrl60"]]
                      placeholderImage:[UIImage imageNamed:@"icon_placeholder"]
-                              options:SDWebImageCacheMemoryOnly
                             completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                                 imageView.image = [QuickaUtil maskImage:image];
                             }];
