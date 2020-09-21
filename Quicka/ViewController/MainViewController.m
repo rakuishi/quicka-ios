@@ -256,7 +256,9 @@
     [self.tableView setEditing:editing animated:YES];
     [[NSNotificationCenter defaultCenter] postNotificationName:QKApplicationEnablePanGesture object:nil userInfo:@{@"enable": [NSNumber numberWithBool:!editing]}];
     
-    self.searchBarTextField.enabled = !editing;
+    if (@available(iOS 13.0, *)) {
+        self.searchBar.searchTextField.enabled = !editing;
+    }
 
     if (editing) {
         [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:1]] withRowAnimation:UITableViewRowAnimationLeft];

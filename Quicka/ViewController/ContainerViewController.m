@@ -204,7 +204,9 @@
                          self.view.userInteractionEnabled = YES;
                          
                          self.mainViewController.isActive = YES;
-                         self.mainViewController.searchBarTextField.enabled = YES;
+                         if (@available(iOS 13.0, *)) {
+                             self.mainViewController.searchBar.searchTextField.enabled = YES;
+                         }
                          [self.mainViewController showSoftwareKeyboardIfPossible];
                      }];
 }
@@ -234,7 +236,9 @@
 
                          // スクロール途中で searchbar に becomeFirstResponder して挙動がおかしくなるのを防ぐ
                          self.mainViewController.isActive = NO;
-                         self.mainViewController.searchBarTextField.enabled = NO;
+                         if (@available(iOS 13.0, *)) {
+                             self.mainViewController.searchBar.searchTextField.enabled = NO;
+                         }
                      }];
 }
 

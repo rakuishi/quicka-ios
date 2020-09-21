@@ -30,7 +30,6 @@
 
 @property (nonatomic, weak) id <MainViewControllerDelegate> delegate;
 @property (nonatomic, strong) UISearchBar *searchBar;
-@property (nonatomic, strong) UITextField *searchBarTextField;
 @property (nonatomic, assign) BOOL isActive;
 
 - (void)showSoftwareKeyboardIfPossible;
