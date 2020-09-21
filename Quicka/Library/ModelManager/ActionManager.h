@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RLMAction.h"
 #import "CoreData+MagicalRecord.h"
 #import "Action+CoreDataClass.h"
 #import <CommonCrypto/CommonDigest.h>   // MD5
@@ -17,9 +18,10 @@
 
 + (void)setupInitAction;
 + (void)addTitle:(NSString *)title url:(NSString *)url image:(UIImage *)image;
-+ (void)updateAction:(Action *)action title:(NSString *)title url:(NSString *)url image:(UIImage *)image;
++ (void)updateAction:(RLMAction *)action title:(NSString *)title url:(NSString *)url image:(UIImage *)image;
 + (void)updateActions:(NSMutableArray *)actions;
-+ (void)deleteAction:(Action *)action;
++ (void)deleteAction:(RLMAction *)action;
 + (NSMutableArray *)getAllData;
++ (void)migrateFromCoreDataToRealm;
 
 @end

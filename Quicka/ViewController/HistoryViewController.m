@@ -10,7 +10,7 @@
 
 @interface HistoryViewController ()
 
-@property (nonatomic) NSMutableArray *historys;
+@property (nonatomic) NSMutableArray *histories;
 
 @end
 
@@ -29,7 +29,7 @@
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                            target:self action:@selector(doneButtonItemTapped)];
     
-    self.historys = [[HistoryManager getAllData] mutableCopy];
+    self.histories = [[HistoryManager getAllData] mutableCopy];
     [self.tableView reloadData];
 }
 
@@ -54,7 +54,7 @@
 
     [actionSheet addAction:[UIAlertAction actionWithTitle:LSTR(@"Clear All Recents") style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
         [HistoryManager deleteAllData];
-        self.historys = [NSMutableArray new];
+        self.histories = [NSMutableArray new];
         [self.tableView reloadData];
     }]];
     
@@ -70,7 +70,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.historys.count;
+    return self.histories.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -89,9 +89,9 @@
         
         [tableView beginUpdates];
         
-        Hisotry *history = self.historys[indexPath.row];
+        RLMHistory *history = self.histories[indexPath.row];
         [HistoryManager deleteHistory:history];    // データベースから削除
-        [self.historys removeObjectAtIndex:indexPath.row]; // 配列に持たせているデータを削除
+        [self.histories removeObjectAtIndex:indexPath.row]; // 配列に持たせているデータを削除
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
         
         [tableView endUpdates];
@@ -104,7 +104,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    Hisotry *history = self.historys[indexPath.row];
+    RLMHistory *history = self.histories[indexPath.row];
     cell.textLabel.text = history.query;
     
     return cell;
@@ -112,7 +112,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Hisotry *history = self.historys[indexPath.row];
+    Hisotry *history = self.histories[indexPath.row];
     [self dismissViewControllerAnimated:YES completion:^{
         if ([self.delegate respondsToSelector:@selector(didSelectQuery:)]) {
             [self.delegate didSelectQuery:history.query];

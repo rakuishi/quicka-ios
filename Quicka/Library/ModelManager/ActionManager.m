@@ -43,26 +43,32 @@
     }
 
     // ソート番号を確定（一番後ろにする）
-    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
-    
-    NSArray *actions = [Action MR_findAllSortedBy:@"sort" ascending:YES];
+    RLMResults<RLMAction *> *actions = [[RLMAction allObjects] sortedResultsUsingKeyPath:@"sort" ascending:YES];
     NSInteger max = 0;
-    for (Action *action in actions) {
+    for (RLMAction *action in actions) {
         if ([action.sort integerValue] > max) {
             max = [action.sort integerValue];
         }
     }
-
-    Action *action = [Action MR_createEntity];
-    action.title = title;
-    action.url = url;
-    action.imageName = imageName;
-    action.sort = [NSNumber numberWithInteger:max + 1];
     
-    [context MR_saveOnlySelfAndWait];
+    [self addTitle:title url:url image:imageName sort:[NSNumber numberWithInteger:max + 1]];
 }
 
-+ (void)updateAction:(Action *)action title:(NSString *)title url:(NSString *)url image:(UIImage *)image
++ (void)addTitle:(NSString *)title url:(NSString *)url image:(NSString *)image sort:(NSNumber *)sort
+{
+    RLMAction *action = [[RLMAction alloc] init];
+    action.title = title;
+    action.url = url;
+    action.imageName = image;
+    action.sort = sort;
+    
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    [realm addObject:action];
+    [realm commitWriteTransaction];
+}
+
++ (void)updateAction:(RLMAction *)action title:(NSString *)title url:(NSString *)url image:(UIImage *)image
 {
     NSError *error = nil;
     if (![[NSFileManager defaultManager] removeItemAtPath:IMAGE_PATH(action.imageName) error:&error]) {
@@ -75,37 +81,41 @@
         [[[NSData alloc] initWithData:UIImagePNGRepresentation(image)] writeToFile:IMAGE_PATH(imageName) atomically:YES];
     }
 
-    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+
     action.title = title;
     action.url = url;
     action.imageName = imageName;
-    
-    [context MR_saveOnlySelfAndWait];
+
+    [realm commitWriteTransaction];
 }
 
 + (void)updateActions:(NSMutableArray *)actions
 {
-    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
     NSInteger sort = 1;
-    for (Action *action in actions) {
+    for (RLMAction *action in actions) {
+        [realm beginWriteTransaction];
         action.sort = [NSNumber numberWithInteger:sort];
-        [context MR_saveOnlySelfAndWait]; // 保存
+        [realm commitWriteTransaction];
         sort++;
     }
 }
 
-+ (void)deleteAction:(Action *)action
++ (void)deleteAction:(RLMAction *)action
 {
     NSString *imageName = action.imageName;
-    [action MR_deleteEntity];
     
-    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
-    [context MR_saveOnlySelfAndWait];
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    [realm deleteObject:action];
+    [realm commitWriteTransaction];
 
     // 他のアクションで同一の画像を使用しているかどうかを調査
     NSInteger count = 0;
-    NSArray *actions = [Action MR_findAll];
-    for (Action *temp in actions) {
+    for (RLMAction *temp in [RLMAction allObjects]) {
         if ([imageName isEqualToString:temp.imageName]) {
             count++;
         }
@@ -122,7 +132,21 @@
 
 + (NSMutableArray *)getAllData
 {
-    return [[Action MR_findAllSortedBy:@"sort" ascending:YES] mutableCopy];
+    NSMutableArray *actions = [NSMutableArray array];
+    for (RLMAction *action in [[RLMAction allObjects] sortedResultsUsingKeyPath:@"sort" ascending:YES]) {
+          [actions addObject:action];
+    }
+    return actions;
+}
+
++ (void)migrateFromCoreDataToRealm
+{
+    for (Action *action in [[Action MR_findAllSortedBy:@"sort" ascending:YES] mutableCopy]) {
+        [self addTitle:action.title url:action.url image:action.imageName sort:action.sort];
+        NSLog(@"migrateFromCoreDataToRealm: RLMAction: %@", action.title);
+    }
+    
+    [Action MR_truncateAll];
 }
 
 + (BOOL)createImagesDirectory

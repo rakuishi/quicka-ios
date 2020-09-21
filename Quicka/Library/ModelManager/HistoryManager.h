@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "RLMHistory.h"
 #import "CoreData+MagicalRecord.h"
 #import "Hisotry+CoreDataClass.h"
 
@@ -15,7 +15,8 @@
 
 + (void)addQuery:(NSString *)query;
 + (NSArray *)getAllData;
-+ (void)deleteHistory:(Hisotry *)history;
++ (void)deleteHistory:(RLMHistory *)history;
 + (void)deleteAllData;
++ (void)migrateFromCoreDataToRealm;
 
 @end

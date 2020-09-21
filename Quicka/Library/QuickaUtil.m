@@ -8,6 +8,7 @@
 
 #import "QuickaUtil.h"
 #import "ActionManager.h"
+#import "HistoryManager.h"
 
 @implementation QuickaUtil
 
@@ -112,18 +113,15 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *version = [defaults stringForKey:kQuickaVersion];
     
-    if ([version isEqualToString:@"1.2.2"]) {
-        // v1.0 → v1.1
-
-        // 初期値を入力
-        [QuickaUtil setOn:NO forKey:kQuickaUseSuggestView];
-        [QuickaUtil setOn:YES forKey:kQuickaClearTextAfterSearch];
-
-        version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-        [defaults setObject:version forKey:kQuickaVersion];
-        [defaults synchronize];
-    } else if (version.length) {
+    if (version.length) {
         // 2回目以降の起動
+        if (![defaults boolForKey:kQuickaIsMigrated]) {
+            [ActionManager migrateFromCoreDataToRealm];
+            [HistoryManager migrateFromCoreDataToRealm];
+            [defaults setBool:YES forKey:kQuickaIsMigrated];
+            [defaults synchronize];
+        }
+
     } else {
         // 初回起動
         [ActionManager setupInitAction];

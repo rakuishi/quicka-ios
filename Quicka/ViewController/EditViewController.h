@@ -29,6 +29,6 @@ typedef NS_ENUM(NSInteger, EditViewControllerStyle) {
 
 @property (nonatomic, assign) id <EditViewControllerDelegate> delegate;
 @property (nonatomic, assign) EditViewControllerStyle style;
-@property (nonatomic, strong) Action *action;
+@property (nonatomic, strong) RLMAction *action;
 
 @end

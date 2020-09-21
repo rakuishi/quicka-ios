@@ -16,59 +16,68 @@
         // 何も入力されていない場合は、保存しません
         return;
     }
-
-    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
-    NSArray *hisotrys = [Hisotry MR_findAll];
-    for (Hisotry *history in hisotrys) {
+    
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    
+    // 検索ワードが同一の場合は日付を更新
+    RLMResults<RLMHistory *> *histories = [[RLMHistory allObjects] sortedResultsUsingKeyPath:@"updated" ascending:NO];
+    for (RLMHistory *history in histories) {
         if ([history.query isEqualToString:query]) {
-            // 検索ワードが同一の場合は日付を更新
+            [realm beginWriteTransaction];
             history.updated = [NSDate date];
-            [context MR_saveOnlySelfAndWait];
+            [realm commitWriteTransaction];
             return;
         }
     }
-    
-    Hisotry *history = [Hisotry MR_createEntity];
-    history.query = query;
-    history.updated = [NSDate date];
 
-    [context MR_saveOnlySelfAndWait];
+    [self addQuery:query updated:[NSDate date]];
+}
+
++ (void)addQuery:(NSString *)query updated:(NSDate *)updated
+{
+    RLMHistory *history = [[RLMHistory alloc] init];
+    history.query = query;
+    history.updated = updated;
+
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    [realm addObject:history];
+    [realm commitWriteTransaction];
 }
 
 + (NSArray *)getAllData
 {
-    return [Hisotry MR_findAllSortedBy:@"updated" ascending:NO];
+    NSMutableArray *histories = [NSMutableArray array];
+    for (RLMHistory *history in [[RLMHistory allObjects] sortedResultsUsingKeyPath:@"updated" ascending:NO]) {
+        [histories addObject:history];
+    }
+    return histories;
 }
 
-+ (void)deleteHistory:(Hisotry *)history
++ (void)deleteHistory:(RLMHistory *)history
 {
-    [history MR_deleteEntity];
-    
-    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
-    [context MR_saveOnlySelfAndWait];
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    [realm deleteObject:history];
+    [realm commitWriteTransaction];
 }
 
 + (void)deleteAllData
 {
-    NSArray *hisotrys = [Hisotry MR_findAll];
-    for (Hisotry *history in hisotrys) {
-        [history MR_deleteEntity];
-    }
-    
-    NSManagedObjectContext *context = [NSManagedObjectContext MR_defaultContext];
-    [context MR_saveOnlySelfAndWait];
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm beginWriteTransaction];
+    [realm deleteObjects:[RLMHistory allObjects]];
+    [realm commitWriteTransaction];
 }
 
-+ (void)logAllData
++ (void)migrateFromCoreDataToRealm
 {
-    NSArray *hisotrys = [Hisotry MR_findAllSortedBy:@"updated" ascending:NO];
-    int i = 0;
-    if (hisotrys.count) {
-        for (Hisotry *history in hisotrys) {
-            DLog(@"%d, %@, %@", i, history.query, history.updated);
-            i++;
-        }
+    for (Hisotry *history in [Hisotry MR_findAllSortedBy:@"updated" ascending:NO]) {
+        [self addQuery:history.query updated:history.updated];
+        NSLog(@"RLMHistory: %@", history.query);
     }
+
+    [Hisotry MR_truncateAll];
 }
 
 @end

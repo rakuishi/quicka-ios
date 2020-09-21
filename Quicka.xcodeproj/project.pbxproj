@@ -80,6 +80,8 @@
 		16AB5FB417FE1FB900B7D45A /* SearchEngineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AB5FB317FE1FB900B7D45A /* SearchEngineViewController.m */; };
 		16AB5FB917FF8D6600B7D45A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16AB5FBB17FF8D6600B7D45A /* Localizable.strings */; };
 		16D0B3B518914AD500880C2B /* NSString+Quicka2.m in Sources */ = {isa = PBXBuildFile; fileRef = 16D0B3B418914AD500880C2B /* NSString+Quicka2.m */; };
+		16E091422518C40E0089512E /* RLMAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E091412518C40E0089512E /* RLMAction.m */; };
+		16E091472518E7EB0089512E /* RLMHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 16E091462518E7EB0089512E /* RLMHistory.m */; };
 		16EE5E5A1EC7C88500F2188C /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16EE5E591EC7C88500F2188C /* BrowserViewController.m */; };
 		16EEDF571E751AAB001DE9E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 16EEDF591E751AAB001DE9E5 /* InfoPlist.strings */; };
 		16F947DE17F82C10003923C5 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 16F947DD17F82C10003923C5 /* CustomTableViewCell.m */; };
@@ -228,6 +230,10 @@
 		16AB5FBF17FF8DCC00B7D45A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		16D0B3B318914AD500880C2B /* NSString+Quicka2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Quicka2.h"; sourceTree = "<group>"; };
 		16D0B3B418914AD500880C2B /* NSString+Quicka2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Quicka2.m"; sourceTree = "<group>"; };
+		16E0913E2518C2F00089512E /* RLMAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLMAction.h; sourceTree = "<group>"; };
+		16E091412518C40E0089512E /* RLMAction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLMAction.m; sourceTree = "<group>"; };
+		16E091452518E5BD0089512E /* RLMHistory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RLMHistory.h; sourceTree = "<group>"; };
+		16E091462518E7EB0089512E /* RLMHistory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RLMHistory.m; sourceTree = "<group>"; };
 		16EE5E581EC7C88500F2188C /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BrowserViewController.h; path = ViewController/BrowserViewController.h; sourceTree = "<group>"; };
 		16EE5E591EC7C88500F2188C /* BrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BrowserViewController.m; path = ViewController/BrowserViewController.m; sourceTree = "<group>"; };
 		16EEDF581E751AAB001DE9E5 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -360,6 +366,7 @@
 		160BEDF917E491E700EC97FC /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				16E0913D2518C2470089512E /* Model */,
 				1672813817E5454B0072173D /* MagicalRecord */,
 				169DEB7717E69048000F8C7D /* ModelManager */,
 				169DEB5E17E68CD4000F8C7D /* XcdataModel */,
@@ -574,6 +581,17 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		16E0913D2518C2470089512E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				16E0913E2518C2F00089512E /* RLMAction.h */,
+				16E091412518C40E0089512E /* RLMAction.m */,
+				16E091452518E5BD0089512E /* RLMHistory.h */,
+				16E091462518E7EB0089512E /* RLMHistory.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1C754687B93996806D987822 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -723,10 +741,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				16880AFF216A51B300C3C52A /* Hisotry+CoreDataProperties.m in Sources */,
+				16E091422518C40E0089512E /* RLMAction.m in Sources */,
 				16F947ED17FC66C9003923C5 /* SettingsViewController.m in Sources */,
 				1672817817E5454B0072173D /* NSObject+MagicalDataImport.m in Sources */,
 				1672818617E5454B0072173D /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				1672817717E5454B0072173D /* NSNumber+MagicalDataImport.m in Sources */,
+				16E091472518E7EB0089512E /* RLMHistory.m in Sources */,
 				16F947EA17F85CDD003923C5 /* SuggestView.m in Sources */,
 				16A840F1180013AE00B946D3 /* AppStoreViewController.m in Sources */,
 				1672818117E5454B0072173D /* NSManagedObjectContext+MagicalRecord.m in Sources */,
