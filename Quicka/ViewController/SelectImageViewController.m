@@ -31,12 +31,15 @@
     configuration.requestCachePolicy = NSURLRequestReloadIgnoringCacheData;
     configuration.timeoutIntervalForRequest = 10.f;
     
+    dispatch_queue_t q_main = dispatch_get_main_queue();
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
     NSURLSessionTask *task = [session dataTaskWithURL:url
                                     completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
                                         if (!error) {
-                                            self.objects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
-                                            [self.tableView reloadData];
+                                            dispatch_async(q_main, ^{
+                                                self.objects = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+                                                [self.tableView reloadData];
+                                            });
                                         }
                                     }];
     [task resume];
