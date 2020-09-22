@@ -37,13 +37,13 @@
     self.mainViewController.isActive = YES;
     self.mainViewController.delegate = self;
     self.mainNavigationController = [[UINavigationController alloc] initWithRootViewController:self.mainViewController];
-    self.mainNavigationController.toolbar.translucent = NO;
+//    self.mainNavigationController.toolbar.translucent = NO;
     [self.mainNavigationController setToolbarHidden:NO];
     
     self.subViewController = [SubViewController new];
     self.subViewController.delegate = self;
     self.subNavigationController = [[UINavigationController alloc] initWithRootViewController:self.subViewController];
-    self.subNavigationController.toolbar.translucent = NO;
+//    self.subNavigationController.toolbar.translucent = NO;
     [self.subNavigationController setToolbarHidden:NO];
     
     // MainViewController
@@ -62,7 +62,7 @@
     
     self.isActiveMainView = YES;
     self.shouldMoveViewPosition = NO;
-    self.subNavigationController.view.layer.shadowColor = [[UIColor blackColor] CGColor];
+//    self.subNavigationController.view.layer.shadowColor = [[UIColor blackColor] CGColor];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePanGestureEnable:) name:QKApplicationEnablePanGesture object:nil];
 }

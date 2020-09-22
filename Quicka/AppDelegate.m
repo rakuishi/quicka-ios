@@ -22,7 +22,7 @@
     [[UIToolbar appearance] setBarTintColor:QK_BAR_TINT_COLOR];
 
     if (@available(iOS 13.0, *)) {
-        [[UITextField appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]] setBackgroundColor:[UIColor systemBackgroundColor]];
+        [[UITextField appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]] setBackgroundColor:[UIColor secondarySystemGroupedBackgroundColor]];
     } else {
         [[UITextField appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]] setBackgroundColor:[UIColor whiteColor]];
     }

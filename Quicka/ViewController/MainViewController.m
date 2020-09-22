@@ -28,6 +28,13 @@
     self.tableView.separatorInset = UIEdgeInsetsMake(0.f, 15.f, 0.f, 0.f);
     self.tableView.allowsSelectionDuringEditing = YES;
     [self.tableView registerNib:[UINib nibWithNibName:@"DefaultIconCell" bundle:nil] forCellReuseIdentifier:@"DefaultIconCell"];
+
+    // 履歴画面 UITableViewStylePlain 背景色と揃えるために、背景色を調整する
+    // 挙動は理解できていないが、この MainVC を履歴画面同様に呼び出すと同色になるため
+    // VC の階層に応じてデフォルト色を変えているのだと推測される
+    if (@available(iOS 13.0, *)) {
+        self.tableView.backgroundColor = [UIColor secondarySystemGroupedBackgroundColor];
+    }
     
     self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectZero];
     self.searchBar.delegate = self;
@@ -292,6 +299,9 @@
 {
     DefaultIconCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DefaultIconCell" forIndexPath:indexPath];
     cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    if (@available(iOS 13.0, *)) {
+        cell.backgroundColor = [UIColor secondarySystemGroupedBackgroundColor];
+    }
 
     if (indexPath.section == 0) {
         
