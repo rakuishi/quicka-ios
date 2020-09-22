@@ -173,16 +173,12 @@
 
 - (void)share
 {
-    NSString *title = self.webView.title;
     NSURL *URL = self.webView.URL;
     [self.webView evaluateJavaScript:@"navigator.userAgent" completionHandler:^(id _Nullable userAgent, NSError * _Nullable error) {
         self.userAgent = userAgent;
     }];
 
-    NSArray *applicationActivities = [CustomActivity getApplicationActivities];
-    UIActivityViewController *activityView = [[UIActivityViewController alloc] initWithActivityItems:@[title, URL] applicationActivities:applicationActivities];
-    activityView.excludedActivityTypes = @[UIActivityTypeAirDrop, UIActivityTypeCopyToPasteboard, UIActivityTypeAddToReadingList];
-    
+    UIActivityViewController *activityView = [[UIActivityViewController alloc] initWithActivityItems:@[URL] applicationActivities:nil];
     [self presentViewController:activityView animated:YES completion:nil];
 }
 

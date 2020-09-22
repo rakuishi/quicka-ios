@@ -10,7 +10,6 @@
 #import <WebKit/WebKit.h>
 
 #import "QuickaUtil.h"
-#import "CustomActivity.h"
 #import "NSString+Quicka2.h"
 
 @protocol SubViewControllerDelegate <NSObject>

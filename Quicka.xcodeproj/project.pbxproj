@@ -71,7 +71,6 @@
 		16880AFE216A51B300C3C52A /* Hisotry+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 16880AFC216A51B300C3C52A /* Hisotry+CoreDataClass.m */; };
 		16880AFF216A51B300C3C52A /* Hisotry+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 16880AFD216A51B300C3C52A /* Hisotry+CoreDataProperties.m */; };
 		168FFD851E8FD35D003DB6D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 168FFD831E8FD35D003DB6D9 /* LaunchScreen.storyboard */; };
-		169DEB5A17E5BD24000F8C7D /* CustomActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 169DEB5917E5BD24000F8C7D /* CustomActivity.m */; };
 		169DEB7A17E6905F000F8C7D /* HistoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 169DEB7917E6905F000F8C7D /* HistoryManager.m */; };
 		169DEB8017E699A6000F8C7D /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 169DEB7F17E699A6000F8C7D /* HistoryViewController.m */; };
 		169DEB8817E6C0E0000F8C7D /* EditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 169DEB8717E6C0E0000F8C7D /* EditViewController.m */; };
@@ -211,8 +210,6 @@
 		16880AFC216A51B300C3C52A /* Hisotry+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Hisotry+CoreDataClass.m"; sourceTree = "<group>"; };
 		16880AFD216A51B300C3C52A /* Hisotry+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Hisotry+CoreDataProperties.m"; sourceTree = "<group>"; };
 		168FFD841E8FD35D003DB6D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		169DEB5817E5BD24000F8C7D /* CustomActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomActivity.h; sourceTree = "<group>"; };
-		169DEB5917E5BD24000F8C7D /* CustomActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomActivity.m; sourceTree = "<group>"; };
 		169DEB7817E6905F000F8C7D /* HistoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryManager.h; sourceTree = "<group>"; };
 		169DEB7917E6905F000F8C7D /* HistoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryManager.m; sourceTree = "<group>"; };
 		169DEB7E17E699A6000F8C7D /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryViewController.h; path = ViewController/HistoryViewController.h; sourceTree = "<group>"; };
@@ -370,7 +367,6 @@
 				1672813817E5454B0072173D /* MagicalRecord */,
 				169DEB7717E69048000F8C7D /* ModelManager */,
 				169DEB5E17E68CD4000F8C7D /* XcdataModel */,
-				169DEB4B17E5B486000F8C7D /* CustomActivity */,
 				16D0B3B318914AD500880C2B /* NSString+Quicka2.h */,
 				16D0B3B418914AD500880C2B /* NSString+Quicka2.m */,
 				16F947DC17F82C10003923C5 /* CustomTableViewCell.h */,
@@ -500,15 +496,6 @@
 				1672817217E5454B0072173D /* MagicalRecordShorthand.h */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		169DEB4B17E5B486000F8C7D /* CustomActivity */ = {
-			isa = PBXGroup;
-			children = (
-				169DEB5817E5BD24000F8C7D /* CustomActivity.h */,
-				169DEB5917E5BD24000F8C7D /* CustomActivity.m */,
-			);
-			path = CustomActivity;
 			sourceTree = "<group>";
 		};
 		169DEB5E17E68CD4000F8C7D /* XcdataModel */ = {
@@ -767,7 +754,6 @@
 				169DEB9717E719E6000F8C7D /* ActionManager.m in Sources */,
 				169DEB8817E6C0E0000F8C7D /* EditViewController.m in Sources */,
 				1672817417E5454B0072173D /* MagicalImportFunctions.m in Sources */,
-				169DEB5A17E5BD24000F8C7D /* CustomActivity.m in Sources */,
 				16880AF8216A50B000C3C52A /* Action+CoreDataClass.m in Sources */,
 				163D1C501800E3A8009894A5 /* SelectImageViewController.m in Sources */,
 				160BEDF817E47C6700EC97FC /* MainViewController.m in Sources */,
