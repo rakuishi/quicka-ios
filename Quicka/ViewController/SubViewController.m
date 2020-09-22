@@ -52,7 +52,7 @@
     UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     self.goBackButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonitem_arrow_left"] style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
     self.goForwardButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonitem_arrow_right"] style:UIBarButtonItemStylePlain target:self action:@selector(goForward)];
-    self.refreshButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh)];
+    self.refreshButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonitem_refresh"] style:UIBarButtonItemStylePlain target:self action:@selector(refresh)];
     self.shareButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonitem_share"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
     self.toolbarItems = @[self.goBackButtonItem, flexibleSpace, self.goForwardButtonItem, flexibleSpace, self.refreshButtonItem, flexibleSpace, self.shareButtonItem];
     

@@ -43,7 +43,7 @@
     self.searchBar.tintColor = [UIColor colorWithRed:69.f/255.f green:111.f/255.f blue:238.f/255.f alpha:1.f]; // カーソル色
 
     self.navigationItem.titleView = self.searchBar;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonitem_bookmark"] style:UIBarButtonItemStylePlain target:self action:@selector(bookmark)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonitem_history"] style:UIBarButtonItemStylePlain target:self action:@selector(history)];
 
     // 通知を登録
     NSNotificationCenter *notification = [NSNotificationCenter defaultCenter];
@@ -197,7 +197,7 @@
     [self performQuickaSearchWithQuery:searchBar.text url:[QuickaUtil getSearchEngineURL] isSearchBarAction:YES];
 }
 
-- (void)bookmark
+- (void)history
 {
     HistoryViewController *viewController = [[HistoryViewController alloc] initWithStyle:UITableViewStylePlain];
     viewController.delegate = self;
