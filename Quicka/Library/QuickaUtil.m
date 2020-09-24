@@ -112,10 +112,11 @@
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *version = [defaults stringForKey:kQuickaVersion];
-    
+
     if (version.length) {
         // 2回目以降の起動
         if (![defaults boolForKey:kQuickaIsMigrated]) {
+            [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Quicka.sql"];
             [ActionManager migrateFromCoreDataToRealm];
             [HistoryManager migrateFromCoreDataToRealm];
             [defaults setBool:YES forKey:kQuickaIsMigrated];
@@ -132,6 +133,7 @@
 
         version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
         [defaults setObject:version forKey:kQuickaVersion];
+        [defaults setBool:YES forKey:kQuickaIsMigrated];
         [defaults synchronize];
     }
 }

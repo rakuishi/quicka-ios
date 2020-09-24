@@ -21,7 +21,6 @@
     [[UIToolbar appearance] setTintColor:QK_TINT_COLOR];
     [[UIToolbar appearance] setBarTintColor:QK_BAR_TINT_COLOR];
 
-    [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Quicka.sql"];
     [QuickaUtil setup];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
