@@ -42,6 +42,10 @@
     self.searchBar.enablesReturnKeyAutomatically = NO;
     self.searchBar.tintColor = [UIColor colorWithRed:69.f/255.f green:111.f/255.f blue:238.f/255.f alpha:1.f]; // カーソル色
 
+    if (@available(iOS 13.0, *)) {
+        self.searchBar.searchTextField.backgroundColor = [UIColor secondarySystemGroupedBackgroundColor];
+    }
+
     self.navigationItem.titleView = self.searchBar;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonitem_history"] style:UIBarButtonItemStylePlain target:self action:@selector(history)];
 
