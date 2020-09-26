@@ -37,6 +37,7 @@
     }
     
     self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectZero];
+    self.searchBar.placeholder = LSTR(@"Search");
     self.searchBar.delegate = self;
     self.searchBar.translucent = NO;
     self.searchBar.enablesReturnKeyAutomatically = NO;

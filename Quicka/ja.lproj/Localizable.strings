@@ -1,6 +1,7 @@
 
 // Common
 "Cancel" = "キャンセル";
+"Search" = "検索";
 
 // MainViewController
 "New Action" = "新規項目を追加";
