@@ -112,7 +112,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Hisotry *history = self.histories[indexPath.row];
+    RLMHistory *history = self.histories[indexPath.row];
     [self dismissViewControllerAnimated:YES completion:^{
         if ([self.delegate respondsToSelector:@selector(didSelectQuery:)]) {
             [self.delegate didSelectQuery:history.query];

@@ -17,7 +17,6 @@
 #define kQuickaVersion              @"kQuickaVersion"
 #define kQuickaCustomEngineURL      @"kQuickaCustomEngineURL"
 #define kQuickaUseSuggestView       @"kQuickaUseSuggestView"
-#define kQuickaIsMigrated           @"kQuickaIsMigrated"
 
 typedef NS_ENUM(NSInteger, kSearchEngineType) {
     kSearchEngineTypeGoogle,

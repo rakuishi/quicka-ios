@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "RLMAction.h"
-#import "CoreData+MagicalRecord.h"
-#import "Action+CoreDataClass.h"
 #import <CommonCrypto/CommonDigest.h>   // MD5
 
 #define IMAGE_PATH(__imageName__) [[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Images"] stringByAppendingPathComponent:(__imageName__)]
@@ -22,6 +20,5 @@
 + (void)updateActions:(NSMutableArray *)actions;
 + (void)deleteAction:(RLMAction *)action;
 + (NSMutableArray *)getAllData;
-+ (void)migrateFromCoreDataToRealm;
 
 @end

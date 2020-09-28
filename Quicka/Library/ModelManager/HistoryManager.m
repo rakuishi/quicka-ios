@@ -70,23 +70,4 @@
     [realm commitWriteTransaction];
 }
 
-+ (void)migrateFromCoreDataToRealm
-{
-    NSMutableArray *objects = [NSMutableArray array];
-    
-    for (Hisotry *history in [Hisotry MR_findAllSortedBy:@"updated" ascending:NO]) {
-        RLMHistory *object = [[RLMHistory alloc] init];
-        object.query = history.query;
-        object.updated = history.updated;
-        [objects addObject: object];
-    }
-
-    RLMRealm *realm = [RLMRealm defaultRealm];
-    [realm beginWriteTransaction];
-    [realm addObjects:objects];
-    [realm commitWriteTransaction];
-
-    [Hisotry MR_truncateAll];
-}
-
 @end
