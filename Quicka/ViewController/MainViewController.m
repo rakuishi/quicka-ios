@@ -241,10 +241,10 @@
     self.isBeginDragging = YES;
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
-    CGPoint currentPoint = [scrollView contentOffset];
     if (self.isBeginDragging) {
+        CGPoint currentPoint = [scrollView contentOffset];
         self.isBeginDragging = NO;
         if (currentPoint.y < 0.f) {
             if ([self.searchBar isFirstResponder]) {
