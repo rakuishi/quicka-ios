@@ -139,16 +139,6 @@
     return actions;
 }
 
-+ (void)migrateFromCoreDataToRealm
-{
-    for (Action *action in [[Action MR_findAllSortedBy:@"sort" ascending:YES] mutableCopy]) {
-        [self addTitle:action.title url:action.url image:action.imageName sort:action.sort];
-        NSLog(@"migrateFromCoreDataToRealm: RLMAction: %@", action.title);
-    }
-    
-    [Action MR_truncateAll];
-}
-
 + (BOOL)createImagesDirectory
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);

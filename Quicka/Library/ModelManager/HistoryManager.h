@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "RLMHistory.h"
-#import "CoreData+MagicalRecord.h"
-#import "Hisotry+CoreDataClass.h"
 
 @interface HistoryManager : NSObject
 
@@ -17,6 +15,5 @@
 + (NSArray *)getAllData;
 + (void)deleteHistory:(RLMHistory *)history;
 + (void)deleteAllData;
-+ (void)migrateFromCoreDataToRealm;
 
 @end

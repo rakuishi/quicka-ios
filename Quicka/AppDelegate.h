@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CoreData+MagicalRecord.h"
 #import "QuickaUtil.h"
 #import "ActionManager.h"
 #import "ContainerViewController.h"

@@ -115,6 +115,8 @@ typedef enum kSection : NSUInteger {
             return 1;
         case kSectionAbout:
             return 4;
+        case kSectionLisence:
+            return 2;
         default:
             return 1;
     }
@@ -143,7 +145,7 @@ typedef enum kSection : NSUInteger {
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return (indexPath.section == kSectionLisence) ? 150.f : 44.f;
+    return 44.f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -231,8 +233,24 @@ typedef enum kSection : NSUInteger {
         }
         default: {
             
-            static NSString *CellIdentifier = @"LisenceCell";
+            static NSString *CellIdentifier = @"BasicCell";
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+            switch (indexPath.row) {
+                case 0:
+                    cell.textLabel.text = LSTR(@"SDWebImage");
+                    cell.accessoryView = nil;
+                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                    cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+                    break;
+                case 1:
+                    cell.textLabel.text = LSTR(@"Realm");
+                    cell.accessoryView = nil;
+                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                    cell.selectionStyle = UITableViewCellSelectionStyleDefault;
+                    break;
+                default:
+                    break;
+            }
             return cell;
         }
     }
@@ -265,6 +283,13 @@ typedef enum kSection : NSUInteger {
             [self sendFeedback];
             [tableView deselectRowAtIndexPath:indexPath animated:YES];
             break;
+        case kSectionLisence:
+            [tableView deselectRowAtIndexPath:indexPath animated:YES];
+            if (indexPath.row == 0) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/SDWebImage/SDWebImage/blob/master/LICENSE"] options:@{} completionHandler:nil];
+            } else {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/realm/realm-cocoa/blob/master/LICENSE"] options:@{} completionHandler:nil];
+            }
         default:
             [tableView deselectRowAtIndexPath:indexPath animated:YES];
             break;

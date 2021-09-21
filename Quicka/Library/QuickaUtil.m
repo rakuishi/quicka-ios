@@ -115,13 +115,6 @@
 
     if (version.length) {
         // 2回目以降の起動
-        if (![defaults boolForKey:kQuickaIsMigrated]) {
-            [MagicalRecord setupCoreDataStackWithAutoMigratingSqliteStoreNamed:@"Quicka.sql"];
-            [ActionManager migrateFromCoreDataToRealm];
-            [HistoryManager migrateFromCoreDataToRealm];
-            [defaults setBool:YES forKey:kQuickaIsMigrated];
-            [defaults synchronize];
-        }
 
     } else {
         // 初回起動
@@ -133,7 +126,6 @@
 
         version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
         [defaults setObject:version forKey:kQuickaVersion];
-        [defaults setBool:YES forKey:kQuickaIsMigrated];
         [defaults synchronize];
     }
 }
