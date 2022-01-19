@@ -154,7 +154,8 @@
 
 - (void)showSoftwareKeyboardIfPossible
 {
-    if (self.isActive && self.editing == NO) {
+    // 上に ViewController が重なっていない場合のみキーボードを表示する
+    if (self.isActive && self.editing == NO && self.presentedViewController == NULL) {
         [self.searchBar becomeFirstResponder];
     }
 }
