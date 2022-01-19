@@ -62,7 +62,6 @@
     
     self.isActiveMainView = YES;
     self.shouldMoveViewPosition = NO;
-//    self.subNavigationController.view.layer.shadowColor = [[UIColor blackColor] CGColor];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlePanGestureEnable:) name:QKApplicationEnablePanGesture object:nil];
 }
