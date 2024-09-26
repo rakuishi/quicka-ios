@@ -2,7 +2,7 @@ platform :ios, "15.0"
 
 target 'Quicka' do
   pod 'SDWebImage', '~> 5.19.7'
-  pod 'Realm', '5.4.2'
+  pod 'Realm', '~> 10.54.0'
 end
 
 post_install do |installer|
