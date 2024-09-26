@@ -40,7 +40,6 @@
     NSURLSessionTask *task = [session dataTaskWithURL:url
                                     completionHandler:^(NSData *data, NSURLResponse *response, NSError *error){
                                         dispatch_async(q_main, ^{
-                                            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                                             if (!error) {
                                                 NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
                                                 self.objects = [dict objectForKey:@"results"];
@@ -51,7 +50,6 @@
                                             }
                                         });
                                     }];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     [task resume];
 }
 

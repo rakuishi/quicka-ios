@@ -103,16 +103,12 @@
 
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation
 {
-	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    
 	self.goBackButtonItem.enabled = _webView.canGoBack;
 	self.goForwardButtonItem.enabled = _webView.canGoForward;
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
-	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    
     NSString *title = self.webView.title;
     NSString *url = [self.webView.URL absoluteString];
     
@@ -128,8 +124,6 @@
 
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error
 {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-
 	self.goBackButtonItem.enabled = _webView.canGoBack;
 	self.goForwardButtonItem.enabled = _webView.canGoForward;
 }
