@@ -1,7 +1,7 @@
 platform :ios, "15.0"
 
 target 'Quicka' do
-  pod 'SDWebImage', '~> 5.0'
+  pod 'SDWebImage', '~> 5.19.7'
   pod 'Realm', '5.4.2'
 end
 
