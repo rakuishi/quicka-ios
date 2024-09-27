@@ -160,6 +160,8 @@
     return YES;
 }
 
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 + (NSString *)MD5:(UIImage *)image
 {
     // UIImageからハッシュ値を求める
