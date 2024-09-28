@@ -60,29 +60,11 @@ CGFloat const kSuggestViewFrameSizeHeight = 36.f;
         
         self.alpha = 0.f;
         
-        // ステータスバーの変動に対応する
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(statusBarFrameWillChange:)
-                                                     name:UIApplicationWillChangeStatusBarFrameNotification
-                                                   object:nil];
-        
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
         self.session = [NSURLSession sessionWithConfiguration:config];
     }
 
     return self;
-}
-
-- (void)statusBarFrameWillChange:(NSNotification *)notification
-{
-    [self moveOriginY];
-}
-
-- (void)dealloc
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:UIApplicationWillChangeStatusBarFrameNotification
-                                                  object:nil];
 }
 
 - (void)moveOriginYFromKeyboardRect:(CGRect)frame
@@ -140,7 +122,6 @@ CGFloat const kSuggestViewFrameSizeHeight = 36.f;
             [button setTitleColor:UIColor.darkTextColor forState:UIControlStateNormal];
             [button setTitleColor:UIColor.lightTextColor forState:UIControlStateHighlighted];
         }
-        [button setTitleEdgeInsets:UIEdgeInsetsMake(3.f, 0.f, 0.f, 0.f)];
         [button.titleLabel setTextAlignment:NSTextAlignmentCenter];
         [button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
         
