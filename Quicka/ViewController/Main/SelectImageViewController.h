@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CustomTableViewCell.h"
-#import "UIImageView+WebCache.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @protocol SelectImageViewControllerDelegate <NSObject>
 

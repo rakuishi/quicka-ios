@@ -10,9 +10,9 @@
 #import "CustomTableViewCell.h"
 #import "SelectImageViewController.h"
 #import "CreateIconViewController.h"
-#import "UIImageView+WebCache.h"
 #import "ActionManager.h"
 #import "QuickaUtil.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 typedef NS_ENUM(NSInteger, EditViewControllerStyle) {
     EditViewControllerStyleInsert,
