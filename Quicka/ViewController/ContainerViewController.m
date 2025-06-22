@@ -31,6 +31,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    // iOS 18 以下にて MainViewController が Push し NavigationBar の高さ変動が起こるときの色の変化を抑える
+    self.view.backgroundColor = [UIColor systemBackgroundColor];
+    
     self.width = [[UIScreen mainScreen] bounds].size.width;
 
     self.mainViewController = [[MainViewController alloc] initWithStyle:UITableViewStylePlain];
