@@ -23,10 +23,17 @@
     [self setTitle:LSTR(@"Recents")];
     [self.tableView registerNib:[UINib nibWithNibName:@"DefaultCell" bundle:nil] forCellReuseIdentifier:@"DefaultCell"];
     
+    UIBarButtonSystemItem systemItemDone;
+    if (@available(iOS 26.0, *)) {
+        systemItemDone = UIBarButtonSystemItemClose;
+    } else {
+        systemItemDone = UIBarButtonSystemItemDone;
+    }
+    
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:LSTR(@"Clear")
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self action:@selector(deleteButtonItemTapped)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItemDone
                                                                                            target:self action:@selector(doneButtonItemTapped)];
     
     self.histories = [[HistoryManager getAllData] mutableCopy];

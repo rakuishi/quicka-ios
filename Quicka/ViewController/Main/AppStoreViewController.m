@@ -25,7 +25,15 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"DefaultCell" bundle:nil] forCellReuseIdentifier:@"DefaultCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"DefaultSubtitleIconCell" bundle:nil] forCellReuseIdentifier:@"DefaultSubtitleIconCell"];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonItemTapped)];
+    UIBarButtonSystemItem systemItemDone;
+    if (@available(iOS 26.0, *)) {
+        systemItemDone = UIBarButtonSystemItemClose;
+    } else {
+        systemItemDone = UIBarButtonSystemItemDone;
+    }
+
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItemDone target:self action:@selector(doneButtonItemTapped)];
+
     self.tableView.separatorInset = UIEdgeInsetsMake(0.f, 15.f, 0.f, 0.f);
     __weak UITableView *tableView = self.tableView;
     dispatch_queue_t q_main = dispatch_get_main_queue();

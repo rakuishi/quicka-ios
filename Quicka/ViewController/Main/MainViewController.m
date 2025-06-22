@@ -40,14 +40,17 @@
     self.searchBar.placeholder = LSTR(@"Search");
     self.searchBar.delegate = self;
     self.searchBar.translucent = NO;
+    self.searchBar.searchBarStyle = UISearchBarStyleProminent;
     self.searchBar.enablesReturnKeyAutomatically = NO;
     self.searchBar.tintColor = [UIColor colorWithRed:69.f/255.f green:111.f/255.f blue:238.f/255.f alpha:1.f]; // カーソル色
+    self.searchBar.searchTextField.backgroundColor = [UIColor secondarySystemGroupedBackgroundColor];
 
-    if (@available(iOS 13.0, *)) {
-        self.searchBar.searchTextField.backgroundColor = [UIColor secondarySystemGroupedBackgroundColor];
+    if (@available(iOS 26.0, *)) {
+        // iOS 26.0 以降では、subtitleView に設定すると UIBarButtonItem と縦中央位置が揃う
+        self.navigationItem.subtitleView = self.searchBar;
+    } else {
+        self.navigationItem.titleView = self.searchBar;
     }
-
-    self.navigationItem.titleView = self.searchBar;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonitem_history"] style:UIBarButtonItemStylePlain target:self action:@selector(history)];
 
     // 通知を登録

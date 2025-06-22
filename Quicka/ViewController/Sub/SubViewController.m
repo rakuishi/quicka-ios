@@ -35,14 +35,22 @@
     self.navigationItem.titleView = titleView;
     
     self.barTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.f, 3.f, 200.f, 18.f)];
-    [self.barTitleLabel setTextColor:[UIColor whiteColor]];
+    if (@available(iOS 26.0, *)) {
+        [self.barTitleLabel setTextColor:[UIColor labelColor]];
+    } else {
+        [self.barTitleLabel setTextColor:[UIColor whiteColor]];
+    }
     [self.barTitleLabel setTextAlignment:NSTextAlignmentCenter];
     [self.barTitleLabel setFont:[UIFont boldSystemFontOfSize:14.f]];
     [titleView addSubview:self.barTitleLabel];
     
     self.barUrlButton = [[UIButton alloc] initWithFrame:CGRectMake(0.f, 20.f, 200.f, 18.f)];
     [self.barUrlButton.titleLabel setFont:[UIFont systemFontOfSize:12.f]];
-    [self.barUrlButton setTitleColor:QK_TINT_COLOR forState:UIControlStateNormal];
+    if (@available(iOS 26.0, *)) {
+        [self.barUrlButton setTitleColor:[UIColor secondaryLabelColor] forState:UIControlStateNormal];
+    } else {
+        [self.barUrlButton setTitleColor:QK_TINT_COLOR forState:UIControlStateNormal];
+    }
     [self.barUrlButton setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
     [self.barUrlButton addTarget:self action:@selector(barUrlButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [titleView addSubview:self.barUrlButton];
@@ -54,7 +62,12 @@
     self.goForwardButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonitem_arrow_right"] style:UIBarButtonItemStylePlain target:self action:@selector(goForward)];
     self.refreshButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonitem_refresh"] style:UIBarButtonItemStylePlain target:self action:@selector(refresh)];
     self.shareButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonitem_share"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
-    self.toolbarItems = @[self.goBackButtonItem, flexibleSpace, self.goForwardButtonItem, flexibleSpace, self.refreshButtonItem, flexibleSpace, self.shareButtonItem];
+
+    if (@available(iOS 26.0, *)) {
+        self.toolbarItems = @[self.goBackButtonItem, self.goForwardButtonItem, flexibleSpace, self.refreshButtonItem, self.shareButtonItem];
+    } else {
+        self.toolbarItems = @[self.goBackButtonItem, flexibleSpace, self.goForwardButtonItem, flexibleSpace, self.refreshButtonItem, flexibleSpace, self.shareButtonItem];
+    }
     
     self.goBackButtonItem.enabled = NO;
     self.goForwardButtonItem.enabled = NO;
@@ -69,7 +82,14 @@
     // `viewDidLoad` でインスタンスを生成するのと比較して 50ms 短縮
     if (self.webView == nil) {
         CGSize size = [[UIScreen mainScreen] bounds].size;
-        CGRect frame = CGRectMake(0.f, 0.f, size.width, size.height - 20.f - 44.f - 44.f);
+        CGRect frame;
+
+        if (@available(iOS 26.0, *)) {
+            // iOS 26 では透過部分を含んで描画されているため、サイズ調整は不要になった模様
+            frame = CGRectMake(0.f, 0.f, size.width, size.height);
+        } else {
+            frame = CGRectMake(0.f, 0.f, size.width, size.height - 20.f - 44.f - 44.f);
+        }
         
         self.webView = [[WKWebView alloc] initWithFrame:frame];
         [self.webView setNavigationDelegate:self];

@@ -12,23 +12,26 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    NSDictionary *titleTextAttrs = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+    if (@available(iOS 26.0, *)) {
+        // appearance for iOS 26.0 and later
+    } else {
+        NSDictionary *titleTextAttrs = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
 
-    [[UINavigationBar appearance] setTintColor:QK_TINT_COLOR];
-    [[UINavigationBar appearance] setBarTintColor:QK_BAR_TINT_COLOR];
-    [[UINavigationBar appearance] setTitleTextAttributes:titleTextAttrs];
-    [[UINavigationBar appearance] setTranslucent:false];
-    [[UIToolbar appearance] setTintColor:QK_TINT_COLOR];
-    [[UIToolbar appearance] setBarTintColor:QK_BAR_TINT_COLOR];
+        [[UINavigationBar appearance] setTintColor:QK_TINT_COLOR];
+        [[UINavigationBar appearance] setBarTintColor:QK_BAR_TINT_COLOR];
+        [[UINavigationBar appearance] setTitleTextAttributes:titleTextAttrs];
+        [[UINavigationBar appearance] setTranslucent:false];
+        [[UIToolbar appearance] setTintColor:QK_TINT_COLOR];
+        [[UIToolbar appearance] setBarTintColor:QK_BAR_TINT_COLOR];
 
-    if (@available(iOS 15.0, *)) {
         UINavigationBarAppearance *navBarAppearance = [UINavigationBarAppearance new];
         [navBarAppearance configureWithOpaqueBackground];
+        [navBarAppearance configureWithDefaultBackground];
         [navBarAppearance setTitleTextAttributes:titleTextAttrs];
         [navBarAppearance setBackgroundColor:QK_BAR_TINT_COLOR];
         [[UINavigationBar appearance] setStandardAppearance:navBarAppearance];
         [[UINavigationBar appearance] setScrollEdgeAppearance:navBarAppearance];
-
+        
         UIToolbarAppearance *toolbarAppearance = [UIToolbarAppearance new];
         [toolbarAppearance configureWithOpaqueBackground];
         [toolbarAppearance setBackgroundColor:QK_BAR_TINT_COLOR];

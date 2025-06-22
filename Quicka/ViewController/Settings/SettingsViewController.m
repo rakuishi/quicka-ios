@@ -46,8 +46,15 @@ typedef enum kSection : NSUInteger {
     [self.clearTextAfterSearchSwitch setTag:1];
     [self.clearTextAfterSearchSwitch setOn:[QuickaUtil isOnForKey:kQuickaClearTextAfterSearch]];
     [self.clearTextAfterSearchSwitch addTarget:self action:@selector(switchValueChanged:) forControlEvents:UIControlEventValueChanged];
+
+    UIBarButtonSystemItem systemItemDone;
+    if (@available(iOS 26.0, *)) {
+        systemItemDone = UIBarButtonSystemItemClose;
+    } else {
+        systemItemDone = UIBarButtonSystemItemDone;
+    }
     
-    UIBarButtonItem *doneButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonItemTapped)];
+    UIBarButtonItem *doneButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItemDone target:self action:@selector(doneButtonItemTapped)];
     self.navigationItem.rightBarButtonItem = doneButtonItem;
     
     [self loadCacheSizeDescriptionOnAsync];
