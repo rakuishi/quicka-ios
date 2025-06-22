@@ -301,16 +301,14 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 44.f;
+    return 52.f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DefaultIconCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DefaultIconCell" forIndexPath:indexPath];
     cell.editingAccessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    if (@available(iOS 13.0, *)) {
-        cell.backgroundColor = [UIColor secondarySystemGroupedBackgroundColor];
-    }
+    cell.backgroundColor = [UIColor secondarySystemGroupedBackgroundColor];
 
     if (indexPath.section == 0) {
         

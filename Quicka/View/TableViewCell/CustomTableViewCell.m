@@ -14,7 +14,7 @@
 {
 	[super layoutSubviews];
     
-    self.imageView.frame = CGRectMake(15.f, (44.f - 29.f) / 2.f, 29.f, 29.f);
+    self.imageView.frame = CGRectMake(15.f, (self.frame.size.height - 29.f) / 2.f, 29.f, 29.f);
     
     CGRect frame = self.textLabel.frame;
     frame.origin.x = CGRectGetMaxX(self.imageView.frame) + 10.f;
@@ -30,8 +30,7 @@
 {
 	[super layoutSubviews];
     
-    self.imageView.frame = CGRectMake(15.f, (44.f - 29.f) / 2.f, 29.f, 29.f);
-    // self.imageView.image = [QuickaUtil maskImage:self.imageView.image];
+    self.imageView.frame = CGRectMake(15.f, (self.frame.size.height - 29.f) / 2.f, 29.f, 29.f);
     
     CGRect frame = self.textLabel.frame;
     frame.origin.x = CGRectGetMaxX(self.imageView.frame) + 10.f;
@@ -52,7 +51,7 @@
 {
     [super layoutSubviews];
     
-    self.imageView.frame = CGRectMake(15.f, 7.f, 29.f, 29.f);
+    self.imageView.frame = CGRectMake(15.f, (self.frame.size.height - 29.f) / 2.f, 29.f, 29.f);
 }
 
 @end
