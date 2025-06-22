@@ -51,7 +51,7 @@
     } else {
         self.navigationItem.titleView = self.searchBar;
     }
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonitem_history"] style:UIBarButtonItemStylePlain target:self action:@selector(history)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage systemImageNamed:@"clock"] style:UIBarButtonItemStylePlain target:self action:@selector(history)];
 
     // 通知を登録
     NSNotificationCenter *notification = [NSNotificationCenter defaultCenter];
@@ -93,7 +93,7 @@
     // `viewDidLoad` でインスタンスを生成するのと比較して 200ms 短縮
     if (self.toolbarItems.count == 0) {
         UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-        UIBarButtonItem *settingsButtonItem = [[UIBarButtonItem alloc] initWithTitle:LSTR(@"Settings") style:UIBarButtonItemStylePlain target:self action:@selector(settingsButtonItemTapped)];
+        UIBarButtonItem *settingsButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage systemImageNamed:@"gearshape"] style:UIBarButtonItemStylePlain target:self action:@selector(settingsButtonItemTapped)];
         [self setToolbarItems:@[settingsButtonItem, flexibleSpace, self.editButtonItem] animated:NO];
     }
     

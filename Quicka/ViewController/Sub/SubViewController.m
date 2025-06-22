@@ -55,13 +55,13 @@
     [self.barUrlButton addTarget:self action:@selector(barUrlButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [titleView addSubview:self.barUrlButton];
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonitem_back"] style:UIBarButtonItemStylePlain target:self action:@selector(scrollToMainViewController)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage systemImageNamed:@"chevron.left"] style:UIBarButtonItemStylePlain target:self action:@selector(scrollToMainViewController)];
     
     UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    self.goBackButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonitem_arrow_left"] style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
-    self.goForwardButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonitem_arrow_right"] style:UIBarButtonItemStylePlain target:self action:@selector(goForward)];
-    self.refreshButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonitem_refresh"] style:UIBarButtonItemStylePlain target:self action:@selector(refresh)];
-    self.shareButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonitem_share"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
+    self.goBackButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage systemImageNamed:@"chevron.left"] style:UIBarButtonItemStylePlain target:self action:@selector(goBack)];
+    self.goForwardButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage systemImageNamed:@"chevron.right"] style:UIBarButtonItemStylePlain target:self action:@selector(goForward)];
+    self.refreshButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage systemImageNamed:@"arrow.clockwise"] style:UIBarButtonItemStylePlain target:self action:@selector(refresh)];
+    self.shareButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage systemImageNamed:@"square.and.arrow.up"] style:UIBarButtonItemStylePlain target:self action:@selector(share)];
 
     if (@available(iOS 26.0, *)) {
         self.toolbarItems = @[self.goBackButtonItem, self.goForwardButtonItem, flexibleSpace, self.refreshButtonItem, self.shareButtonItem];
