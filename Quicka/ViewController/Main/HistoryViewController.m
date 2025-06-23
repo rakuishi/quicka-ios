@@ -30,11 +30,8 @@
         systemItemDone = UIBarButtonSystemItemDone;
     }
     
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:LSTR(@"Clear")
-                                                                             style:UIBarButtonItemStylePlain
-                                                                            target:self action:@selector(deleteButtonItemTapped)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItemDone
-                                                                                           target:self action:@selector(doneButtonItemTapped)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:LSTR(@"Clear") style:UIBarButtonItemStylePlain target:self action:@selector(deleteButtonItemTapped)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:systemItemDone target:self action:@selector(doneButtonItemTapped)];
     
     self.histories = [[HistoryManager getAllData] mutableCopy];
     [self.tableView reloadData];
