@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Realm/Realm.h>
+#import "Realm/RLMObject.h"
 
 @interface RLMHistory : RLMObject
 
