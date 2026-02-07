@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RLMHistory.h"
+#import "QKHistory.h"
 
 @interface HistoryManager : NSObject
 
 + (void)addQuery:(NSString *)query;
 + (NSArray *)getAllData;
-+ (void)deleteHistory:(RLMHistory *)history;
++ (void)deleteHistory:(QKHistory *)history;
 + (void)deleteAllData;
 
 @end

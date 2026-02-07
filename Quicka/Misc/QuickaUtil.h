@@ -18,6 +18,10 @@
 #define kQuickaCustomEngineURL      @"kQuickaCustomEngineURL"
 #define kQuickaUseSuggestView       @"kQuickaUseSuggestView"
 
+#define kQuickaActions              @"kQuickaActions"
+#define kQuickaHistories            @"kQuickaHistories"
+#define kQuickaRealmMigrated        @"kQuickaRealmMigrated"
+
 typedef NS_ENUM(NSInteger, kSearchEngineType) {
     kSearchEngineTypeGoogle,
     kSearchEngineTypeYahoo,

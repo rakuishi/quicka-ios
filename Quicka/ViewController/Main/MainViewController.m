@@ -314,7 +314,7 @@
         
         cell.showsReorderControl = YES;
 
-        RLMAction *action = self.actions[indexPath.row];
+        QKAction *action = self.actions[indexPath.row];
         cell.textLabel.text = action.title;
         UIImage *image = [UIImage imageWithContentsOfFile:IMAGE_PATH(action.imageName)];
         if (image == nil) image = [UIImage imageNamed:@"icon_placeholder"];
@@ -335,8 +335,8 @@
 
         if (indexPath.section == 0) {
             
-            RLMAction *action = self.actions[indexPath.row];
-            
+            QKAction *action = self.actions[indexPath.row];
+
             EditViewController *editViewController = [[EditViewController alloc] initWithStyle:UITableViewStyleGrouped];
             editViewController.delegate = self;
             editViewController.style = EditViewControllerStyleEdit;
@@ -352,7 +352,7 @@
         
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-        RLMAction *action = self.actions[indexPath.row];
+        QKAction *action = self.actions[indexPath.row];
         [self performQuickaSearchWithQuery:self.searchBar.text url:action.url isSearchBarAction:NO];
     }
 }
@@ -379,7 +379,7 @@
 
         [tableView beginUpdates];
         
-        RLMAction *action = self.actions[indexPath.row];
+        QKAction *action = self.actions[indexPath.row];
         [ActionManager deleteAction:action];    // データベースから削除
         [self.actions removeObjectAtIndex:indexPath.row]; // 配列に持たせているデータを削除
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];

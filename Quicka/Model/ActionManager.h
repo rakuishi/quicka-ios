@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "RLMAction.h"
+#import "QKAction.h"
 #import <CommonCrypto/CommonDigest.h>   // MD5
 
 #define IMAGE_PATH(__imageName__) [[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"Images"] stringByAppendingPathComponent:(__imageName__)]
@@ -16,9 +16,9 @@
 
 + (void)setupInitAction;
 + (void)addTitle:(NSString *)title url:(NSString *)url image:(UIImage *)image;
-+ (void)updateAction:(RLMAction *)action title:(NSString *)title url:(NSString *)url image:(UIImage *)image;
++ (void)updateAction:(QKAction *)action title:(NSString *)title url:(NSString *)url image:(UIImage *)image;
 + (void)updateActions:(NSMutableArray *)actions;
-+ (void)deleteAction:(RLMAction *)action;
++ (void)deleteAction:(QKAction *)action;
 + (NSMutableArray *)getAllData;
 
 @end

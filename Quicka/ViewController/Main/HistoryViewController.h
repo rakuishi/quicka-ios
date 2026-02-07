@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "HistoryManager.h"
-#import "RLMHistory.h"
 
 @protocol HistoryViewControllerDelegate <NSObject>
 

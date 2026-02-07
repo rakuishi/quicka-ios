@@ -9,6 +9,7 @@
 #import "QuickaUtil.h"
 #import "ActionManager.h"
 #import "HistoryManager.h"
+#import "RealmMigrator.h"
 
 @implementation QuickaUtil
 
@@ -114,20 +115,55 @@
     NSString *version = [defaults stringForKey:kQuickaVersion];
 
     if (version.length) {
-        // 2回目以降の起動
-
+        // 2回目以降の起動: Realm からの移行が必要かチェック
+        if (![defaults boolForKey:kQuickaRealmMigrated]) {
+            [self migrateRealmToUserDefaults];
+            [defaults setBool:YES forKey:kQuickaRealmMigrated];
+            [defaults synchronize];
+        }
     } else {
         // 初回起動
         [ActionManager setupInitAction];
-        
+
         // 初期値を入力
         [QuickaUtil setOn:NO forKey:kQuickaUseSuggestView];
         [QuickaUtil setOn:YES forKey:kQuickaClearTextAfterSearch];
+
+        // 新規インストールなので Realm 移行は不要
+        [defaults setBool:YES forKey:kQuickaRealmMigrated];
 
         version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
         [defaults setObject:version forKey:kQuickaVersion];
         [defaults synchronize];
     }
+}
+
++ (void)migrateRealmToUserDefaults
+{
+    if (![RealmMigrator realmDatabaseExists]) {
+        NSLog(@"[Migration] Realm database not found. Skipping migration.");
+        return;
+    }
+
+    NSLog(@"[Migration] Starting Realm → NSUserDefaults migration...");
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    NSArray *actions = [RealmMigrator readActionsFromRealm];
+    if (actions.count > 0) {
+        [defaults setObject:actions forKey:kQuickaActions];
+    }
+    NSLog(@"[Migration] Migrated %lu actions.", (unsigned long)actions.count);
+
+    NSArray *histories = [RealmMigrator readHistoriesFromRealm];
+    if (histories.count > 0) {
+        [defaults setObject:histories forKey:kQuickaHistories];
+    }
+    NSLog(@"[Migration] Migrated %lu histories.", (unsigned long)histories.count);
+
+    [defaults synchronize];
+
+    NSLog(@"[Migration] Realm → NSUserDefaults migration completed successfully.");
 }
 
 #pragma mark - NSUserDefaults for BOOL Value key

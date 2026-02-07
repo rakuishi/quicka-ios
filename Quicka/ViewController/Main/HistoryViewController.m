@@ -93,7 +93,7 @@
         
         [tableView beginUpdates];
         
-        RLMHistory *history = self.histories[indexPath.row];
+        QKHistory *history = self.histories[indexPath.row];
         [HistoryManager deleteHistory:history];    // データベースから削除
         [self.histories removeObjectAtIndex:indexPath.row]; // 配列に持たせているデータを削除
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
@@ -108,7 +108,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    RLMHistory *history = self.histories[indexPath.row];
+    QKHistory *history = self.histories[indexPath.row];
     cell.textLabel.text = history.query;
     
     return cell;
@@ -116,7 +116,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    RLMHistory *history = self.histories[indexPath.row];
+    QKHistory *history = self.histories[indexPath.row];
     [self dismissViewControllerAnimated:YES completion:^{
         if ([self.delegate respondsToSelector:@selector(didSelectQuery:)]) {
             [self.delegate didSelectQuery:history.query];
