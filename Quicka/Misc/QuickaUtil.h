@@ -20,7 +20,6 @@
 
 #define kQuickaActions              @"kQuickaActions"
 #define kQuickaHistories            @"kQuickaHistories"
-#define kQuickaRealmMigrated        @"kQuickaRealmMigrated"
 
 typedef NS_ENUM(NSInteger, kSearchEngineType) {
     kSearchEngineTypeGoogle,

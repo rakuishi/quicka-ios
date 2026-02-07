@@ -73,24 +73,8 @@
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
-/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		16822F212E876D61002061F4 /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			attributesByRelativePath = {
-				Framework/Realm.xcframework = (
-					CodeSignOnCopy,
-					RemoveHeadersOnCopy,
-				);
-			};
-			buildPhase = 16822F132E876C59002061F4 /* Embed Frameworks */;
-			membershipExceptions = (
-				Framework/Realm.xcframework,
-			);
-		};
-/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		163B14782DBE16C3001D23D2 /* Quicka */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (163B14A02DBE16C3001D23D2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 16822F212E876D61002061F4 /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Quicka; sourceTree = "<group>"; };
+		163B14782DBE16C3001D23D2 /* Quicka */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (163B14A02DBE16C3001D23D2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Quicka; sourceTree = "<group>"; };
 		163B16042DBE1A0E001D23D2 /* QuickaTests */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (163B16062DBE1A0F001D23D2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = QuickaTests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 

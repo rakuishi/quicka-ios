@@ -123,7 +123,7 @@ typedef enum kSection : NSUInteger {
         case kSectionAbout:
             return 4;
         case kSectionLisence:
-            return 2;
+            return 1;
         default:
             return 1;
     }
@@ -237,22 +237,10 @@ typedef enum kSection : NSUInteger {
             
             static NSString *CellIdentifier = @"BasicCell";
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-            switch (indexPath.row) {
-                case 0:
-                    cell.textLabel.text = LSTR(@"SDWebImage");
-                    cell.accessoryView = nil;
-                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                    cell.selectionStyle = UITableViewCellSelectionStyleDefault;
-                    break;
-                case 1:
-                    cell.textLabel.text = LSTR(@"Realm");
-                    cell.accessoryView = nil;
-                    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-                    cell.selectionStyle = UITableViewCellSelectionStyleDefault;
-                    break;
-                default:
-                    break;
-            }
+            cell.textLabel.text = LSTR(@"SDWebImage");
+            cell.accessoryView = nil;
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.selectionStyle = UITableViewCellSelectionStyleDefault;
             return cell;
         }
     }
@@ -289,8 +277,6 @@ typedef enum kSection : NSUInteger {
             [tableView deselectRowAtIndexPath:indexPath animated:YES];
             if (indexPath.row == 0) {
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/SDWebImage/SDWebImage/blob/master/LICENSE"] options:@{} completionHandler:nil];
-            } else {
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/realm/realm-cocoa/blob/master/LICENSE"] options:@{} completionHandler:nil];
             }
         default:
             [tableView deselectRowAtIndexPath:indexPath animated:YES];
