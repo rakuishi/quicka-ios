@@ -32,7 +32,6 @@ typedef NS_ENUM(NSInteger, kSearchEngineType) {
 typedef NS_ENUM(NSInteger, kBrowserType) {
     kBrowserTypeSFSafariViewController,
     kBrowserTypeSafari,
-    kBrowserTypeQuickaBrowser,
     kBrowserTypeCount
 };
 
@@ -65,5 +64,6 @@ typedef NS_ENUM(NSInteger, kBrowserType) {
 + (NSString *)getBrowserName;
 + (NSInteger)getBrowserIndex;
 + (void)setBrowserIndex:(NSInteger)index;
++ (void)normalizeBrowserIndex;
 
 @end

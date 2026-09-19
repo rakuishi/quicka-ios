@@ -140,18 +140,7 @@
     
     if (gesture.state == UIGestureRecognizerStateBegan) {
         
-        if ([QuickaUtil getBrowserIndex] == kBrowserTypeQuickaBrowser) {
-            [self.mainViewController hideSoftwareKeyboard];
-            if (x > self.width - MARGIN && self.isActiveMainView == YES) {
-                self.shouldMoveViewPosition = YES;
-            } else if (x < MARGIN && self.isActiveMainView == NO) {
-                self.shouldMoveViewPosition = YES;
-            } else {
-                self.shouldMoveViewPosition = NO;
-            }
-        } else {
-            self.shouldMoveViewPosition = NO;
-        }
+        self.shouldMoveViewPosition = NO;
         
         if (self.shouldMoveViewPosition == YES) {
             CALayer *layer = self.subNavigationController.view.layer;

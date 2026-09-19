@@ -114,6 +114,8 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *version = [defaults stringForKey:kQuickaVersion];
 
+    [self normalizeBrowserIndex];
+
     if (version.length) {
         // 2回目以降の起動: Realm からの移行が必要かチェック
         if (![defaults boolForKey:kQuickaRealmMigrated]) {
@@ -263,20 +265,37 @@
 
 + (NSArray *)getBrowserNames
 {
-    return @[@"SFSafariViewController", @"Default Browser App", @"Quicka Browser"];
+    return @[@"SFSafariViewController", @"Default Browser App"];
 }
 
 + (NSString *)getBrowserName
 {
     NSArray *browserNames = [self getBrowserNames];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    return [browserNames objectAtIndex:[defaults integerForKey:kQuickaBrowserIndex]];
+    return [browserNames objectAtIndex:[self getBrowserIndex]];
 }
 
 + (NSInteger)getBrowserIndex
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    return [defaults integerForKey:kQuickaBrowserIndex];
+    NSInteger index = [defaults integerForKey:kQuickaBrowserIndex];
+
+    // 廃止した内蔵ブラウザなど、範囲外の値は SFSafariViewController にフォールバックする
+    if (index < 0 || index >= kBrowserTypeCount) {
+        return kBrowserTypeSFSafariViewController;
+    }
+
+    return index;
+}
+
++ (void)normalizeBrowserIndex
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSInteger index = [defaults integerForKey:kQuickaBrowserIndex];
+
+    if (index < 0 || index >= kBrowserTypeCount) {
+        [defaults setInteger:kBrowserTypeSFSafariViewController forKey:kQuickaBrowserIndex];
+        [defaults synchronize];
+    }
 }
 
 + (void)setBrowserIndex:(NSInteger)index

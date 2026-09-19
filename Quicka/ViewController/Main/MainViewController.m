@@ -511,22 +511,16 @@
 
     if ([url hasPrefix:@"http:"] || [url hasPrefix:@"https:"]) {
         switch ([QuickaUtil getBrowserIndex]) {
-            case kBrowserTypeSFSafariViewController: {
-                SFSafariViewController *viewController = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:url]];
-                viewController.preferredBarTintColor = QK_BAR_TINT_COLOR;
-                viewController.preferredControlTintColor = [UIColor whiteColor];
-                [self presentViewController:viewController animated:YES completion:nil];
-                break;
-            }
             case kBrowserTypeSafari: {
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url] options:@{} completionHandler:nil];
                 break;
             }
-            case kBrowserTypeQuickaBrowser:
+            case kBrowserTypeSFSafariViewController:
             default: {
-                if ([self.delegate respondsToSelector:@selector(scrollToSubViewControllerWithQuery:)]) {
-                    [self.delegate scrollToSubViewControllerWithQuery:url];
-                }
+                SFSafariViewController *viewController = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:url]];
+                viewController.preferredBarTintColor = QK_BAR_TINT_COLOR;
+                viewController.preferredControlTintColor = [UIColor whiteColor];
+                [self presentViewController:viewController animated:YES completion:nil];
                 break;
             }
         }

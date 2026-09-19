@@ -243,17 +243,6 @@
         }
       }
     },
-    "Quicka Browser" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "内蔵ブラウザ"
-          }
-        }
-      }
-    },
     "Recents" : {
       "extractionState" : "manual",
       "localizations" : {
