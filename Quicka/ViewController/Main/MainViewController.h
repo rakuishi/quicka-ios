@@ -20,19 +20,8 @@
 #import "AppStoreViewController.h"
 #import "NSString+Quicka2.h"
 
-@protocol MainViewControllerDelegate <NSObject>
-
-- (void)scrollToSubViewControllerWithQuery:(NSString *)query;
-
-@end
-
 @interface MainViewController : UITableViewController <EditViewControllerDelegate, HistoryViewControllerDelegate, SuggestViewDelegate, UISearchBarDelegate>
 
-@property (nonatomic, weak) id <MainViewControllerDelegate> delegate;
 @property (nonatomic, strong) UISearchBar *searchBar;
-@property (nonatomic, assign) BOOL isActive;
-
-- (void)showSoftwareKeyboardIfPossible;
-- (void)hideSoftwareKeyboard;
 
 @end

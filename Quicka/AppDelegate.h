@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "QuickaUtil.h"
 #import "ActionManager.h"
-#import "ContainerViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

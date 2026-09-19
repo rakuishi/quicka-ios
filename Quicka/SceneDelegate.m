@@ -18,8 +18,12 @@
     
     UIWindowScene *windowScene = (UIWindowScene *)scene;
     
+    MainViewController *mainViewController = [[MainViewController alloc] initWithStyle:UITableViewStylePlain];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    [navigationController setToolbarHidden:NO];
+
     UIWindow *window = [[UIWindow alloc] initWithWindowScene:windowScene];
-    window.rootViewController = [ContainerViewController new];
+    window.rootViewController = navigationController;
     window.backgroundColor = [UIColor blackColor];
     [window makeKeyAndVisible];
     

@@ -55,7 +55,7 @@ CGFloat const kSuggestViewFrameSizeHeight = 36.f;
         self.scrollView = [[UIScrollView alloc] initWithFrame:self.frame];
         self.scrollView.decelerationRate = UIScrollViewDecelerationRateFast;
         self.scrollView.showsHorizontalScrollIndicator = NO;
-        self.scrollView.scrollsToTop = NO; // SubViewController における UIWebView のステータスバータップによる移動を許可するために
+        self.scrollView.scrollsToTop = NO;
         [self addSubview:self.scrollView];
         
         self.alpha = 0.f;

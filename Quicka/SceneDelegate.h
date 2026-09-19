@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ContainerViewController.h"
+#import "MainViewController.h"
 
 @interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
 

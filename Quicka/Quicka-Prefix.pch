@@ -12,7 +12,6 @@
 
 #define QKApplicationReloadTableViewData    @"QKApplicationReloadTableViewData"
 #define QKApplicationSetTextToSearchBar     @"QKApplicationSetTextToSearchBar"
-#define QKApplicationEnablePanGesture       @"QKApplicationEnablePanGesture"
 
 #define QK_APPID                        @"725195676"
 #define QK_ACTION_JSON_URL              @"https://rakuishi.github.io/static/apps/quicka2/action.json"

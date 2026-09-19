@@ -153,19 +153,14 @@
     [self.tableView reloadData];
 }
 
-#pragma mark - From ContainerViewController
+#pragma mark -
 
 - (void)showSoftwareKeyboardIfPossible
 {
     // 上に ViewController が重なっていない場合のみキーボードを表示する
-    if (self.isActive && self.editing == NO && self.presentedViewController == NULL) {
+    if (self.editing == NO && self.presentedViewController == NULL) {
         [self.searchBar becomeFirstResponder];
     }
-}
-
-- (void)hideSoftwareKeyboard
-{
-    [self.searchBar resignFirstResponder];
 }
 
 #pragma mark - SuggestViewDelegate
@@ -180,12 +175,9 @@
 
 - (void)keyboardDidShow:(NSNotification *)notification
 {
-    // MainViewController が前面にいる場合
-    if (self.isActive) {
-        CGRect frame = [[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
-        self.suggestView.hidden = NO;
-        [self.suggestView moveOriginYFromKeyboardRect:frame];
-    }
+    CGRect frame = [[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    self.suggestView.hidden = NO;
+    [self.suggestView moveOriginYFromKeyboardRect:frame];
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification
@@ -270,8 +262,7 @@
 {
     [super setEditing:editing animated:animated];
     [self.tableView setEditing:editing animated:YES];
-    [[NSNotificationCenter defaultCenter] postNotificationName:QKApplicationEnablePanGesture object:nil userInfo:@{@"enable": [NSNumber numberWithBool:!editing]}];
-    
+
     if (@available(iOS 13.0, *)) {
         self.searchBar.searchTextField.enabled = !editing;
     }
