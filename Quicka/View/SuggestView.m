@@ -11,7 +11,7 @@
 // MainViewController からは、SuggestView を hidden で管理
 // SuggestView 内では、自身を alpha で管理
 
-int const kSuggestViewMaxQuery = 10;
+enum { kSuggestViewMaxQuery = 10 };
 CGFloat const kSuggestViewButtonPadding = 24.f;
 CGFloat const kSuggestViewFrameSizeHeight = 36.f;
 
